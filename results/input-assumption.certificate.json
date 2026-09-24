@@ -1,0 +1,45 @@
+{
+  "case_id": "input-assumption",
+  "cells": [
+    {
+      "ranks": [
+        1
+      ],
+      "valuation_ids": [
+        0
+      ]
+    },
+    {
+      "ranks": [
+        -1
+      ],
+      "valuation_ids": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "equation_visits": 2,
+  "rounds": 1,
+  "safe_valuation_ids": [
+    1,
+    2,
+    3
+  ],
+  "shortest_bad_valuation_id": 0,
+  "valuations": [
+    {
+      "p": 0
+    },
+    {
+      "p": 1
+    },
+    {
+      "p": 2
+    },
+    {
+      "p": 3
+    }
+  ]
+}

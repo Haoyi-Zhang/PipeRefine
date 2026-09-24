@@ -1,0 +1,48 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "group": "semantic-control",
+  "id": "correlated",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "out",
+        "label": "a",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 1
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "x"
+    },
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "y"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": [
+          "==",
+          "x",
+          "y"
+        ],
+        "kind": "out",
+        "label": "a",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 1
+  }
+}

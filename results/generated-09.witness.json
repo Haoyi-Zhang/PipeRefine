@@ -1,0 +1,18 @@
+{
+  "depth": 1,
+  "nodes": {
+    "0": {
+      "edge": 2,
+      "kind": "out",
+      "label": "value",
+      "rank": 1,
+      "replies": []
+    }
+  },
+  "root": 0,
+  "valuation": {
+    "p": 0,
+    "q": 0
+  },
+  "valuation_id": 0
+}

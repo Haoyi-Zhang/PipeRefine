@@ -1,0 +1,450 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "group": "timing-motif",
+  "id": "availability-window",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 2
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 3
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 4
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 5
+      },
+      {
+        "from": 5,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 6
+      },
+      {
+        "from": 6,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 6
+      },
+      {
+        "from": 0,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "new",
+            0
+          ],
+          [
+            "<",
+            0,
+            [
+              "+",
+              "new",
+              3
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "new",
+            1
+          ],
+          [
+            "<",
+            1,
+            [
+              "+",
+              "new",
+              3
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 1
+      },
+      {
+        "from": 2,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "new",
+            2
+          ],
+          [
+            "<",
+            2,
+            [
+              "+",
+              "new",
+              3
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 2
+      },
+      {
+        "from": 3,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "new",
+            3
+          ],
+          [
+            "<",
+            3,
+            [
+              "+",
+              "new",
+              3
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 3
+      },
+      {
+        "from": 4,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "new",
+            4
+          ],
+          [
+            "<",
+            4,
+            [
+              "+",
+              "new",
+              3
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 4
+      },
+      {
+        "from": 5,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "new",
+            5
+          ],
+          [
+            "<",
+            5,
+            [
+              "+",
+              "new",
+              3
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 5
+      },
+      {
+        "from": 6,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "new",
+            6
+          ],
+          [
+            "<",
+            6,
+            [
+              "+",
+              "new",
+              3
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 6
+      }
+    ],
+    "initial": 0,
+    "states": 7
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "new"
+    },
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "old"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 2
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 3
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 4
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 5
+      },
+      {
+        "from": 5,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 6
+      },
+      {
+        "from": 6,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 6
+      },
+      {
+        "from": 0,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "old",
+            0
+          ],
+          [
+            "<",
+            0,
+            [
+              "+",
+              "old",
+              2
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "old",
+            1
+          ],
+          [
+            "<",
+            1,
+            [
+              "+",
+              "old",
+              2
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 1
+      },
+      {
+        "from": 2,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "old",
+            2
+          ],
+          [
+            "<",
+            2,
+            [
+              "+",
+              "old",
+              2
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 2
+      },
+      {
+        "from": 3,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "old",
+            3
+          ],
+          [
+            "<",
+            3,
+            [
+              "+",
+              "old",
+              2
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 3
+      },
+      {
+        "from": 4,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "old",
+            4
+          ],
+          [
+            "<",
+            4,
+            [
+              "+",
+              "old",
+              2
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 4
+      },
+      {
+        "from": 5,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "old",
+            5
+          ],
+          [
+            "<",
+            5,
+            [
+              "+",
+              "old",
+              2
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 5
+      },
+      {
+        "from": 6,
+        "guard": [
+          "and",
+          [
+            "<=",
+            "old",
+            6
+          ],
+          [
+            "<",
+            6,
+            [
+              "+",
+              "old",
+              2
+            ]
+          ]
+        ],
+        "kind": "in",
+        "label": "sample",
+        "to": 6
+      }
+    ],
+    "initial": 0,
+    "states": 7
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "assumption": true,
+  "environment_inputs": {
+    "launch": [
+      "==",
+      "p",
+      0
+    ]
+  },
+  "group": "semantic-control",
+  "id": "input-assumption",
+  "implementation": {
+    "edges": [],
+    "initial": 0,
+    "states": 1
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 1
+  }
+}

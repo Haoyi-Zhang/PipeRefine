@@ -1,0 +1,85 @@
+{
+  "assumption": true,
+  "group": "generated",
+  "horizon": 7,
+  "id": "timeline-generated-21",
+  "implementation": {
+    "gap": [
+      "+",
+      4,
+      [
+        "%",
+        "q",
+        2
+      ]
+    ],
+    "reads": {
+      "x": [
+        [
+          [
+            "%",
+            "p",
+            2
+          ],
+          [
+            "+",
+            2,
+            [
+              "%",
+              "p",
+              2
+            ]
+          ]
+        ]
+      ]
+    },
+    "writes": {
+      "y": [
+        [
+          [
+            "+",
+            1,
+            [
+              "%",
+              "p",
+              2
+            ]
+          ],
+          [
+            "+",
+            3,
+            [
+              "%",
+              "p",
+              2
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    },
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "q"
+    }
+  ],
+  "specification": {
+    "gap": 6,
+    "reads": {},
+    "writes": {
+      "y": [
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  }
+}

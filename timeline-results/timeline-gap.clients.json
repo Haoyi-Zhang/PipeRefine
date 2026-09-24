@@ -1,0 +1,221 @@
+{
+  "case_id": "timeline-gap",
+  "counterexamples": [
+    {
+      "client": {
+        "age": 4,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "x",
+            "time": 0
+          },
+          {
+            "age": 0,
+            "launch": 4,
+            "port": "x",
+            "time": 4
+          }
+        ],
+        "explanation": "the second specification-legal launch is too early for the replacement",
+        "first_violation_cycle": 4,
+        "kind": "gap",
+        "launches": [
+          0,
+          4
+        ],
+        "port": null,
+        "samples": []
+      },
+      "game_rank": 6,
+      "valuation": {
+        "p": 1,
+        "q": 0
+      },
+      "valuation_id": 4
+    },
+    {
+      "client": {
+        "age": 4,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "x",
+            "time": 0
+          },
+          {
+            "age": 0,
+            "launch": 4,
+            "port": "x",
+            "time": 4
+          }
+        ],
+        "explanation": "the second specification-legal launch is too early for the replacement",
+        "first_violation_cycle": 4,
+        "kind": "gap",
+        "launches": [
+          0,
+          4
+        ],
+        "port": null,
+        "samples": []
+      },
+      "game_rank": 6,
+      "valuation": {
+        "p": 1,
+        "q": 2
+      },
+      "valuation_id": 6
+    },
+    {
+      "client": {
+        "age": 4,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "x",
+            "time": 0
+          },
+          {
+            "age": 0,
+            "launch": 4,
+            "port": "x",
+            "time": 4
+          }
+        ],
+        "explanation": "the second specification-legal launch is too early for the replacement",
+        "first_violation_cycle": 4,
+        "kind": "gap",
+        "launches": [
+          0,
+          4
+        ],
+        "port": null,
+        "samples": []
+      },
+      "game_rank": 6,
+      "valuation": {
+        "p": 3,
+        "q": 0
+      },
+      "valuation_id": 12
+    },
+    {
+      "client": {
+        "age": 4,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "x",
+            "time": 0
+          },
+          {
+            "age": 0,
+            "launch": 4,
+            "port": "x",
+            "time": 4
+          }
+        ],
+        "explanation": "the second specification-legal launch is too early for the replacement",
+        "first_violation_cycle": 4,
+        "kind": "gap",
+        "launches": [
+          0,
+          4
+        ],
+        "port": null,
+        "samples": []
+      },
+      "game_rank": 6,
+      "valuation": {
+        "p": 3,
+        "q": 2
+      },
+      "valuation_id": 14
+    }
+  ],
+  "safe_valuation_ids": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    15
+  ],
+  "valuations": [
+    {
+      "p": 0,
+      "q": 0
+    },
+    {
+      "p": 0,
+      "q": 1
+    },
+    {
+      "p": 0,
+      "q": 2
+    },
+    {
+      "p": 0,
+      "q": 3
+    },
+    {
+      "p": 1,
+      "q": 0
+    },
+    {
+      "p": 1,
+      "q": 1
+    },
+    {
+      "p": 1,
+      "q": 2
+    },
+    {
+      "p": 1,
+      "q": 3
+    },
+    {
+      "p": 2,
+      "q": 0
+    },
+    {
+      "p": 2,
+      "q": 1
+    },
+    {
+      "p": 2,
+      "q": 2
+    },
+    {
+      "p": 2,
+      "q": 3
+    },
+    {
+      "p": 3,
+      "q": 0
+    },
+    {
+      "p": 3,
+      "q": 1
+    },
+    {
+      "p": 3,
+      "q": 2
+    },
+    {
+      "p": 3,
+      "q": 3
+    }
+  ]
+}

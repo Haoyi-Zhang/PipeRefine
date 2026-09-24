@@ -1,0 +1,1369 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "group": "scaling-control",
+  "id": "wide-control",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 2
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 1
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 3
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 2
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 4
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 3
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 5
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 4
+      },
+      {
+        "from": 5,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 6
+      },
+      {
+        "from": 5,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 5
+      },
+      {
+        "from": 6,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 7
+      },
+      {
+        "from": 6,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 6
+      },
+      {
+        "from": 7,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 8
+      },
+      {
+        "from": 7,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 7
+      },
+      {
+        "from": 8,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 9
+      },
+      {
+        "from": 8,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 8
+      },
+      {
+        "from": 9,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 10
+      },
+      {
+        "from": 9,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 9
+      },
+      {
+        "from": 10,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 11
+      },
+      {
+        "from": 10,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 10
+      },
+      {
+        "from": 11,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 12
+      },
+      {
+        "from": 11,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 11
+      },
+      {
+        "from": 12,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 13
+      },
+      {
+        "from": 12,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 12
+      },
+      {
+        "from": 13,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 14
+      },
+      {
+        "from": 13,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 13
+      },
+      {
+        "from": 14,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 15
+      },
+      {
+        "from": 14,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 14
+      },
+      {
+        "from": 15,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 16
+      },
+      {
+        "from": 15,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 15
+      },
+      {
+        "from": 16,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 17
+      },
+      {
+        "from": 16,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 16
+      },
+      {
+        "from": 17,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 18
+      },
+      {
+        "from": 17,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 17
+      },
+      {
+        "from": 18,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 19
+      },
+      {
+        "from": 18,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 18
+      },
+      {
+        "from": 19,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 20
+      },
+      {
+        "from": 19,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 19
+      },
+      {
+        "from": 20,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 21
+      },
+      {
+        "from": 20,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 20
+      },
+      {
+        "from": 21,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 22
+      },
+      {
+        "from": 21,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 21
+      },
+      {
+        "from": 22,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 23
+      },
+      {
+        "from": 22,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 22
+      },
+      {
+        "from": 23,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 24
+      },
+      {
+        "from": 23,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 23
+      },
+      {
+        "from": 24,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 25
+      },
+      {
+        "from": 24,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 24
+      },
+      {
+        "from": 25,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 26
+      },
+      {
+        "from": 25,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 25
+      },
+      {
+        "from": 26,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 27
+      },
+      {
+        "from": 26,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 26
+      },
+      {
+        "from": 27,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 28
+      },
+      {
+        "from": 27,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 27
+      },
+      {
+        "from": 28,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 29
+      },
+      {
+        "from": 28,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 28
+      },
+      {
+        "from": 29,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 30
+      },
+      {
+        "from": 29,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 29
+      },
+      {
+        "from": 30,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 31
+      },
+      {
+        "from": 30,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 30
+      },
+      {
+        "from": 31,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 32
+      },
+      {
+        "from": 31,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 31
+      },
+      {
+        "from": 32,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 33
+      },
+      {
+        "from": 32,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 32
+      },
+      {
+        "from": 33,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 34
+      },
+      {
+        "from": 33,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 33
+      },
+      {
+        "from": 34,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 35
+      },
+      {
+        "from": 34,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 34
+      },
+      {
+        "from": 35,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 36
+      },
+      {
+        "from": 35,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 35
+      },
+      {
+        "from": 36,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 37
+      },
+      {
+        "from": 36,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 36
+      },
+      {
+        "from": 37,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 38
+      },
+      {
+        "from": 37,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 37
+      },
+      {
+        "from": 38,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 39
+      },
+      {
+        "from": 38,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 38
+      },
+      {
+        "from": 39,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 40
+      },
+      {
+        "from": 39,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 39
+      },
+      {
+        "from": 40,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 41
+      },
+      {
+        "from": 40,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 40
+      },
+      {
+        "from": 41,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 42
+      },
+      {
+        "from": 41,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 41
+      },
+      {
+        "from": 42,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 43
+      },
+      {
+        "from": 42,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 42
+      },
+      {
+        "from": 43,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 44
+      },
+      {
+        "from": 43,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 43
+      },
+      {
+        "from": 44,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 45
+      },
+      {
+        "from": 44,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 44
+      },
+      {
+        "from": 45,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 46
+      },
+      {
+        "from": 45,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 45
+      },
+      {
+        "from": 46,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 47
+      },
+      {
+        "from": 46,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 46
+      },
+      {
+        "from": 47,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 0
+      },
+      {
+        "from": 47,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 47
+      }
+    ],
+    "initial": 0,
+    "states": 48
+  },
+  "parameters": [
+    {
+      "hi": 0,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 2
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 1
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 3
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 2
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 4
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 3
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 5
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 4
+      },
+      {
+        "from": 5,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 6
+      },
+      {
+        "from": 5,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 5
+      },
+      {
+        "from": 6,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 7
+      },
+      {
+        "from": 6,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 6
+      },
+      {
+        "from": 7,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 8
+      },
+      {
+        "from": 7,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 7
+      },
+      {
+        "from": 8,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 9
+      },
+      {
+        "from": 8,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 8
+      },
+      {
+        "from": 9,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 10
+      },
+      {
+        "from": 9,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 9
+      },
+      {
+        "from": 10,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 11
+      },
+      {
+        "from": 10,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 10
+      },
+      {
+        "from": 11,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 12
+      },
+      {
+        "from": 11,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 11
+      },
+      {
+        "from": 12,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 13
+      },
+      {
+        "from": 12,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 12
+      },
+      {
+        "from": 13,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 14
+      },
+      {
+        "from": 13,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 13
+      },
+      {
+        "from": 14,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 15
+      },
+      {
+        "from": 14,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 14
+      },
+      {
+        "from": 15,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 16
+      },
+      {
+        "from": 15,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 15
+      },
+      {
+        "from": 16,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 17
+      },
+      {
+        "from": 16,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 16
+      },
+      {
+        "from": 17,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 18
+      },
+      {
+        "from": 17,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 17
+      },
+      {
+        "from": 18,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 19
+      },
+      {
+        "from": 18,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 18
+      },
+      {
+        "from": 19,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 20
+      },
+      {
+        "from": 19,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 19
+      },
+      {
+        "from": 20,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 21
+      },
+      {
+        "from": 20,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 20
+      },
+      {
+        "from": 21,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 22
+      },
+      {
+        "from": 21,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 21
+      },
+      {
+        "from": 22,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 23
+      },
+      {
+        "from": 22,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 22
+      },
+      {
+        "from": 23,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 24
+      },
+      {
+        "from": 23,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 23
+      },
+      {
+        "from": 24,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 25
+      },
+      {
+        "from": 24,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 24
+      },
+      {
+        "from": 25,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 26
+      },
+      {
+        "from": 25,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 25
+      },
+      {
+        "from": 26,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 27
+      },
+      {
+        "from": 26,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 26
+      },
+      {
+        "from": 27,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 28
+      },
+      {
+        "from": 27,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 27
+      },
+      {
+        "from": 28,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 29
+      },
+      {
+        "from": 28,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 28
+      },
+      {
+        "from": 29,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 30
+      },
+      {
+        "from": 29,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 29
+      },
+      {
+        "from": 30,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 31
+      },
+      {
+        "from": 30,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 30
+      },
+      {
+        "from": 31,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 32
+      },
+      {
+        "from": 31,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 31
+      },
+      {
+        "from": 32,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 33
+      },
+      {
+        "from": 32,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 32
+      },
+      {
+        "from": 33,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 34
+      },
+      {
+        "from": 33,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 33
+      },
+      {
+        "from": 34,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 35
+      },
+      {
+        "from": 34,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 34
+      },
+      {
+        "from": 35,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 36
+      },
+      {
+        "from": 35,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 35
+      },
+      {
+        "from": 36,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 37
+      },
+      {
+        "from": 36,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 36
+      },
+      {
+        "from": 37,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 38
+      },
+      {
+        "from": 37,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 37
+      },
+      {
+        "from": 38,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 39
+      },
+      {
+        "from": 38,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 38
+      },
+      {
+        "from": 39,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 40
+      },
+      {
+        "from": 39,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 39
+      },
+      {
+        "from": 40,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 41
+      },
+      {
+        "from": 40,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 40
+      },
+      {
+        "from": 41,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 42
+      },
+      {
+        "from": 41,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 41
+      },
+      {
+        "from": 42,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 43
+      },
+      {
+        "from": 42,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 42
+      },
+      {
+        "from": 43,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 44
+      },
+      {
+        "from": 43,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 43
+      },
+      {
+        "from": 44,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 45
+      },
+      {
+        "from": 44,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 44
+      },
+      {
+        "from": 45,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 46
+      },
+      {
+        "from": 45,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 45
+      },
+      {
+        "from": 46,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 47
+      },
+      {
+        "from": 46,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 46
+      },
+      {
+        "from": 47,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 0
+      },
+      {
+        "from": 47,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 47
+      }
+    ],
+    "initial": 0,
+    "states": 48
+  }
+}

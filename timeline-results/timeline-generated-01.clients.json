@@ -1,0 +1,656 @@
+{
+  "case_id": "timeline-generated-01",
+  "counterexamples": [
+    {
+      "client": {
+        "age": 0,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 0,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "x",
+        "samples": []
+      },
+      "game_rank": 2,
+      "valuation": {
+        "p": 0,
+        "q": 0
+      },
+      "valuation_id": 0
+    },
+    {
+      "client": {
+        "age": 0,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 0,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "x",
+        "samples": []
+      },
+      "game_rank": 2,
+      "valuation": {
+        "p": 0,
+        "q": 1
+      },
+      "valuation_id": 1
+    },
+    {
+      "client": {
+        "age": 0,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 0,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "x",
+        "samples": []
+      },
+      "game_rank": 2,
+      "valuation": {
+        "p": 0,
+        "q": 2
+      },
+      "valuation_id": 2
+    },
+    {
+      "client": {
+        "age": 0,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 0,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "x",
+        "samples": []
+      },
+      "game_rank": 2,
+      "valuation": {
+        "p": 0,
+        "q": 3
+      },
+      "valuation_id": 3
+    },
+    {
+      "client": {
+        "age": 2,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the client samples a specification-guaranteed transaction age absent from the replacement",
+        "first_violation_cycle": 2,
+        "kind": "write",
+        "launches": [
+          0
+        ],
+        "port": "y",
+        "samples": [
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "y",
+            "time": 2
+          }
+        ]
+      },
+      "game_rank": 4,
+      "valuation": {
+        "p": 1,
+        "q": 0
+      },
+      "valuation_id": 4
+    },
+    {
+      "client": {
+        "age": 2,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the client samples a specification-guaranteed transaction age absent from the replacement",
+        "first_violation_cycle": 2,
+        "kind": "write",
+        "launches": [
+          0
+        ],
+        "port": "y",
+        "samples": [
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "y",
+            "time": 2
+          }
+        ]
+      },
+      "game_rank": 4,
+      "valuation": {
+        "p": 1,
+        "q": 1
+      },
+      "valuation_id": 5
+    },
+    {
+      "client": {
+        "age": 2,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the client samples a specification-guaranteed transaction age absent from the replacement",
+        "first_violation_cycle": 2,
+        "kind": "write",
+        "launches": [
+          0
+        ],
+        "port": "y",
+        "samples": [
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "y",
+            "time": 2
+          }
+        ]
+      },
+      "game_rank": 4,
+      "valuation": {
+        "p": 1,
+        "q": 2
+      },
+      "valuation_id": 6
+    },
+    {
+      "client": {
+        "age": 2,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the client samples a specification-guaranteed transaction age absent from the replacement",
+        "first_violation_cycle": 2,
+        "kind": "write",
+        "launches": [
+          0
+        ],
+        "port": "y",
+        "samples": [
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "y",
+            "time": 2
+          }
+        ]
+      },
+      "game_rank": 4,
+      "valuation": {
+        "p": 1,
+        "q": 3
+      },
+      "valuation_id": 7
+    },
+    {
+      "client": {
+        "age": 0,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 0,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "x",
+        "samples": []
+      },
+      "game_rank": 2,
+      "valuation": {
+        "p": 2,
+        "q": 0
+      },
+      "valuation_id": 8
+    },
+    {
+      "client": {
+        "age": 0,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 0,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "x",
+        "samples": []
+      },
+      "game_rank": 2,
+      "valuation": {
+        "p": 2,
+        "q": 1
+      },
+      "valuation_id": 9
+    },
+    {
+      "client": {
+        "age": 0,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 0,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "x",
+        "samples": []
+      },
+      "game_rank": 2,
+      "valuation": {
+        "p": 2,
+        "q": 2
+      },
+      "valuation_id": 10
+    },
+    {
+      "client": {
+        "age": 0,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 0,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "x",
+        "samples": []
+      },
+      "game_rank": 2,
+      "valuation": {
+        "p": 2,
+        "q": 3
+      },
+      "valuation_id": 11
+    },
+    {
+      "client": {
+        "age": 2,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the client samples a specification-guaranteed transaction age absent from the replacement",
+        "first_violation_cycle": 2,
+        "kind": "write",
+        "launches": [
+          0
+        ],
+        "port": "y",
+        "samples": [
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "y",
+            "time": 2
+          }
+        ]
+      },
+      "game_rank": 4,
+      "valuation": {
+        "p": 3,
+        "q": 0
+      },
+      "valuation_id": 12
+    },
+    {
+      "client": {
+        "age": 2,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the client samples a specification-guaranteed transaction age absent from the replacement",
+        "first_violation_cycle": 2,
+        "kind": "write",
+        "launches": [
+          0
+        ],
+        "port": "y",
+        "samples": [
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "y",
+            "time": 2
+          }
+        ]
+      },
+      "game_rank": 4,
+      "valuation": {
+        "p": 3,
+        "q": 1
+      },
+      "valuation_id": 13
+    },
+    {
+      "client": {
+        "age": 2,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the client samples a specification-guaranteed transaction age absent from the replacement",
+        "first_violation_cycle": 2,
+        "kind": "write",
+        "launches": [
+          0
+        ],
+        "port": "y",
+        "samples": [
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "y",
+            "time": 2
+          }
+        ]
+      },
+      "game_rank": 4,
+      "valuation": {
+        "p": 3,
+        "q": 2
+      },
+      "valuation_id": 14
+    },
+    {
+      "client": {
+        "age": 2,
+        "drives": [
+          {
+            "age": 1,
+            "launch": 0,
+            "port": "x",
+            "time": 1
+          },
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "x",
+            "time": 2
+          }
+        ],
+        "explanation": "the client samples a specification-guaranteed transaction age absent from the replacement",
+        "first_violation_cycle": 2,
+        "kind": "write",
+        "launches": [
+          0
+        ],
+        "port": "y",
+        "samples": [
+          {
+            "age": 2,
+            "launch": 0,
+            "port": "y",
+            "time": 2
+          }
+        ]
+      },
+      "game_rank": 4,
+      "valuation": {
+        "p": 3,
+        "q": 3
+      },
+      "valuation_id": 15
+    }
+  ],
+  "safe_valuation_ids": [],
+  "valuations": [
+    {
+      "p": 0,
+      "q": 0
+    },
+    {
+      "p": 0,
+      "q": 1
+    },
+    {
+      "p": 0,
+      "q": 2
+    },
+    {
+      "p": 0,
+      "q": 3
+    },
+    {
+      "p": 1,
+      "q": 0
+    },
+    {
+      "p": 1,
+      "q": 1
+    },
+    {
+      "p": 1,
+      "q": 2
+    },
+    {
+      "p": 1,
+      "q": 3
+    },
+    {
+      "p": 2,
+      "q": 0
+    },
+    {
+      "p": 2,
+      "q": 1
+    },
+    {
+      "p": 2,
+      "q": 2
+    },
+    {
+      "p": 2,
+      "q": 3
+    },
+    {
+      "p": 3,
+      "q": 0
+    },
+    {
+      "p": 3,
+      "q": 1
+    },
+    {
+      "p": 3,
+      "q": 2
+    },
+    {
+      "p": 3,
+      "q": 3
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "assumption": true,
+  "group": "handwritten",
+  "horizon": 7,
+  "id": "timeline-identical",
+  "implementation": {
+    "gap": 4,
+    "reads": {
+      "x": [
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "writes": {
+      "y": [
+        [
+          2,
+          4
+        ]
+      ]
+    }
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "gap": 4,
+    "reads": {
+      "x": [
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "writes": {
+      "y": [
+        [
+          2,
+          4
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "depth": 16,
+  "nodes": {
+    "0": {
+      "edge": 0,
+      "kind": "out",
+      "label": "step",
+      "rank": 16,
+      "replies": [
+        17
+      ]
+    },
+    "102": {
+      "edge": 6,
+      "kind": "out",
+      "label": "step",
+      "rank": 10,
+      "replies": [
+        119
+      ]
+    },
+    "119": {
+      "edge": 7,
+      "kind": "out",
+      "label": "step",
+      "rank": 9,
+      "replies": [
+        136
+      ]
+    },
+    "136": {
+      "edge": 8,
+      "kind": "out",
+      "label": "step",
+      "rank": 8,
+      "replies": [
+        153
+      ]
+    },
+    "153": {
+      "edge": 9,
+      "kind": "out",
+      "label": "step",
+      "rank": 7,
+      "replies": [
+        170
+      ]
+    },
+    "17": {
+      "edge": 1,
+      "kind": "out",
+      "label": "step",
+      "rank": 15,
+      "replies": [
+        34
+      ]
+    },
+    "170": {
+      "edge": 10,
+      "kind": "out",
+      "label": "step",
+      "rank": 6,
+      "replies": [
+        187
+      ]
+    },
+    "187": {
+      "edge": 11,
+      "kind": "out",
+      "label": "step",
+      "rank": 5,
+      "replies": [
+        204
+      ]
+    },
+    "204": {
+      "edge": 12,
+      "kind": "out",
+      "label": "step",
+      "rank": 4,
+      "replies": [
+        221
+      ]
+    },
+    "221": {
+      "edge": 13,
+      "kind": "out",
+      "label": "step",
+      "rank": 3,
+      "replies": [
+        238
+      ]
+    },
+    "238": {
+      "edge": 14,
+      "kind": "out",
+      "label": "step",
+      "rank": 2,
+      "replies": [
+        255
+      ]
+    },
+    "255": {
+      "edge": 15,
+      "kind": "out",
+      "label": "finish",
+      "rank": 1,
+      "replies": []
+    },
+    "34": {
+      "edge": 2,
+      "kind": "out",
+      "label": "step",
+      "rank": 14,
+      "replies": [
+        51
+      ]
+    },
+    "51": {
+      "edge": 3,
+      "kind": "out",
+      "label": "step",
+      "rank": 13,
+      "replies": [
+        68
+      ]
+    },
+    "68": {
+      "edge": 4,
+      "kind": "out",
+      "label": "step",
+      "rank": 12,
+      "replies": [
+        85
+      ]
+    },
+    "85": {
+      "edge": 5,
+      "kind": "out",
+      "label": "step",
+      "rank": 11,
+      "replies": [
+        102
+      ]
+    }
+  },
+  "root": 0,
+  "valuation": {
+    "p": 1
+  },
+  "valuation_id": 1
+}

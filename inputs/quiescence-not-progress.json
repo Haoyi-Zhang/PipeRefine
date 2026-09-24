@@ -1,0 +1,31 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "group": "semantic-control",
+  "id": "quiescence-not-progress",
+  "implementation": {
+    "edges": [],
+    "initial": 0,
+    "states": 1
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "out",
+        "label": "response",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 1
+  }
+}

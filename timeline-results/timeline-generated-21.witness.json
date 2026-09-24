@@ -1,0 +1,27 @@
+{
+  "depth": 2,
+  "nodes": {
+    "0": {
+      "edge": 3,
+      "kind": "out",
+      "label": "need:x",
+      "rank": 1,
+      "replies": []
+    },
+    "63": {
+      "edge": 29,
+      "kind": "in",
+      "label": "launch",
+      "rank": 2,
+      "replies": [
+        0
+      ]
+    }
+  },
+  "root": 63,
+  "valuation": {
+    "p": 0,
+    "q": 0
+  },
+  "valuation_id": 0
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "branching",
+  "cells": [
+    {
+      "ranks": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "valuation_ids": [
+        0
+      ]
+    }
+  ],
+  "equation_visits": 36,
+  "rounds": 2,
+  "safe_valuation_ids": [],
+  "shortest_bad_valuation_id": 0,
+  "valuations": [
+    {
+      "p": 0
+    }
+  ]
+}

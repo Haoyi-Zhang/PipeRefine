@@ -1,0 +1,51 @@
+{
+  "scope": "Retained final one-worker measurements and the clean deterministic reproduction. Values establish closure only; no throughput or cross-tool performance claim is made.",
+  "workers": 1,
+  "limits": {
+    "address_space_bytes": 2147483648,
+    "child_cpu_seconds": 110,
+    "command_timeout_seconds": 120
+  },
+  "retained_runs": {
+    "timeline": {
+      "families": 67,
+      "valuations": 961,
+      "state_pair_valuations": 66688,
+      "cpu_seconds": 0.992145082,
+      "wall_seconds": 0.9928858929999933,
+      "peak_rss_kib": 94376
+    },
+    "general": {
+      "families": 41,
+      "valuations": 520,
+      "state_pair_valuations": 9076,
+      "cpu_seconds": 0.16924861599999996,
+      "wall_seconds": 0.17001000900006602,
+      "peak_rss_kib": 95660
+    },
+    "source_normalization": {
+      "records": 6,
+      "supported_records": 5,
+      "boundary_records": 1
+    }
+  },
+  "unit_tests": {
+    "count": 93,
+    "errors": 0,
+    "failures": 0
+  },
+  "clean_reproduction": {
+    "status": "pass",
+    "scope": "full temporary regeneration and deterministic comparison from the retained artifact tree",
+    "wall_seconds": 11.85,
+    "user_cpu_seconds": 11.17,
+    "system_cpu_seconds": 1.05,
+    "peak_rss_kib": 96044,
+    "compared_scientific_files": 294,
+    "exhaustive_micro_profiles": 52,
+    "exhaustive_micro_profile_pairs": 2704,
+    "exhaustive_micro_clients": 3665,
+    "bibliography_entries_checked": 69
+  },
+  "accounting_note": "Pair valuations, solver equation visits, collision pairs, client replay, and repeated clean checks are different units and are not summed into an invented operation count. Exploratory development CPU was not fully instrumented, so no exact process-lifetime total is claimed."
+}

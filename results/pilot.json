@@ -1,0 +1,19 @@
+{
+  "address_space_limit_bytes": 2147483648,
+  "bad": 4,
+  "case_id": "long-chain",
+  "command": "python run.py --only long-chain --output <temporary-directory>",
+  "cpu_limit_seconds": 110,
+  "cpu_seconds": 0.006279668000000016,
+  "exit_code": 0,
+  "implementation_states": 16,
+  "interpretation": "Measured feasibility pilot; not a performance benchmark.",
+  "maximum_shortest_depth": 16,
+  "peak_rss_kib": 94252,
+  "safe": 4,
+  "specification_states": 16,
+  "state_pair_valuations": 2048,
+  "valuations": 8,
+  "wall_seconds": 0.00782697299996471,
+  "workers": 1
+}

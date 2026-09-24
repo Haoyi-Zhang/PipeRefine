@@ -1,0 +1,27 @@
+{
+  "depth": 2,
+  "nodes": {
+    "0": {
+      "edge": 0,
+      "kind": "in",
+      "label": "tick",
+      "rank": 2,
+      "replies": [
+        6
+      ]
+    },
+    "6": {
+      "edge": 6,
+      "kind": "in",
+      "label": "launch",
+      "rank": 1,
+      "replies": []
+    }
+  },
+  "root": 0,
+  "valuation": {
+    "new": 2,
+    "old": 1
+  },
+  "valuation_id": 4
+}

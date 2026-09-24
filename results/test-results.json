@@ -1,0 +1,379 @@
+{
+  "count": 93,
+  "errors": 0,
+  "failures": 0,
+  "tests": [
+    {
+      "status": "pass",
+      "test": "test_anchor.AnchorNormalization.test_five_reusable_declarations_inside_fragment"
+    },
+    {
+      "status": "pass",
+      "test": "test_anchor.AnchorNormalization.test_input_files_exact_rebuild"
+    },
+    {
+      "status": "pass",
+      "test": "test_anchor.AnchorNormalization.test_source_identity_is_bound"
+    },
+    {
+      "status": "pass",
+      "test": "test_anchor.AnchorNormalization.test_wide_input_is_explicit_boundary"
+    },
+    {
+      "status": "pass",
+      "test": "test_bibliography.BibliographyAuditTests.test_audit_key_mismatch_is_rejected"
+    },
+    {
+      "status": "pass",
+      "test": "test_bibliography.BibliographyAuditTests.test_duplicate_stable_locator_is_rejected"
+    },
+    {
+      "status": "pass",
+      "test": "test_bibliography.BibliographyAuditTests.test_high_risk_metadata_mutation_is_rejected"
+    },
+    {
+      "status": "pass",
+      "test": "test_bibliography.BibliographyAuditTests.test_minimum_reference_count_is_enforced"
+    },
+    {
+      "status": "pass",
+      "test": "test_bibliography.BibliographyAuditTests.test_missing_stable_locator_is_rejected"
+    },
+    {
+      "status": "pass",
+      "test": "test_bibliography.BibliographyAuditTests.test_parser_and_citation_extraction_preserve_nested_braces"
+    },
+    {
+      "status": "pass",
+      "test": "test_bibliography.BibliographyAuditTests.test_retained_bibliography_passes"
+    },
+    {
+      "status": "pass",
+      "test": "test_bibliography.BibliographyAuditTests.test_uncited_entry_is_rejected"
+    },
+    {
+      "status": "pass",
+      "test": "test_exhaustive_context.ExhaustiveContextTests.test_client_universe_is_nontrivial"
+    },
+    {
+      "status": "pass",
+      "test": "test_exhaustive_context.ExhaustiveContextTests.test_each_variance_direction_has_explicit_client"
+    },
+    {
+      "status": "pass",
+      "test": "test_exhaustive_context.ExhaustiveContextTests.test_exhaustive_context_matches_criterion"
+    },
+    {
+      "status": "pass",
+      "test": "test_exhaustive_context.ExhaustiveContextTests.test_profile_and_pair_counts"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_boolean_global_selection"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_boolean_parameter_value"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_boolean_valuation_id"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_boolean_witness_edge"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_boolean_witness_parameter"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_branch_omission"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_coverage"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_extraneous_node"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_false_safe"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_global_selection"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_missing_leaf"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_nonminimal_rank"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_nonminimal_witness_depth"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_overlap"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_rank_dimension"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_round_counter"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_safe_region_omission_or_addition"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_valuation_binding"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_valuation_outside_domain"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_visit_counter"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.CertificateMutations.test_wrong_challenge"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SchemaControls.test_input_nondeterminism"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SchemaControls.test_nonpositive_modulus"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SchemaControls.test_parameter_out_of_range"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SchemaControls.test_polarity_collision"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SchemaControls.test_variable_multiplication"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_boolean_safe_index_rejected"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_branching_requires_strategy_not_word"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_correlation_not_a_bounding_box"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_empty_domain_is_vacuous"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_environment_input_restriction"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_gap_closed_form"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_global_shortest_order"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_input_contravariance"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_input_files_exact_rebuild"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_interior_is_not_determined_by_corners"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_no_progress_claim"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_parity_not_monotone"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_phase_closed_form"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_pointwise_quantifier"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_reflexivity"
+    },
+    {
+      "status": "pass",
+      "test": "test_semantics.SemanticControls.test_window_closed_form"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_all_failures_have_contextual_counterexample"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_all_families_criterion_equals_game"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_anchor_shapes_use_history_translation"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_assumption_filters_domain"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_client_time_matches_game_rank"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_counterexample_canonical_priority"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_disjoint_intervals"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_extra_read_port_fails"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_extra_write_port_is_allowed"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_gap_direction"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_history_translation_represents_overlapping_launches"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_initial_state_is_quiescent"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_input_files_exact_rebuild"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_missing_write_port_fails"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_port_span_matches_exhaustive_collision_check"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_read_is_contravariant"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_reflexive_generated_controls"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_tick_saturates"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_transaction_tags_prevent_cross_launch_borrowing"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_translated_witnesses_check"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_write_is_covariant"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_bad_parameter_bound"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_direction_collision"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_gap_beyond_horizon"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_horizon_too_large"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_interval_after_gap"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_interval_empty"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_interval_negative"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_late_singletons_are_allowed"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_overlapping_intervals"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_same_port_span_at_gap_is_rejected"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_too_many_ports"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_unknown_parameter"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_variable_product"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineSchemaControls.test_zero_gap"
+    }
+  ]
+}

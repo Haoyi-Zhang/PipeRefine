@@ -1,0 +1,75 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "group": "timing-motif",
+  "id": "phase-alignment",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "sample",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 2
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "latency"
+    },
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "phase"
+    },
+    {
+      "hi": 1,
+      "lo": 0,
+      "name": "mode"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "sample",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          [
+            "%",
+            [
+              "+",
+              "latency",
+              "phase"
+            ],
+            2
+          ],
+          0
+        ],
+        "kind": "out",
+        "label": "value",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 2
+  }
+}

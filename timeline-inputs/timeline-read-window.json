@@ -1,0 +1,72 @@
+{
+  "assumption": true,
+  "group": "handwritten",
+  "horizon": 7,
+  "id": "timeline-read-window",
+  "implementation": {
+    "gap": 5,
+    "reads": {
+      "x": [
+        [
+          0,
+          [
+            "+",
+            1,
+            [
+              "%",
+              "p",
+              2
+            ]
+          ]
+        ]
+      ]
+    },
+    "writes": {
+      "y": [
+        [
+          2,
+          4
+        ]
+      ]
+    }
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    },
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "q"
+    }
+  ],
+  "specification": {
+    "gap": 5,
+    "reads": {
+      "x": [
+        [
+          0,
+          [
+            "+",
+            1,
+            [
+              "%",
+              "q",
+              2
+            ]
+          ]
+        ]
+      ]
+    },
+    "writes": {
+      "y": [
+        [
+          2,
+          4
+        ]
+      ]
+    }
+  }
+}

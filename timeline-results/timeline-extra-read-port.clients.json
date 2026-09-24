@@ -1,0 +1,124 @@
+{
+  "case_id": "timeline-extra-read-port",
+  "counterexamples": [
+    {
+      "client": {
+        "age": 1,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "x",
+            "time": 0
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 1,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "coef",
+        "samples": []
+      },
+      "game_rank": 3,
+      "valuation": {
+        "p": 0
+      },
+      "valuation_id": 0
+    },
+    {
+      "client": {
+        "age": 1,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "x",
+            "time": 0
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 1,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "coef",
+        "samples": []
+      },
+      "game_rank": 3,
+      "valuation": {
+        "p": 1
+      },
+      "valuation_id": 1
+    },
+    {
+      "client": {
+        "age": 1,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "x",
+            "time": 0
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 1,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "coef",
+        "samples": []
+      },
+      "game_rank": 3,
+      "valuation": {
+        "p": 2
+      },
+      "valuation_id": 2
+    },
+    {
+      "client": {
+        "age": 1,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "x",
+            "time": 0
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 1,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "coef",
+        "samples": []
+      },
+      "game_rank": 3,
+      "valuation": {
+        "p": 3
+      },
+      "valuation_id": 3
+    }
+  ],
+  "safe_valuation_ids": [],
+  "valuations": [
+    {
+      "p": 0
+    },
+    {
+      "p": 1
+    },
+    {
+      "p": 2
+    },
+    {
+      "p": 3
+    }
+  ]
+}

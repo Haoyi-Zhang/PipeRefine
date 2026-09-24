@@ -1,0 +1,28 @@
+{
+  "depth": 2,
+  "nodes": {
+    "0": {
+      "edge": 0,
+      "kind": "in",
+      "label": "sample",
+      "rank": 2,
+      "replies": [
+        3
+      ]
+    },
+    "3": {
+      "edge": 1,
+      "kind": "out",
+      "label": "value",
+      "rank": 1,
+      "replies": []
+    }
+  },
+  "root": 0,
+  "valuation": {
+    "latency": 0,
+    "mode": 0,
+    "phase": 1
+  },
+  "valuation_id": 2
+}

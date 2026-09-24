@@ -1,0 +1,7 @@
+record,supported,valuations,maximum_age,source_page,source_locator,classification_note
+lilac-fpadd,1,7,7,5,"Figure 4, FPAdd signature",accepted
+lilac-fpu-wide-input-boundary,0,0,,5,"Figure 5(a), initial erroneous FPU declaration","the source labels this FPU implementation erroneous; input r spans ages 0 and 1 while the launch gap is 1, so the port-separated fragment rejects this shape"
+lilac-highrad,1,7,7,10,"Figure 9(c), HighRad signature",accepted
+lilac-lutmult,1,1,8,10,"Figure 9(a), LutMult signature",accepted
+lilac-mult,1,7,7,9,"Section 6.1, Mult signature",accepted
+lilac-shift,1,7,7,6,"Figure 6(a), Shift signature",accepted

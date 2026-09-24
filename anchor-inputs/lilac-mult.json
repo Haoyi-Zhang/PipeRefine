@@ -1,0 +1,82 @@
+{
+  "assumption": true,
+  "boundary_reason": "",
+  "expected_supported": true,
+  "group": "published-declaration",
+  "horizon": 7,
+  "id": "lilac-mult",
+  "implementation": {
+    "gap": 1,
+    "reads": {
+      "a": [
+        [
+          0,
+          1
+        ]
+      ],
+      "b": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "o": [
+        [
+          "L",
+          [
+            "+",
+            "L",
+            1
+          ]
+        ]
+      ]
+    }
+  },
+  "normalization": "event delay becomes gap; half-open input intervals become read ages; half-open output intervals become guarantee ages",
+  "parameters": [
+    {
+      "hi": 7,
+      "lo": 1,
+      "name": "L"
+    }
+  ],
+  "source": {
+    "doi": "10.1145/3779212.3790199",
+    "license": "CC BY-NC-ND 4.0 (paper); normalized facts only, paper not redistributed",
+    "locator": "Section 6.1, Mult signature",
+    "page": 9,
+    "title": "Parameterized Hardware Design with Latency-Abstract Interfaces",
+    "url": "https://people.csail.mit.edu/rachit/files/pubs/lilac.pdf"
+  },
+  "specification": {
+    "gap": 1,
+    "reads": {
+      "a": [
+        [
+          0,
+          1
+        ]
+      ],
+      "b": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "o": [
+        [
+          "L",
+          [
+            "+",
+            "L",
+            1
+          ]
+        ]
+      ]
+    }
+  }
+}

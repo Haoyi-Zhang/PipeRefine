@@ -1,0 +1,86 @@
+{
+  "assumption": true,
+  "boundary_reason": "the source labels this FPU implementation erroneous; input r spans ages 0 and 1 while the launch gap is 1, so the port-separated fragment rejects this shape",
+  "expected_supported": false,
+  "group": "published-declaration",
+  "horizon": 1,
+  "id": "lilac-fpu-wide-input-boundary",
+  "implementation": {
+    "gap": 1,
+    "reads": {
+      "l": [
+        [
+          0,
+          1
+        ]
+      ],
+      "op": [
+        [
+          0,
+          1
+        ]
+      ],
+      "r": [
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "writes": {
+      "o": [
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "normalization": "event delay becomes gap; half-open input intervals become read ages; half-open output intervals become guarantee ages",
+  "parameters": [
+    {
+      "hi": 0,
+      "lo": 0,
+      "name": "z"
+    }
+  ],
+  "source": {
+    "doi": "10.1145/3779212.3790199",
+    "license": "CC BY-NC-ND 4.0 (paper); normalized facts only, paper not redistributed",
+    "locator": "Figure 5(a), initial erroneous FPU declaration",
+    "page": 5,
+    "title": "Parameterized Hardware Design with Latency-Abstract Interfaces",
+    "url": "https://people.csail.mit.edu/rachit/files/pubs/lilac.pdf"
+  },
+  "specification": {
+    "gap": 1,
+    "reads": {
+      "l": [
+        [
+          0,
+          1
+        ]
+      ],
+      "op": [
+        [
+          0,
+          1
+        ]
+      ],
+      "r": [
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "writes": {
+      "o": [
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  }
+}

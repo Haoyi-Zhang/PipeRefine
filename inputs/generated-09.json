@@ -1,0 +1,162 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "generation_seed": 20260919,
+  "group": "generated",
+  "id": "generated-09",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": false,
+        "kind": "in",
+        "label": "request",
+        "to": 2
+      },
+      {
+        "from": 0,
+        "guard": [
+          "<",
+          1,
+          "p"
+        ],
+        "kind": "out",
+        "label": "value",
+        "to": 2
+      },
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "out",
+        "label": "value",
+        "to": 2
+      },
+      {
+        "from": 1,
+        "guard": [
+          "<=",
+          "p",
+          1
+        ],
+        "kind": "in",
+        "label": "request",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "<",
+          1,
+          "p"
+        ],
+        "kind": "in",
+        "label": "tick",
+        "to": 0
+      },
+      {
+        "from": 2,
+        "guard": [
+          "==",
+          "p",
+          "q"
+        ],
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 2,
+        "guard": [
+          "==",
+          [
+            "%",
+            "q",
+            2
+          ],
+          0
+        ],
+        "kind": "out",
+        "label": "error",
+        "to": 1
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "in",
+        "label": "request",
+        "to": 3
+      }
+    ],
+    "initial": 0,
+    "states": 4
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    },
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "q"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          [
+            "%",
+            "q",
+            2
+          ],
+          0
+        ],
+        "kind": "out",
+        "label": "value",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          "p",
+          "q"
+        ],
+        "kind": "out",
+        "label": "value",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "out",
+        "label": "error",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          "p",
+          "q"
+        ],
+        "kind": "out",
+        "label": "error",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 2
+  }
+}

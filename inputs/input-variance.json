@@ -1,0 +1,47 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "group": "semantic-control",
+  "id": "input-variance",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": [
+          "==",
+          [
+            "%",
+            "p",
+            2
+          ],
+          0
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 1
+  },
+  "parameters": [
+    {
+      "hi": 7,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 1
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "group": "timing-motif",
+  "id": "initiation-gap",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 2
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 3
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 4
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 4
+      },
+      {
+        "from": 0,
+        "guard": [
+          "<=",
+          "new",
+          0
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "<=",
+          "new",
+          1
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      },
+      {
+        "from": 2,
+        "guard": [
+          "<=",
+          "new",
+          2
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      },
+      {
+        "from": 3,
+        "guard": [
+          "<=",
+          "new",
+          3
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      },
+      {
+        "from": 4,
+        "guard": [
+          "<=",
+          "new",
+          4
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 5
+  },
+  "parameters": [
+    {
+      "hi": 4,
+      "lo": 1,
+      "name": "new"
+    },
+    {
+      "hi": 4,
+      "lo": 1,
+      "name": "old"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 2
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 3
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 4
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "in",
+        "label": "tick",
+        "to": 4
+      },
+      {
+        "from": 0,
+        "guard": [
+          "<=",
+          "old",
+          0
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "<=",
+          "old",
+          1
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      },
+      {
+        "from": 2,
+        "guard": [
+          "<=",
+          "old",
+          2
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      },
+      {
+        "from": 3,
+        "guard": [
+          "<=",
+          "old",
+          3
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      },
+      {
+        "from": 4,
+        "guard": [
+          "<=",
+          "old",
+          4
+        ],
+        "kind": "in",
+        "label": "launch",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 5
+  }
+}

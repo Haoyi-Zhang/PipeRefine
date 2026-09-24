@@ -1,0 +1,199 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "generation_seed": 20260926,
+  "group": "generated",
+  "id": "generated-16",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": [
+          "not",
+          [
+            "==",
+            "p",
+            2
+          ]
+        ],
+        "kind": "in",
+        "label": "request",
+        "to": 0
+      },
+      {
+        "from": 0,
+        "guard": [
+          "==",
+          [
+            "%",
+            "q",
+            2
+          ],
+          0
+        ],
+        "kind": "in",
+        "label": "tick",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "not",
+          [
+            "==",
+            "p",
+            2
+          ]
+        ],
+        "kind": "in",
+        "label": "request",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          [
+            "%",
+            "q",
+            2
+          ],
+          0
+        ],
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          [
+            "%",
+            "q",
+            2
+          ],
+          0
+        ],
+        "kind": "out",
+        "label": "error",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          "p",
+          "q"
+        ],
+        "kind": "out",
+        "label": "error",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 2
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    },
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "q"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": [
+          "not",
+          [
+            "==",
+            "p",
+            2
+          ]
+        ],
+        "kind": "in",
+        "label": "request",
+        "to": 0
+      },
+      {
+        "from": 0,
+        "guard": [
+          "==",
+          [
+            "%",
+            "q",
+            2
+          ],
+          0
+        ],
+        "kind": "in",
+        "label": "tick",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "not",
+          [
+            "==",
+            "p",
+            2
+          ]
+        ],
+        "kind": "in",
+        "label": "request",
+        "to": 0
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          [
+            "%",
+            "q",
+            2
+          ],
+          0
+        ],
+        "kind": "in",
+        "label": "tick",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          [
+            "%",
+            "q",
+            2
+          ],
+          0
+        ],
+        "kind": "out",
+        "label": "error",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": [
+          "==",
+          "p",
+          "q"
+        ],
+        "kind": "out",
+        "label": "error",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 2
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "case_id": "timeline-extra-write-port",
+  "counterexamples": [],
+  "safe_valuation_ids": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "valuations": [
+    {
+      "p": 0
+    },
+    {
+      "p": 1
+    },
+    {
+      "p": 2
+    },
+    {
+      "p": 3
+    }
+  ]
+}

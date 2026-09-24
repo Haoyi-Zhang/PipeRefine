@@ -1,0 +1,57 @@
+{
+  "assumption": true,
+  "group": "handwritten",
+  "horizon": 7,
+  "id": "timeline-extra-read-port",
+  "implementation": {
+    "gap": 5,
+    "reads": {
+      "coef": [
+        [
+          1,
+          2
+        ]
+      ],
+      "x": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "y": [
+        [
+          2,
+          4
+        ]
+      ]
+    }
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "gap": 5,
+    "reads": {
+      "x": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "y": [
+        [
+          2,
+          4
+        ]
+      ]
+    }
+  }
+}

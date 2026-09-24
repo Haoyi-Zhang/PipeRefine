@@ -1,0 +1,70 @@
+key,entry_type,year,venue,stable_identifier,citation_count
+lilac,inproceedings,2026,Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems,doi:10.1145/3779212.3790199,4
+performanceinterfaces,inproceedings,2024,18th USENIX Symposium on Operating Systems Design and Implementation,url:https://www.usenix.org/conference/osdi24/presentation/ma,2
+filament,article,2023,Proceedings of the ACM on Programming Languages,doi:10.1145/3591234,4
+dahlia,inproceedings,2020,Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation,doi:10.1145/3385412.3385974,4
+durst,inproceedings,2020,Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation,doi:10.1145/3385412.3385983,2
+calyx,inproceedings,2021,Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems,doi:10.1145/3445814.3446712,2
+anvil,inproceedings,2026,Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems,doi:10.1145/3779212.3790125,3
+carloni,article,2001,IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems,doi:10.1109/43.945302,2
+syncelastic,inproceedings,2006,Computer Science--Theory and Applications,doi:10.1007/11753728_3,2
+elasticcircuits,inproceedings,2006,Proceedings of the Design Automation Conference,doi:10.1145/1146909.1147077,2
+chisel,inproceedings,2012,Proceedings of the Design Automation Conference,doi:10.1145/2228360.2228584,2
+clash,inproceedings,2010,Proceedings of the Euromicro Conference on Digital System Design,doi:10.1109/dsd.2010.21,2
+bluespec,inproceedings,2004,Proceedings of the ACM/IEEE International Conference on Formal Methods and Models for Co-Design,doi:10.1109/memcod.2004.1459818,2
+pymtl,inproceedings,2014,Proceedings of the IEEE/ACM International Symposium on Microarchitecture,doi:10.1109/micro.2014.50,2
+firrtl,inproceedings,2017,Proceedings of the IEEE/ACM International Conference on Computer-Aided Design,doi:10.1109/iccad.2017.8203780,2
+bambu,inproceedings,2013,Proceedings of the International Conference on Field Programmable Logic and Applications,doi:10.1109/fpl.2013.6645550,2
+spatial,inproceedings,2018,Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems,doi:10.1145/3192366.3192379,2
+halide,inproceedings,2013,Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation,doi:10.1145/2491956.2462176,2
+darkroom,article,2014,ACM Transactions on Graphics,doi:10.1145/2601097.2601174,2
+rigel,article,2016,ACM Transactions on Graphics,doi:10.1145/2897824.2925892,2
+flopoco,article,2011,IEEE Design and Test of Computers,doi:10.1109/mdt.2011.44,2
+spiral,article,2018,Proceedings of the IEEE,doi:10.1109/jproc.2018.2873289,2
+cosa,inproceedings,2018,Proceedings of the Formal Methods in Computer Aided Design,doi:10.23919/fmcad.2018.8603014,3
+spade,article,2026,ACM Transactions on Reconfigurable Technology and Systems,doi:10.1145/3793550,2
+autopilot,incollection,2008,High-Level Synthesis: From Algorithm to Digital Circuit,doi:10.1007/978-1-4020-8588-8_6,2
+legup,inproceedings,2011,Proceedings of the ACM/SIGDA International Symposium on Field Programmable Gate Arrays,doi:10.1145/1950413.1950423,2
+heterocl,inproceedings,2019,Proceedings of the ACM/SIGDA International Symposium on Field-Programmable Gate Arrays,doi:10.1145/3289602.3293910,2
+ioautomata,article,1989,CWI Quarterly,url:https://groups.csail.mit.edu/tds/papers/Lynch/CWI89.pdf,2
+interfaceautomata,inproceedings,2001,Proceedings of the ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering,doi:10.1145/503209.503226,4
+interfacetheories,inproceedings,2001,Embedded Software,doi:10.1007/3-540-45449-7_11,2
+alternating,inproceedings,1998,CONCUR '98: Concurrency Theory,doi:10.1007/bfb0055622,4
+modalspec,incollection,1989,Automatic Verification Methods for Finite State Systems,doi:10.1007/3-540-52148-8_19,2
+modalio,inproceedings,2007,Programming Languages and Systems,doi:10.1007/978-3-540-71316-6_6,4
+timedio,inproceedings,2010,Proceedings of the ACM International Conference on Hybrid Systems: Computation and Control,doi:10.1145/1755952.1755967,4
+contracts,article,2018,Foundations and Trends in Electronic Design Automation,doi:10.1561/1000000053,4
+frankenstein,article,2012,European Journal of Control,doi:10.3166/ejc.18.217-238,2
+specstocontracts,inproceedings,2012,Fundamental Approaches to Software Engineering,doi:10.1007/978-3-642-28872-2_3,2
+interfacebased,inproceedings,1997,Proceedings of the Design Automation Conference,doi:10.1145/266021.266060,2
+learningag,article,2008,Formal Methods in System Design,doi:10.1007/s10703-008-0049-6,1
+behavioraltypes,article,2004,Formal Aspects of Computing,doi:10.1007/s00165-004-0043-8,1
+relations,inproceedings,2019,Integrated Formal Methods,doi:10.1007/978-3-030-34968-4_14,2
+paramrealtime,inproceedings,1993,Proceedings of the ACM Symposium on Theory of Computing,doi:10.1145/167088.167242,3
+hune,article,2002,Journal of Logic and Algebraic Programming,doi:10.1016/s1567-8326(02)00037-1,3
+andre,article,2019,International Journal on Software Tools for Technology Transfer,doi:10.1007/s10009-017-0467-0,3
+jovanovic,article,2015,IEEE Transactions on Software Engineering,doi:10.1109/tse.2014.2357445,3
+integercomplete,inproceedings,2015,Reachability Problems,doi:10.1007/978-3-319-24537-9_2,3
+imitator,inproceedings,2012,Formal Methods,doi:10.1007/978-3-642-32759-9_6,3
+traonouez,article,2012,Electronic Proceedings in Theoretical Computer Science,doi:10.4204/eptcs.87.3,2
+timedinterfaces,article,2014,Electronic Proceedings in Theoretical Computer Science,doi:10.4204/eptcs.145.6,2
+featuredts,article,2013,IEEE Transactions on Software Engineering,doi:10.1109/tse.2012.86,3
+modellots,inproceedings,2010,Proceedings of the International Conference on Software Engineering,doi:10.1145/1806799.1806850,3
+featured,article,2020,arXiv preprint arXiv:2005.05666,url:https://arxiv.org/abs/2005.05666,3
+antichains,inproceedings,2006,Computer Aided Verification,doi:10.1007/11817963_5,2
+antichainmc,article,2009,Logical Methods in Computer Science,doi:10.2168/lmcs-5(1:5)2009,2
+simulations,inproceedings,1995,Proceedings of the IEEE Symposium on Foundations of Computer Science,doi:10.1109/sfcs.1995.492576,2
+ranzato,inproceedings,2007,Proceedings of the IEEE Symposium on Logic in Computer Science,doi:10.1109/lics.2007.8,2
+cleaveland,inproceedings,1990,Computer Aided Verification,doi:10.1007/bfb0023750,2
+cegar,inproceedings,2000,Computer Aided Verification,doi:10.1007/10722167_15,2
+groce,inproceedings,2003,Model Checking Software,doi:10.1007/3-540-44829-2_8,2
+cooper,incollection,1972,Machine Intelligence 7,url:https://www.doc.ic.ac.uk/~shm/MI/mi7.html,2
+ginsburg,article,1966,Pacific Journal of Mathematics,doi:10.2140/pjm.1966.16.285,2
+haase,article,2018,ACM SIGLOG News,doi:10.1145/3242953.3242964,2
+omega,article,1992,Communications of the ACM,doi:10.1145/143165.143175,2
+bryant,article,1986,IEEE Transactions on Computers,doi:10.1109/tc.1986.1676819,4
+burch,inproceedings,1990,Proceedings of the IEEE Symposium on Logic in Computer Science,doi:10.1109/lics.1990.113767,4
+pixley,article,1992,IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems,doi:10.1109/43.180261,4
+abc,inproceedings,2010,Computer Aided Verification,doi:10.1007/978-3-642-14295-6_5,4
+kuehlmann,inproceedings,1997,Proceedings of the Design Automation Conference,doi:10.1145/266021.266090,4
+bmc,inproceedings,1999,Tools and Algorithms for the Construction and Analysis of Systems,doi:10.1007/3-540-49059-0_14,4

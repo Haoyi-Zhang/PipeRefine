@@ -1,0 +1,76 @@
+{
+  "assumption": true,
+  "group": "anchor-derived",
+  "horizon": 3,
+  "id": "timeline-anchor-highrad",
+  "implementation": {
+    "gap": "p",
+    "reads": {
+      "d": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "quot": [
+        [
+          "p",
+          [
+            "+",
+            "p",
+            1
+          ]
+        ]
+      ]
+    }
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 1,
+      "name": "p"
+    },
+    {
+      "hi": 3,
+      "lo": 1,
+      "name": "q"
+    }
+  ],
+  "specification": {
+    "gap": "q",
+    "reads": {
+      "d": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "quot": [
+        [
+          "q",
+          [
+            "+",
+            "q",
+            1
+          ]
+        ]
+      ]
+    }
+  }
+}

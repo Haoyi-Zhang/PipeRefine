@@ -1,0 +1,46 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "group": "semantic-control",
+  "id": "interior-hole",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "out",
+        "label": "a",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 1
+  },
+  "parameters": [
+    {
+      "hi": 7,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": [
+          "not",
+          [
+            "==",
+            "p",
+            3
+          ]
+        ],
+        "kind": "out",
+        "label": "a",
+        "to": 0
+      }
+    ],
+    "initial": 0,
+    "states": 1
+  }
+}

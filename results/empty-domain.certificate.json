@@ -1,0 +1,9 @@
+{
+  "case_id": "empty-domain",
+  "cells": [],
+  "equation_visits": 1,
+  "rounds": 0,
+  "safe_valuation_ids": [],
+  "shortest_bad_valuation_id": null,
+  "valuations": []
+}

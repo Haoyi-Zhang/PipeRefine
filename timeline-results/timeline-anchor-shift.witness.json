@@ -1,0 +1,36 @@
+{
+  "depth": 3,
+  "nodes": {
+    "0": {
+      "edge": 1,
+      "kind": "in",
+      "label": "launch",
+      "rank": 3,
+      "replies": [
+        17
+      ]
+    },
+    "17": {
+      "edge": 2,
+      "kind": "in",
+      "label": "tick",
+      "rank": 2,
+      "replies": [
+        34
+      ]
+    },
+    "34": {
+      "edge": 7,
+      "kind": "in",
+      "label": "sample:out@1",
+      "rank": 1,
+      "replies": []
+    }
+  },
+  "root": 0,
+  "valuation": {
+    "p": 2,
+    "q": 1
+  },
+  "valuation_id": 3
+}

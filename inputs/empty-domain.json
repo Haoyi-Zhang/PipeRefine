@@ -1,0 +1,23 @@
+{
+  "assumption": false,
+  "environment_inputs": {},
+  "group": "semantic-control",
+  "id": "empty-domain",
+  "implementation": {
+    "edges": [],
+    "initial": 0,
+    "states": 1
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "edges": [],
+    "initial": 0,
+    "states": 1
+  }
+}

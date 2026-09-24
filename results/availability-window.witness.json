@@ -1,0 +1,18 @@
+{
+  "depth": 1,
+  "nodes": {
+    "0": {
+      "edge": 7,
+      "kind": "in",
+      "label": "sample",
+      "rank": 1,
+      "replies": []
+    }
+  },
+  "root": 0,
+  "valuation": {
+    "new": 1,
+    "old": 0
+  },
+  "valuation_id": 4
+}

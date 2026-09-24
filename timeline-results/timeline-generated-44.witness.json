@@ -1,0 +1,45 @@
+{
+  "depth": 4,
+  "nodes": {
+    "0": {
+      "edge": 0,
+      "kind": "in",
+      "label": "tick",
+      "rank": 3,
+      "replies": [
+        9
+      ]
+    },
+    "18": {
+      "edge": 14,
+      "kind": "out",
+      "label": "need:x",
+      "rank": 1,
+      "replies": []
+    },
+    "63": {
+      "edge": 36,
+      "kind": "in",
+      "label": "launch",
+      "rank": 4,
+      "replies": [
+        0
+      ]
+    },
+    "9": {
+      "edge": 5,
+      "kind": "in",
+      "label": "tick",
+      "rank": 2,
+      "replies": [
+        18
+      ]
+    }
+  },
+  "root": 63,
+  "valuation": {
+    "p": 1,
+    "q": 0
+  },
+  "valuation_id": 4
+}

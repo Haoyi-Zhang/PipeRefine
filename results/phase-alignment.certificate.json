@@ -1,0 +1,240 @@
+{
+  "case_id": "phase-alignment",
+  "cells": [
+    {
+      "ranks": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "valuation_ids": [
+        0,
+        1,
+        4,
+        5,
+        10,
+        11,
+        14,
+        15,
+        16,
+        17,
+        20,
+        21,
+        26,
+        27,
+        30,
+        31
+      ]
+    },
+    {
+      "ranks": [
+        2,
+        -1,
+        1,
+        1
+      ],
+      "valuation_ids": [
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        18,
+        19,
+        22,
+        23,
+        24,
+        25,
+        28,
+        29
+      ]
+    }
+  ],
+  "equation_visits": 12,
+  "rounds": 2,
+  "safe_valuation_ids": [
+    0,
+    1,
+    4,
+    5,
+    10,
+    11,
+    14,
+    15,
+    16,
+    17,
+    20,
+    21,
+    26,
+    27,
+    30,
+    31
+  ],
+  "shortest_bad_valuation_id": 2,
+  "valuations": [
+    {
+      "latency": 0,
+      "mode": 0,
+      "phase": 0
+    },
+    {
+      "latency": 0,
+      "mode": 1,
+      "phase": 0
+    },
+    {
+      "latency": 0,
+      "mode": 0,
+      "phase": 1
+    },
+    {
+      "latency": 0,
+      "mode": 1,
+      "phase": 1
+    },
+    {
+      "latency": 0,
+      "mode": 0,
+      "phase": 2
+    },
+    {
+      "latency": 0,
+      "mode": 1,
+      "phase": 2
+    },
+    {
+      "latency": 0,
+      "mode": 0,
+      "phase": 3
+    },
+    {
+      "latency": 0,
+      "mode": 1,
+      "phase": 3
+    },
+    {
+      "latency": 1,
+      "mode": 0,
+      "phase": 0
+    },
+    {
+      "latency": 1,
+      "mode": 1,
+      "phase": 0
+    },
+    {
+      "latency": 1,
+      "mode": 0,
+      "phase": 1
+    },
+    {
+      "latency": 1,
+      "mode": 1,
+      "phase": 1
+    },
+    {
+      "latency": 1,
+      "mode": 0,
+      "phase": 2
+    },
+    {
+      "latency": 1,
+      "mode": 1,
+      "phase": 2
+    },
+    {
+      "latency": 1,
+      "mode": 0,
+      "phase": 3
+    },
+    {
+      "latency": 1,
+      "mode": 1,
+      "phase": 3
+    },
+    {
+      "latency": 2,
+      "mode": 0,
+      "phase": 0
+    },
+    {
+      "latency": 2,
+      "mode": 1,
+      "phase": 0
+    },
+    {
+      "latency": 2,
+      "mode": 0,
+      "phase": 1
+    },
+    {
+      "latency": 2,
+      "mode": 1,
+      "phase": 1
+    },
+    {
+      "latency": 2,
+      "mode": 0,
+      "phase": 2
+    },
+    {
+      "latency": 2,
+      "mode": 1,
+      "phase": 2
+    },
+    {
+      "latency": 2,
+      "mode": 0,
+      "phase": 3
+    },
+    {
+      "latency": 2,
+      "mode": 1,
+      "phase": 3
+    },
+    {
+      "latency": 3,
+      "mode": 0,
+      "phase": 0
+    },
+    {
+      "latency": 3,
+      "mode": 1,
+      "phase": 0
+    },
+    {
+      "latency": 3,
+      "mode": 0,
+      "phase": 1
+    },
+    {
+      "latency": 3,
+      "mode": 1,
+      "phase": 1
+    },
+    {
+      "latency": 3,
+      "mode": 0,
+      "phase": 2
+    },
+    {
+      "latency": 3,
+      "mode": 1,
+      "phase": 2
+    },
+    {
+      "latency": 3,
+      "mode": 0,
+      "phase": 3
+    },
+    {
+      "latency": 3,
+      "mode": 1,
+      "phase": 3
+    }
+  ]
+}

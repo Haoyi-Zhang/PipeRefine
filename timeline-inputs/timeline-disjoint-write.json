@@ -1,0 +1,59 @@
+{
+  "assumption": true,
+  "group": "handwritten",
+  "horizon": 7,
+  "id": "timeline-disjoint-write",
+  "implementation": {
+    "gap": 5,
+    "reads": {
+      "x": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "y": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    }
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "gap": 5,
+    "reads": {
+      "x": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "y": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    }
+  }
+}

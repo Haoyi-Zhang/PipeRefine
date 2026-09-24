@@ -1,0 +1,257 @@
+{
+  "assumption": true,
+  "environment_inputs": {},
+  "group": "scaling-control",
+  "id": "long-chain",
+  "implementation": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 2
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 3
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 4
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 5
+      },
+      {
+        "from": 5,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 6
+      },
+      {
+        "from": 6,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 7
+      },
+      {
+        "from": 7,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 8
+      },
+      {
+        "from": 8,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 9
+      },
+      {
+        "from": 9,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 10
+      },
+      {
+        "from": 10,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 11
+      },
+      {
+        "from": 11,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 12
+      },
+      {
+        "from": 12,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 13
+      },
+      {
+        "from": 13,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 14
+      },
+      {
+        "from": 14,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 15
+      },
+      {
+        "from": 15,
+        "guard": true,
+        "kind": "out",
+        "label": "finish",
+        "to": 15
+      }
+    ],
+    "initial": 0,
+    "states": 16
+  },
+  "parameters": [
+    {
+      "hi": 7,
+      "lo": 0,
+      "name": "p"
+    }
+  ],
+  "specification": {
+    "edges": [
+      {
+        "from": 0,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 1
+      },
+      {
+        "from": 1,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 2
+      },
+      {
+        "from": 2,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 3
+      },
+      {
+        "from": 3,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 4
+      },
+      {
+        "from": 4,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 5
+      },
+      {
+        "from": 5,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 6
+      },
+      {
+        "from": 6,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 7
+      },
+      {
+        "from": 7,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 8
+      },
+      {
+        "from": 8,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 9
+      },
+      {
+        "from": 9,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 10
+      },
+      {
+        "from": 10,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 11
+      },
+      {
+        "from": 11,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 12
+      },
+      {
+        "from": 12,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 13
+      },
+      {
+        "from": 13,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 14
+      },
+      {
+        "from": 14,
+        "guard": true,
+        "kind": "out",
+        "label": "step",
+        "to": 15
+      },
+      {
+        "from": 15,
+        "guard": [
+          "==",
+          [
+            "%",
+            "p",
+            2
+          ],
+          0
+        ],
+        "kind": "out",
+        "label": "finish",
+        "to": 15
+      }
+    ],
+    "initial": 0,
+    "states": 16
+  }
+}

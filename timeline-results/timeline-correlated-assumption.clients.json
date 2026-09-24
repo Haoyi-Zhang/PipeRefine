@@ -1,0 +1,85 @@
+{
+  "case_id": "timeline-correlated-assumption",
+  "counterexamples": [
+    {
+      "client": {
+        "age": 1,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "x",
+            "time": 0
+          }
+        ],
+        "explanation": "the replacement requires a transaction-tagged input age absent from the specification",
+        "first_violation_cycle": 1,
+        "kind": "read",
+        "launches": [
+          0
+        ],
+        "port": "x",
+        "samples": []
+      },
+      "game_rank": 3,
+      "valuation": {
+        "p": 1,
+        "q": 2
+      },
+      "valuation_id": 5
+    }
+  ],
+  "safe_valuation_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9
+  ],
+  "valuations": [
+    {
+      "p": 0,
+      "q": 0
+    },
+    {
+      "p": 0,
+      "q": 1
+    },
+    {
+      "p": 0,
+      "q": 2
+    },
+    {
+      "p": 0,
+      "q": 3
+    },
+    {
+      "p": 1,
+      "q": 1
+    },
+    {
+      "p": 1,
+      "q": 2
+    },
+    {
+      "p": 1,
+      "q": 3
+    },
+    {
+      "p": 2,
+      "q": 2
+    },
+    {
+      "p": 2,
+      "q": 3
+    },
+    {
+      "p": 3,
+      "q": 3
+    }
+  ]
+}

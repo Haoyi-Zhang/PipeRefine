@@ -1,0 +1,17 @@
+{
+  "depth": 1,
+  "nodes": {
+    "0": {
+      "edge": 0,
+      "kind": "in",
+      "label": "launch",
+      "rank": 1,
+      "replies": []
+    }
+  },
+  "root": 0,
+  "valuation": {
+    "p": 1
+  },
+  "valuation_id": 1
+}
