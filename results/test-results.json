@@ -1,5 +1,5 @@
 {
-  "count": 93,
+  "count": 102,
   "errors": 0,
   "failures": 0,
   "tests": [
@@ -245,11 +245,19 @@
     },
     {
       "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_all_tags_share_one_physical_collision_domain"
+    },
+    {
+      "status": "pass",
       "test": "test_timeline.TimelineCorrespondence.test_anchor_shapes_use_history_translation"
     },
     {
       "status": "pass",
       "test": "test_timeline.TimelineCorrespondence.test_assumption_filters_domain"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_client_tags_require_actual_nonnegative_launch_owners"
     },
     {
       "status": "pass",
@@ -261,7 +269,15 @@
     },
     {
       "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_counterexample_metadata_and_rank_mutations_are_rejected"
+    },
+    {
+      "status": "pass",
       "test": "test_timeline.TimelineCorrespondence.test_disjoint_intervals"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_equal_time_failure_tie_mutation_is_rejected"
     },
     {
       "status": "pass",
@@ -277,6 +293,10 @@
     },
     {
       "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_history_actions_preserve_old_transaction_and_drop_boundary"
+    },
+    {
+      "status": "pass",
       "test": "test_timeline.TimelineCorrespondence.test_history_translation_represents_overlapping_launches"
     },
     {
@@ -289,7 +309,15 @@
     },
     {
       "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_latest_launch_only_action_mutation_is_rejected"
+    },
+    {
+      "status": "pass",
       "test": "test_timeline.TimelineCorrespondence.test_missing_write_port_fails"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_noncolliding_optional_drive_is_legal_and_removable"
     },
     {
       "status": "pass",
@@ -302,6 +330,14 @@
     {
       "status": "pass",
       "test": "test_timeline.TimelineCorrespondence.test_reflexive_generated_controls"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_retained_client_records_replay_without_producer_reconstruction"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_shifted_persisted_client_requires_absolute_time_replay"
     },
     {
       "status": "pass",

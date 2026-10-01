@@ -1,12 +1,18 @@
-"""Independent validation for port-separated timelines and tagged clients.
+"""Independent validation for port-separated timelines and persisted tagged clients.
 
 This module deliberately uses check.py's separately implemented arithmetic
-rather than timeline.py/domain.py's evaluator.
+rather than timeline.py/domain.py's evaluator.  It validates the complete
+persisted launch/drive/sample record, replays the first absolute violation, and
+checks launch-history actions without importing the producer translation.
 
 SPDX-License-Identifier: MIT
 """
 import itertools
-from check import Invalid, need, integer, predicate, validate_expression, validate_predicate
+from check import (Invalid, need, integer, predicate, validate_expression,
+                   validate_predicate)
+
+
+_KIND_ORDER = {'gap': 0, 'read': 1, 'write': 2}
 
 
 def evaluated(profile, env):
@@ -105,7 +111,8 @@ def validate_timeline(case):
                     seen = set()
                     for lo_term, hi_term in ranges:
                         lo, hi = integer(lo_term, env), integer(hi_term, env)
-                        need(0 <= lo < hi <= horizon + 1, 'invalid interval or age beyond horizon')
+                        need(0 <= lo < hi <= horizon + 1,
+                             'invalid interval or age beyond horizon')
                         ages = set(range(lo, hi))
                         need(not (seen & ages), 'overlapping intervals')
                         seen |= ages
@@ -133,60 +140,219 @@ def _tagged_event(item, launches):
             type(item.get('time')) is not int):
         return None
     launch, age, time = item['launch'], item['age'], item['time']
-    if launch not in launches or age < 0 or time != launch + age:
+    if launch < 0 or launch not in launches or age < 0 or time < 0 or time != launch + age:
         return None
     return item['port'], launch, age, time
 
 
-def client_legal(profile, env, client):
-    """Validate a launch-indexed client and its physical port/cycle projection."""
-    p = evaluated(profile, env)
+def _parsed_client(client):
+    """Parse one persisted client and enforce ownership and global physical injectivity."""
+    need(type(client) is dict, 'client object')
     launches = client.get('launches')
-    if type(launches) is not list or any(type(t) is not int or t < 0 for t in launches):
+    need(type(launches) is list, 'client launch list')
+    need(all(type(t) is int and t >= 0 for t in launches), 'nonnegative client launches')
+    need(launches == sorted(set(launches)), 'strictly increasing client launches')
+
+    parsed = {'launches': launches, 'drives': [], 'samples': []}
+    occupied = {}
+    per_kind_tags = {'drives': set(), 'samples': set()}
+    for field in ('drives', 'samples'):
+        items = client.get(field, [])
+        need(type(items) is list, f'client {field} list')
+        for item in items:
+            event = _tagged_event(item, launches)
+            need(event is not None, f'invalid {field[:-1]} tag ownership or time')
+            port, launch, age, time = event
+            tag = port, launch, age
+            slot = port, time
+            need(tag not in per_kind_tags[field], f'duplicate {field[:-1]} tag')
+            need(slot not in occupied, 'tagged client physical port/cycle collision')
+            per_kind_tags[field].add(tag)
+            occupied[slot] = (field, tag)
+            parsed[field].append(event)
+    parsed['drive_tags'] = per_kind_tags['drives']
+    parsed['sample_tags'] = per_kind_tags['samples']
+    return parsed
+
+
+def client_legal(profile, env, client):
+    """Validate a launch-indexed client and every tagged physical projection.
+
+    Optional drives are permitted, but every drive and sample must belong to an
+    actual nonnegative launch and all tags together must project injectively on
+    each physical port/cycle slot.
+    """
+    try:
+        parsed = _parsed_client(client)
+    except Invalid:
         return False
-    if launches != sorted(set(launches)):
-        return False
+    p = evaluated(profile, env)
+    launches = parsed['launches']
     if any(b - a < p['gap'] for a, b in zip(launches, launches[1:])):
         return False
-
-    drives = client.get('drives', [])
-    if type(drives) is not list:
-        return False
-    drive_tags = set()
-    drive_slots = {}
-    for item in drives:
-        event = _tagged_event(item, launches)
-        if event is None:
-            return False
-        port, launch, age, time = event
-        tag = port, launch, age
-        slot = port, time
-        if tag in drive_tags or slot in drive_slots:
-            return False
-        drive_tags.add(tag)
-        drive_slots[slot] = tag
     for launch in launches:
         for port, ages in p['reads'].items():
             for age in ages:
-                if (port, launch, age) not in drive_tags:
+                if (port, launch, age) not in parsed['drive_tags']:
                     return False
-
-    samples = client.get('samples', [])
-    if type(samples) is not list:
-        return False
-    sample_tags = set()
-    sample_slots = set()
-    for item in samples:
-        event = _tagged_event(item, launches)
-        if event is None:
-            return False
-        port, launch, age, time = event
-        tag = port, launch, age
-        slot = port, time
-        if tag in sample_tags or slot in sample_slots:
-            return False
+    for port, _launch, age, _time in parsed['samples']:
         if age not in p['writes'].get(port, set()):
             return False
-        sample_tags.add(tag)
-        sample_slots.add(slot)
+    return True
+
+
+def _failure_key(item):
+    return (item['cycle'], _KIND_ORDER[item['kind']], item['port'] or '',
+            item['age'], item.get('launch', -1))
+
+
+def canonical_failure(case, env):
+    """Independently select the globally earliest failed directional clause."""
+    impl = evaluated(case['implementation'], env)
+    spec = evaluated(case['specification'], env)
+    candidates = []
+    if impl['gap'] > spec['gap']:
+        candidates.append({'cycle': spec['gap'], 'kind': 'gap', 'port': None,
+                           'age': spec['gap']})
+    for port in sorted(set(impl['reads']) | set(spec['reads'])):
+        for age in sorted(impl['reads'].get(port, set()) - spec['reads'].get(port, set())):
+            candidates.append({'cycle': age, 'kind': 'read', 'port': port, 'age': age})
+    for port in sorted(set(impl['writes']) | set(spec['writes'])):
+        for age in sorted(spec['writes'].get(port, set()) - impl['writes'].get(port, set())):
+            candidates.append({'cycle': age, 'kind': 'write', 'port': port, 'age': age})
+    return min(candidates, key=_failure_key) if candidates else None
+
+
+def replay_first_violation(case, env, client):
+    """Compute the first absolute implementation violation from persisted events."""
+    parsed = _parsed_client(client)
+    impl = evaluated(case['implementation'], env)
+    violations = []
+
+    for left, right in zip(parsed['launches'], parsed['launches'][1:]):
+        distance = right - left
+        if distance < impl['gap']:
+            violations.append({'cycle': right, 'kind': 'gap', 'port': None,
+                               'age': distance, 'launch': right})
+
+    for launch in parsed['launches']:
+        for port, ages in impl['reads'].items():
+            for age in ages:
+                if (port, launch, age) not in parsed['drive_tags']:
+                    violations.append({'cycle': launch + age, 'kind': 'read',
+                                       'port': port, 'age': age, 'launch': launch})
+
+    for port, launch, age, time in parsed['samples']:
+        if age not in impl['writes'].get(port, set()):
+            violations.append({'cycle': time, 'kind': 'write', 'port': port,
+                               'age': age, 'launch': launch})
+
+    need(bool(violations), 'persisted client has no replayed implementation violation')
+    return min(violations, key=_failure_key)
+
+
+def check_counterexample(case, env, client, game_rank):
+    """Check one persisted shortest client against semantics and a verified game rank."""
+    need(client_legal(case['specification'], env, client),
+         'persisted client is not legal for the specification')
+    need(not client_legal(case['implementation'], env, client),
+         'persisted client is legal for the implementation')
+
+    expected = canonical_failure(case, env)
+    need(expected is not None, 'counterexample supplied for a safe valuation')
+    actual = replay_first_violation(case, env, client)
+    need(actual['cycle'] == expected['cycle'], 'client is not temporally shortest')
+    need((actual['kind'], actual['port'], actual['age']) ==
+         (expected['kind'], expected['port'], expected['age']),
+         'client does not realize the canonical failed-clause tie selection')
+
+    need(type(client.get('first_violation_cycle')) is int and
+         client['first_violation_cycle'] == actual['cycle'],
+         'wrong first_violation_cycle metadata')
+    need(client.get('kind') == actual['kind'], 'wrong counterexample kind metadata')
+    need(client.get('port') == actual['port'], 'wrong counterexample port metadata')
+    need(type(client.get('age')) is int and client['age'] == actual['age'],
+         'wrong counterexample age metadata')
+    need(type(game_rank) is int and game_rank == actual['cycle'] + 2,
+         'replayed client time/game-rank mismatch')
+    return actual
+
+
+def check_client_record(case, values, safe_ids, record, rank_rows, initial_pair):
+    """Validate one retained .clients.json file without rebuilding producer clients."""
+    need(type(record) is dict, 'client record object')
+    need(record.get('case_id') == case['id'], 'client record case identifier')
+    need(record.get('safe_valuation_ids') == safe_ids, 'client record safe region')
+    need(record.get('valuations') == values, 'client record valuation order')
+    counterexamples = record.get('counterexamples')
+    need(type(counterexamples) is list, 'client counterexample list')
+
+    expected_failures = set(range(len(values))) - set(safe_ids)
+    seen = set()
+    for row in counterexamples:
+        need(type(row) is dict, 'client counterexample row')
+        valuation_id = row.get('valuation_id')
+        need(type(valuation_id) is int and valuation_id in expected_failures,
+             'counterexample valuation identifier')
+        need(valuation_id not in seen, 'duplicate counterexample valuation')
+        seen.add(valuation_id)
+        need(row.get('valuation') == values[valuation_id], 'counterexample valuation binding')
+        verified_rank = rank_rows[valuation_id][initial_pair]
+        need(row.get('game_rank') == verified_rank, 'counterexample game-rank binding')
+        check_counterexample(case, values[valuation_id], row.get('client'), verified_rank)
+    need(seen == expected_failures, 'missing or extraneous counterexample valuations')
+    return len(counterexamples)
+
+
+def check_history_translation(case, key, translated, env):
+    """Validate enabled actions and drop/launch transitions of a history translation.
+
+    Only histories legal for this valuation are semantic states.  The producer may
+    retain a valuation-independent superset, but every enabled action on a legal
+    history must exactly match the evaluated profile, including actions of older
+    simultaneously active transactions.
+    """
+    need(translated.get('encoding') == 'launch-history', 'history encoding required')
+    raw_states = translated.get('history_states')
+    need(type(raw_states) is list and len(raw_states) == translated.get('states'),
+         'history state inventory')
+    states = []
+    for raw in raw_states:
+        need(type(raw) is list and all(type(age) is int and 0 <= age <= case['horizon']
+                                      for age in raw), 'history state ages')
+        state = tuple(raw)
+        need(state == tuple(sorted(set(state))), 'history state ordering')
+        states.append(state)
+    need(len(set(states)) == len(states), 'duplicate history state')
+    index = {state: sid for sid, state in enumerate(states)}
+    need(states[translated.get('initial')] == (), 'history initial state')
+
+    p = evaluated(case[key], env)
+    outgoing = [[] for _ in states]
+    for edge in translated.get('edges', []):
+        need(type(edge) is dict and type(edge.get('from')) is int and
+             0 <= edge['from'] < len(states), 'history edge source')
+        if predicate(edge.get('guard'), env):
+            outgoing[edge['from']].append(edge)
+
+    for sid, state in enumerate(states):
+        if any(right - left < p['gap']
+               for left, right in itertools.combinations(state, 2)):
+            continue
+        expected = {('in', 'tick', index[tuple(age + 1 for age in state
+                                               if age + 1 <= case['horizon'])])}
+        if not state or min(state) >= p['gap']:
+            expected.add(('in', 'launch', index[tuple(sorted((0, *state)))]) )
+        for age in state:
+            for port, ages in p['writes'].items():
+                if age in ages:
+                    expected.add(('in', f'sample:{port}@{age}', sid))
+            for port, ages in p['reads'].items():
+                if age in ages:
+                    expected.add(('out', f'need:{port}@{age}', sid))
+        actual_list = [(edge.get('kind'), edge.get('label'), edge.get('to'))
+                       for edge in outgoing[sid]]
+        need(len(actual_list) == len(set(actual_list)), 'duplicate enabled history action')
+        need(set(actual_list) == expected,
+             f'history action mismatch for {case["id"]}:{key}:{state}')
     return True

@@ -21,8 +21,12 @@ For admitted profiles, the direct criterion is:
 - every specification output-guarantee age is provided by the implementation.
 
 Failed clauses produce a transaction-tagged old-client counterexample. The
-artifact also translates profiles to launch-history interface games and checks
-that alternating simulation, client replay, and first-violation rank agree.
+persisted record contains its actual nonnegative launches, every drive and
+sample tag, and failure metadata. An independent checker enforces global
+port/cycle injectivity across all tags, replays the first absolute violation,
+and binds it to a separately checked game rank. The artifact also translates
+profiles to launch-history interface games and validates enabled actions for
+older overlapping transactions as well as tick/drop boundaries.
 
 ## Retained evidence
 
@@ -33,8 +37,9 @@ generated families, and three source-shaped overlapping families. The retained
 campaign covers 67 families, 961 valuations, and 66,688 valuation/state-pair
 obligations: 270 valuations are safe and 691 fail. Every failure has a replayed
 old client. Direct criteria, independent profile evaluation, two-launch physical
-collision search, translated games, and client-time/game-rank checks have zero
-retained disagreement.
+collision search, persisted-event replay, translated games, action-level edge
+checks, and absolute-client-time/game-rank checks have zero retained
+disagreement.
 
 ### Independent exhaustive contextual micro-model
 
@@ -102,7 +107,7 @@ python reproduce.py
 exhaustive-micro, and bibliography campaigns; checks certificates, spoiler DAGs,
 tagged clients, source bounds, collision oracles, and bibliography mutations;
 and byte-compares 294 claim-relevant scientific files. A successful run reports
-`status: pass` and `unit_tests: 93`. Timing measurements are intentionally
+`status: pass` and the current unit-test count. Timing measurements are intentionally
 excluded from deterministic byte equality.
 
 To rebuild retained outputs into separate directories without overwriting them:
@@ -136,7 +141,8 @@ python src/generate_anchor.py /tmp/anchor-inputs
 - `src/timeline.py`: profiles, direct criterion, launch-history translation, age
   quotient, and canonical clients.
 - `src/timeline_check.py`: separately written evaluator, physical collision
-  enumerator, client replay, and game/rank comparison.
+  enumerator, persisted-event client replay, canonical tie/rank binding, and
+  launch-history action/drop checker.
 - `src/exhaustive_context.py`: independent exhaustive one-input/one-output
   contextual micro-model.
 - `src/bibliography_check.py`: BibTeX/citation/audit validator and mutation target.
@@ -145,20 +151,24 @@ python src/generate_anchor.py /tmp/anchor-inputs
 - `results/`, `timeline-results/`, `anchor-results/`, `micro-results/`,
   `bibliography-results/`: retained deterministic scientific outputs.
 - `literature/`: bibliography copy, citation inventory, and metadata audit.
-- `tests/`: 93 semantic, schema, mutation, source, exhaustive, and bibliography tests.
+- `tests/`: semantic, schema, mutation, source, exhaustive, and bibliography tests; the exact passing count is recorded by `results/test-results.json`.
 - `proofs/`: readable proof notes and explicit scope boundaries.
 - `claim_evidence_ledger.csv`: material claims mapped to proof and evidence.
 - `external_resources.csv`, `SOURCES.md`: scholarly-source inventory and provenance.
 
 ## Trust boundary and non-claims
 
-The producer is never accepted as its own checker. The timeline checker does not
-import the producer's profile evaluator or criterion; the collision oracle
-enumerates launch/age pairs rather than calling the span test; the micro-model
-imports neither timeline implementation; and the general checker does not import
-the bitset solver. All executable paths still share Python, the supplied schemas,
-and the declared mathematics. These are independent implementation checks, not
-proof-assistant verification or independent human review.
+The producer is never accepted as its own checker. In check-only mode the
+timeline runner does not import or call the producer's canonical-client
+constructor: it parses the retained launches, drives, samples, and metadata.
+The timeline checker also does not import the producer's profile evaluator or
+criterion; the collision oracle enumerates launch/age pairs rather than calling
+the span test; its action checker derives expected enabled edges independently;
+the micro-model imports neither timeline implementation; and the general checker
+does not import the bitset solver. All executable paths still share Python, the
+supplied schemas, and the declared mathematics. These are independent
+implementation checks, not proof-assistant verification or independent human
+review.
 
 The artifact does not establish automatic extraction from Lilac or another
 language, functional/data equivalence, RTL equivalence, reset semantics,

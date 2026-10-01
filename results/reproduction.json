@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "scope": "Clean reproduction of the retained bounded artifact and current paper build; not machine-checked general proof, source-language or RTL validation, industrial workload evidence, or independent peer review.",
-  "source": "clean extraction of the packaged complete project and standalone repository delivery shapes",
+  "scope": "Targeted repair and clean reproduction of the retained bounded artifact and current paper; not machine-checked general proof, source-language or RTL validation, industrial workload evidence, venue-rule review, or independent peer review.",
+  "source": "clean extraction of the packaged complete-project and standalone-repository delivery shapes",
   "scientific_reproduction": {
-    "unit_tests": 93,
+    "unit_tests": 102,
     "regenerated_general_inputs": 41,
     "regenerated_timeline_inputs": 67,
     "regenerated_anchor_inputs": 6,
@@ -13,6 +13,10 @@
     "bibliography_entries": 69,
     "compared_scientific_files": 294,
     "all_scientific_results_identical": true,
+    "timeline_families": 67,
+    "timeline_valuations": 961,
+    "timeline_safe": 270,
+    "timeline_fail": 691,
     "no_external_service_required": true,
     "checks": [
       "unit tests",
@@ -22,7 +26,9 @@
       "reverse AND/OR oracle",
       "spoiler DAG replay",
       "port-separation/collision equivalence",
-      "tagged contextual client replay",
+      "all-tag client ownership/collision checks",
+      "persisted absolute-time client replay and metadata/tie/rank binding",
+      "history action/drop translation checks and newest-only mutation",
       "history-game correspondence",
       "independent exhaustive client-set inclusion oracle",
       "published-declaration normalization boundary",
@@ -34,9 +40,9 @@
     "complete_project_reproduction_status": "pass",
     "standalone_repository_reproduction_status": "pass",
     "documented_commands_passed": true,
-    "representative_complete_project_wall_seconds": 12.51,
-    "representative_standalone_wall_seconds": 12.25,
-    "maximum_observed_rss_kib": 96940,
+    "representative_complete_project_wall_seconds": 11.05,
+    "representative_standalone_wall_seconds": 11.21,
+    "maximum_observed_rss_kib": 97580,
     "timing_values_are_identity_critical": false
   },
   "paper_verification": {
@@ -50,6 +56,7 @@
     "all_bibliography_items_cited": true,
     "all_fonts_embedded": true,
     "overfull_boxes_on_final_pass": false,
+    "underfull_box_diagnostics": 28,
     "undefined_references_on_final_pass": false,
     "latex_warnings_on_final_pass": false,
     "publisher_class_and_bibliography_style_unmodified": true,
@@ -60,7 +67,7 @@
     "changed_rendered_pages": 0,
     "visual_inspection": {
       "rendered_pages": 12,
-      "pages_inspected": "1-12",
+      "pages_inspected": "1-12; focused 3,5,6",
       "overlap_or_clipping_found": false
     }
   },
@@ -72,7 +79,7 @@
     "stable_scholarly_url_entries": 4,
     "unique_stable_locators": 69,
     "high_risk_metadata_checks": 9,
-    "external_resolution_note": "retained structural and metadata audit; not a live resolver or independent source-content or novelty review"
+    "external_resolution_note": "retained structural and metadata audit; no new live venue or source-resolution campaign in this targeted repair"
   },
   "archive_verification": {
     "project_single_root": true,
@@ -86,5 +93,12 @@
     "disposable_build_files_excluded": true,
     "nested_archives_excluded": true,
     "placeholder_repository_links_excluded": true
-  }
+  },
+  "not_executed": [
+    "live venue-rule recheck",
+    "broader composition-overlap study",
+    "GPU or external LLM experiments",
+    "human study",
+    "value/RTL/backpressure validation"
+  ]
 }

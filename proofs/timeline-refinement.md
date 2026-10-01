@@ -25,22 +25,38 @@ Unlike the former quiescent restriction, an event age may exceed `g_P`. Thus a
 fully pipelined component with gap one and one output event at age eight is in
 the fragment.
 
-A finite launch-indexed client has strictly increasing launch times `t_j`, input
-drive tags `(j,x,a)`, and output sample tags `(j,y,a)`. The physical projection
-of a tag is port `x` or `y` at cycle `t_j+a`. It is legal for `P` exactly when:
+A finite launch-indexed client `C=(L,D,M)` has a finite strictly increasing
+set of actual launch times `L subseteq N`, input-drive tags `(t,x,a)`, and
+output-sample tags `(t,y,a)`. Every tag must have an actual nonnegative owner
+`t in L` and a nonnegative age `a`; its physical projection is port `x` or `y`
+at absolute cycle `t+a`. It is legal for `P` exactly when:
 
 1. consecutive launches are separated by at least `g_P` cycles;
-2. for every launch `j`, input port `x`, and `a in R_P(x)`, the drive tag
-   `(j,x,a)` is present;
-3. every sample tag `(j,y,a)` has `a in W_P(y)`;
-4. its drive and sample projections do not assign two transaction tags to the
-   same physical port/cycle slot.
+2. for every actual launch `t`, input port `x`, and `a in R_P(x)`, the drive tag
+   `(t,x,a)` is present;
+3. every sample tag `(t,y,a)` has `a in W_P(y)`;
+4. the projection is injective on **all** tags in `D union M`, so no two tagged
+   events use the same physical port/cycle slot.
 
-The implementation checker also accepts extra tagged input drives. Tags matter:
-a value projected at one cycle for transaction `j` cannot silently satisfy a
-replacement's obligation for transaction `j+1`. Data values are not modeled,
-but tags preserve the transaction identity that a value-correct integration
-would have to respect.
+Extra tagged input drives are permitted, but they obey the same ownership and
+global collision rule. For example, let `g=1`, `R(x)={0}`, and `L={0,1}`. The
+two required drives `(0,x,0)` and `(1,x,0)` are collision free. Adding
+`(0,x,1)` is illegal because it collides with `(1,x,0)` at physical cycle one;
+adding `(0,x,2)` is collision free for this finite launch set. Tags therefore
+matter even though data values are not modeled: a value at one physical cycle
+for one transaction cannot silently serve another transaction.
+
+**Lemma 1 (relevant-client normalization).** To decide `I <= S`, it suffices to
+consider clients whose drives are exactly the tags required by `S` for their
+actual launches and whose samples are a finite subset of `S` guarantees.
+
+**Proof.** From any `S`-legal client, delete each drive not required by `S` for
+its owning launch. Deletion preserves actual launch ownership and cannot create
+a physical collision. All `S`-required drives and all samples remain, so the
+normalized client is still `S`-legal. If `R_I subseteq R_S`, those retained
+drives also cover every implementation requirement. Conversely, every
+normalized counterexample is already a client in the original domain. Hence
+optional input facts can be removed without changing the proof obligation. QED.
 
 Implementation `I` **contextually refines** specification `S`, written `I <= S`,
 when every finite launch-indexed client legal for `S` is legal for `I`.
@@ -69,7 +85,14 @@ The theorem is per port. Events on different ports may share a cycle. It also
 explains the fragment boundary: a multi-cycle availability interval whose span
 is at least the initiation gap requires a richer holding, replication, or
 transaction-multiplexing semantics and is rejected rather than silently
-misinterpreted.
+misinterpreted. In particular, `g=1` and an implementation guarantee
+`W_I(o)={p,...,q}` with `p<q` is outside the fragment. For `p=1,q=2`, launches
+at cycles zero and one map the old transaction's age-two event and the new
+transaction's age-one event to output `o` at cycle two. A general window can
+refine a singleton-`q` specification only when `q-p<g_I<=g_S` and the input
+clauses also hold. Gap-one source-shaped examples therefore use only genuine
+singleton guarantees `{q}`; this artifact does not invent or synthesize a
+value-holding adapter.
 
 ## 3. Complete contextual criterion
 
@@ -86,8 +109,9 @@ Take any client legal for `S`. Every adjacent launch pair is separated by at
 least `g_S` and therefore by at least `g_I`. For every launch and input port, the
 client contains every tag required by `R_S(x)`, hence every tag in the subset
 `R_I(x)`. Every sample tag has an age in `W_S(y)` and therefore in `W_I(y)`.
-Theorem 1 gives an injective physical projection for `I` because `I` is itself
-port-separated. The same tagged client is legal for `I`.
+The client's projection on all of its persisted drive and sample tags is already
+injective by `S`-legality; this is a profile-independent property of the client.
+The same tagged client is therefore legal for `I`.
 
 ### Necessity
 
@@ -100,8 +124,11 @@ port-separated. The same tagged client is legal for `I`.
   input requirements, and sample `(0,y,a)`. The sample is promised by `S` but
   not by `I`.
 
-Every constructed specification client has an injective physical projection by
-Theorem 1. Thus every failed clause has a finite old-client counterexample. QED.
+Specification port separation makes the required same-port tags collision
+free across launches. Input and output port names have disjoint directions, and
+the write construction adds only its selected specification-guaranteed sample.
+Thus every constructed client has an injective all-tag projection, is `S`-legal,
+and is `I`-illegal. QED.
 
 **Corollary 1.** Contextual refinement is a preorder.
 
@@ -141,9 +168,12 @@ exactly the specification facts. A write failure adds one sample at the missing
 specification age. These are the three necessity constructions of Theorem 2.
 QED.
 
-The producer stores only the launch list and exceptional read or sample; the
-checker regenerates all specification-required tags. The certificate is thus
-bounded by the interface declaration rather than by the history arena.
+The producer persists the complete compact client record: the launch list,
+every tagged drive, every sample, and the claimed kind, port, age, and first
+absolute violation cycle. The independent checker parses and replays exactly
+those stored events. It neither calls the producer's canonical-client routine
+nor reconstructs drives from the profile. Corollary 2 still bounds the record by
+the interface declaration rather than by the history arena.
 
 ## 5. Shortest first-violation clients
 
@@ -164,8 +194,13 @@ cannot be observed before cycle `a` after its launch. The three constructions in
 Theorem 2 attain exactly those lower bounds using one launch, except for the gap
 case, which uses two. QED.
 
-The artifact resolves equal-time ties by kind, port, and age. That deterministic
-tie order is not part of temporal minimality.
+The artifact resolves equal-time ties by kind, port, and age. The checker first
+computes the actual earliest absolute implementation violation from the
+persisted launches, drives, and samples; it then checks the claimed cycle,
+kind/port/age tuple, the independently recomputed canonical tie choice, and the
+already verified initial game rank `cycle+2`. It does not substitute the stored
+age for absolute time. The deterministic tie order is not part of temporal
+minimality.
 
 ## 6. Exact bounded family region
 
@@ -212,7 +247,13 @@ The initial state is empty.
 
 The age suffix in an action label preserves launch identity. The artifact's game
 challenges implementation outputs and specification inputs, so inputs are
-contravariant and outputs covariant.
+contravariant and outputs covariant. An action-level regression follows the
+`g=1`, horizon-two path `launch,tick,launch,tick` to history `{1,2}` and checks
+that the older transaction's `sample:o@2` and `need:x@2` are both enabled. The
+next ticks check the drop boundary `{1,2}->{2}->{}`. A mutation that retains
+only actions for the newest launch is rejected by a separately written action
+checker; mere state existence or solver/oracle agreement is not used as a
+substitute for this edge-level test.
 
 **Theorem 3.** `I <= S` if and only if `T(I)` alternating-simulates `T(S)` from
 their initial states.
@@ -316,7 +357,7 @@ translated game agree everywhere. All 691 failures have a replayed old client
 and satisfy Proposition 3. A further 41 general controls add 520 valuations and
 9,076 pair valuations. The independent micro-domain adds 52 profiles, 3,665
 clients, and 2,704 ordered pairs with zero criterion/context disagreement. The
-complete retained suite has 93 passing tests; the bibliography audit checks 69
+complete retained suite has 102 passing tests; the bibliography audit checks 69
 cited entries and 69 unique stable locators; and clean reproduction compares 294
 claim-relevant scientific files exactly.
 

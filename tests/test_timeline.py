@@ -10,9 +10,12 @@ from generate_timeline import all_timeline_cases
 from timeline import (translate_case, safe_valuation_ids, canonical_counterexample,
                       profile_sets, translation_mode)
 from timeline_check import (validate_timeline, direct_refines, client_legal,
-                            port_separated, collision_free)
+                            port_separated, collision_free, check_counterexample,
+                            replay_first_violation, check_client_record,
+                            check_history_translation)
 from solve import solve
-from check import Invalid, check_certificate, certificate_ranks, make_witness, check_witness
+from check import (Invalid, check_certificate, certificate_ranks, make_witness,
+                   check_witness, predicate)
 
 CASES={c['id']:c for c in all_timeline_cases()}
 
@@ -52,7 +55,7 @@ class TimelineCorrespondence(unittest.TestCase):
                 if w is None:
                     self.assertEqual(rows[k][q0],-1)
                 else:
-                    self.assertEqual(rows[k][q0],w['age']+2)
+                    self.assertEqual(rows[k][q0],w['first_violation_cycle']+2)
 
 
     def test_anchor_shapes_use_history_translation(self):
@@ -170,6 +173,192 @@ class TimelineCorrespondence(unittest.TestCase):
             if w:
                 self.assertIn(w['kind'],('gap','read','write'))
                 self.assertEqual(w['launches'][0],0)
+
+    def test_retained_client_records_replay_without_producer_reconstruction(self):
+        for case in CASES.values():
+            translated = translate_case(case)
+            certificate = json.loads((ROOT/'timeline-results'/
+                                      (case['id']+'.certificate.json')).read_text())
+            check_certificate(translated, certificate)
+            values = validate_timeline(case)
+            ranks = certificate_ranks(translated, certificate, values)
+            initial = (translated['implementation']['initial'] *
+                       translated['specification']['states'] +
+                       translated['specification']['initial'])
+            record = json.loads((ROOT/'timeline-results'/
+                                 (case['id']+'.clients.json')).read_text())
+            count = check_client_record(case, values, certificate['safe_valuation_ids'],
+                                        record, ranks, initial)
+            self.assertEqual(count, len(values)-len(certificate['safe_valuation_ids']))
+
+    def test_shifted_persisted_client_requires_absolute_time_replay(self):
+        case = CASES['timeline-extra-read-port']
+        value = validate_timeline(case)[0]
+        row = json.loads((ROOT/'timeline-results'/
+                          'timeline-extra-read-port.clients.json').read_text())['counterexamples'][0]
+        shifted = copy.deepcopy(row['client'])
+        shifted['launches'] = [launch + 1 for launch in shifted['launches']]
+        for field in ('drives', 'samples'):
+            for event in shifted[field]:
+                event['launch'] += 1
+                event['time'] += 1
+        # The shifted fixture preserves specification/implementation legality and
+        # the superficial rank == age + 2 relation, but its real violation is at cycle 2.
+        self.assertTrue(client_legal(case['specification'], value, shifted))
+        self.assertFalse(client_legal(case['implementation'], value, shifted))
+        self.assertEqual(row['game_rank'], shifted['age'] + 2)
+        self.assertEqual(replay_first_violation(case, value, shifted)['cycle'], 2)
+        self.assertEqual(shifted['first_violation_cycle'], 1)
+        with self.assertRaises(Invalid):
+            check_counterexample(case, value, shifted, row['game_rank'])
+
+    def test_counterexample_metadata_and_rank_mutations_are_rejected(self):
+        case = CASES['timeline-extra-read-port']
+        value = validate_timeline(case)[0]
+        row = json.loads((ROOT/'timeline-results'/
+                          'timeline-extra-read-port.clients.json').read_text())['counterexamples'][0]
+        check_counterexample(case, value, row['client'], row['game_rank'])
+        mutations = [
+            ('first cycle', lambda c: c.update(first_violation_cycle=0), row['game_rank']),
+            ('kind', lambda c: c.update(kind='write'), row['game_rank']),
+            ('port', lambda c: c.update(port='x'), row['game_rank']),
+            ('age', lambda c: c.update(age=0), row['game_rank']),
+            ('rank', lambda c: None, row['game_rank'] + 1),
+        ]
+        for name, mutate, rank in mutations:
+            with self.subTest(name=name):
+                client = copy.deepcopy(row['client'])
+                mutate(client)
+                with self.assertRaises(Invalid):
+                    check_counterexample(case, value, client, rank)
+
+    def test_equal_time_failure_tie_mutation_is_rejected(self):
+        case = {
+            'id': 'timeline-equal-time-tie', 'group': 'unit', 'horizon': 2,
+            'parameters': [{'name': 'p', 'lo': 0, 'hi': 0}], 'assumption': True,
+            'implementation': {
+                'gap': 2, 'reads': {'x': [[1, 2]]}, 'writes': {}},
+            'specification': {
+                'gap': 1, 'reads': {}, 'writes': {'y': [[1, 2]]}},
+        }
+        value = validate_timeline(case)[0]
+        translated = translate_case(case)
+        certificate = solve(translated)
+        check_certificate(translated, certificate)
+        ranks = certificate_ranks(translated, certificate, [value])
+        initial = (translated['implementation']['initial'] *
+                   translated['specification']['states'] +
+                   translated['specification']['initial'])
+        rank = ranks[0][initial]
+        client = canonical_counterexample(case, value)
+        self.assertEqual((client['kind'], client['first_violation_cycle']), ('gap', 1))
+        check_counterexample(case, value, client, rank)
+        client.update(kind='read', port='x', age=1)
+        with self.assertRaises(Invalid):
+            check_counterexample(case, value, client, rank)
+
+    def test_all_tags_share_one_physical_collision_domain(self):
+        profile = {'gap': 1, 'reads': {'x': [[0, 1]]}, 'writes': {}}
+        colliding = {
+            'launches': [0, 1],
+            'drives': [
+                {'port': 'x', 'launch': 0, 'age': 0, 'time': 0},
+                {'port': 'x', 'launch': 1, 'age': 0, 'time': 1},
+                {'port': 'x', 'launch': 0, 'age': 1, 'time': 1},
+            ],
+            'samples': [],
+        }
+        self.assertFalse(client_legal(profile, {}, colliding))
+
+    def test_noncolliding_optional_drive_is_legal_and_removable(self):
+        profile = {'gap': 1, 'reads': {'x': [[0, 1]]}, 'writes': {}}
+        client = {
+            'launches': [0, 1],
+            'drives': [
+                {'port': 'x', 'launch': 0, 'age': 0, 'time': 0},
+                {'port': 'x', 'launch': 1, 'age': 0, 'time': 1},
+                {'port': 'x', 'launch': 0, 'age': 2, 'time': 2},
+            ],
+            'samples': [],
+        }
+        self.assertTrue(client_legal(profile, {}, client))
+        normalized = copy.deepcopy(client)
+        normalized['drives'] = normalized['drives'][:2]
+        self.assertTrue(client_legal(profile, {}, normalized))
+
+    def test_client_tags_require_actual_nonnegative_launch_owners(self):
+        profile = {'gap': 1, 'reads': {'x': [[0, 1]]}, 'writes': {}}
+        legal = {
+            'launches': [0],
+            'drives': [{'port': 'x', 'launch': 0, 'age': 0, 'time': 0}],
+            'samples': [],
+        }
+        self.assertTrue(client_legal(profile, {}, legal))
+        orphan = copy.deepcopy(legal)
+        orphan['drives'][0].update(launch=1, time=1)
+        self.assertFalse(client_legal(profile, {}, orphan))
+        negative = {'launches': [-1], 'drives': [], 'samples': []}
+        self.assertFalse(client_legal({'gap': 1, 'reads': {}, 'writes': {}}, {}, negative))
+
+    def test_history_actions_preserve_old_transaction_and_drop_boundary(self):
+        case = {
+            'id': 'timeline-action-regression', 'group': 'unit', 'horizon': 2,
+            'parameters': [{'name': 'p', 'lo': 0, 'hi': 0}], 'assumption': True,
+            'implementation': {
+                'gap': 1, 'reads': {'x': [[2, 3]]}, 'writes': {'o': [[2, 3]]}},
+            'specification': {
+                'gap': 1, 'reads': {'x': [[2, 3]]}, 'writes': {'o': [[2, 3]]}},
+        }
+        value = validate_timeline(case)[0]
+        translated = translate_case(case)['implementation']
+        check_history_translation(case, 'implementation', translated, value)
+        states = [tuple(state) for state in translated['history_states']]
+        index = {state: sid for sid, state in enumerate(states)}
+
+        def target(state, label):
+            matches = [edge for edge in translated['edges']
+                       if edge['from'] == index[state] and edge['label'] == label
+                       and predicate(edge['guard'], value)]
+            self.assertEqual(len(matches), 1)
+            return states[matches[0]['to']]
+
+        self.assertEqual(target((), 'launch'), (0,))
+        self.assertEqual(target((0,), 'tick'), (1,))
+        self.assertEqual(target((1,), 'launch'), (0, 1))
+        self.assertEqual(target((0, 1), 'tick'), (1, 2))
+        enabled = {edge['label'] for edge in translated['edges']
+                   if edge['from'] == index[(1, 2)] and predicate(edge['guard'], value)}
+        self.assertIn('sample:o@2', enabled)
+        self.assertIn('need:x@2', enabled)
+        self.assertEqual(target((1, 2), 'tick'), (2,))
+        self.assertEqual(target((2,), 'tick'), ())
+
+    def test_latest_launch_only_action_mutation_is_rejected(self):
+        case = {
+            'id': 'timeline-action-mutation', 'group': 'unit', 'horizon': 2,
+            'parameters': [{'name': 'p', 'lo': 0, 'hi': 0}], 'assumption': True,
+            'implementation': {
+                'gap': 1, 'reads': {'x': [[2, 3]]}, 'writes': {'o': [[2, 3]]}},
+            'specification': {
+                'gap': 1, 'reads': {'x': [[2, 3]]}, 'writes': {'o': [[2, 3]]}},
+        }
+        value = validate_timeline(case)[0]
+        translated = translate_case(case)['implementation']
+        states = [tuple(state) for state in translated['history_states']]
+        mutated = copy.deepcopy(translated)
+        retained = []
+        for edge in mutated['edges']:
+            state = states[edge['from']]
+            if len(state) > 1 and (edge['label'].startswith('sample:') or
+                                   edge['label'].startswith('need:')):
+                action_age = int(edge['label'].rsplit('@', 1)[1])
+                # Faulty quotient: keep only the newest launch, whose age is min(state).
+                if action_age != min(state):
+                    continue
+            retained.append(edge)
+        mutated['edges'] = retained
+        with self.assertRaises(Invalid):
+            check_history_translation(case, 'implementation', mutated, value)
 
 
 class TimelineSchemaControls(unittest.TestCase):
