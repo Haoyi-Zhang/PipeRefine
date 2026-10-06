@@ -53,10 +53,12 @@ actual launches and whose samples are a finite subset of `S` guarantees.
 **Proof.** From any `S`-legal client, delete each drive not required by `S` for
 its owning launch. Deletion preserves actual launch ownership and cannot create
 a physical collision. All `S`-required drives and all samples remain, so the
-normalized client is still `S`-legal. If `R_I subseteq R_S`, those retained
-drives also cover every implementation requirement. Conversely, every
-normalized counterexample is already a client in the original domain. Hence
-optional input facts can be removed without changing the proof obligation. QED.
+normalized client is still `S`-legal. If the original client is `I`-illegal,
+its gap or sample violation is unchanged; a missing implementation-required
+drive cannot be supplied by deleting other drives. Its all-tag projection was
+already injective. Thus every counterexample normalizes to a counterexample.
+Conversely, every normalized client is already in the original domain. The
+restricted and original quantifiers therefore give the same decision. QED.
 
 Implementation `I` **contextually refines** specification `S`, written `I <= S`,
 when every finite launch-indexed client legal for `S` is legal for `I`.
@@ -246,6 +248,13 @@ The initial state is empty.
 - component output `need:x@a` is a self-loop when `a in A cap R_P(x)`.
 
 The age suffix in an action label preserves launch identity. The artifact's game
+uses a valuation-independent state superset. Histories illegal at one valuation
+can retain enabled edges, but are unreachable from the empty initial history:
+the gap guard preserves pairwise separation on launch, and tick preserves age
+differences while only dropping old entries. The correspondence below therefore
+relates reachable legal histories, not every state in that superset.
+
+The game
 challenges implementation outputs and specification inputs, so inputs are
 contravariant and outputs covariant. An action-level regression follows the
 `g=1`, horizon-two path `launch,tick,launch,tick` to history `{1,2}` and checks
@@ -278,9 +287,17 @@ criterion clause removes the initial pair from every simulation. QED.
 ### Quiescent quotient
 
 When every event age is strictly below the gap, no transaction has a remaining
-port action when another launch becomes legal. Only the age of the newest launch
-matters. The history automaton therefore quotients to the compact saturated age
-automaton used by the artifact for 64 legacy families. The three overlapping
+port action when another launch becomes legal. Uniformly erase the `@a` suffix
+from need/sample labels first; the raw tagged and untagged alphabets are not
+identical. Map a nonempty history to its minimum age and the empty history to
+`H`. Every older age is at least the gap and has no enabled port action, so
+enabled relabeled actions depend only on the newest age. Tick commutes with the
+map, including `{H}->empty` mapping to the saturated `H->H` step; launch is
+enabled in both mapped states because `g<=H` and resets each to zero. This gives
+matching transitions in both directions, hence alternating bisimulation after
+uniform label erasure. The compact saturated age automaton is used by the
+artifact for 64 legacy families. An edge-level regression checks this map on
+every legal history of each retained serial valuation. The three overlapping
 source-shaped families use the full history encoding. Both encodings use the
 same game checker and satisfy Theorem 3 on every retained valuation.
 
@@ -357,9 +374,15 @@ translated game agree everywhere. All 691 failures have a replayed old client
 and satisfy Proposition 3. A further 41 general controls add 520 valuations and
 9,076 pair valuations. The independent micro-domain adds 52 profiles, 3,665
 clients, and 2,704 ordered pairs with zero criterion/context disagreement. The
-complete retained suite has 102 passing tests; the bibliography audit checks 69
+complete retained suite has 108 tests, including hand-written micro-client domain
+checks and edge-level serial-quotient checks after uniform label erasure; the bibliography audit checks 69
 cited entries and 69 unique stable locators; and clean reproduction compares 294
-claim-relevant scientific files exactly.
+claim-relevant scientific files exactly in the retained historical reproduction.
+
+The current native Windows CPython 3.12.14 run passes the 108-test suite,
+regenerates all 114 retained input files byte-for-byte, and matches 284 retained
+JSON objects and the micro-model pair table. It does not execute the POSIX
+resource-limited drivers; historical host measurements remain separate.
 
 These finite checks support the implementation and retained data. The general
 theorems rest on the arguments above. The result does not establish value or RTL

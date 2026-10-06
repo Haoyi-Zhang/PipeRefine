@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from generate_timeline import all_timeline_cases
 from timeline import (translate_case, safe_valuation_ids, canonical_counterexample,
-                      profile_sets, translation_mode)
+                      profile_sets, translation_mode, translate_profile)
 from timeline_check import (validate_timeline, direct_refines, client_legal,
                             port_separated, collision_free, check_counterexample,
                             replay_first_violation, check_client_record,
@@ -21,6 +21,45 @@ CASES={c['id']:c for c in all_timeline_cases()}
 
 
 class TimelineCorrespondence(unittest.TestCase):
+    def test_raw_history_and_age_action_alphabets_are_not_identical(self):
+        case = CASES['timeline-identical']
+        history = translate_profile(case, 'implementation', mode='history')
+        compact = translate_profile(case, 'implementation', mode='age')
+        sid = history['history_states'].index([0])
+        tagged = {edge['label'] for edge in history['edges']
+                  if edge['from'] == sid and predicate(edge['guard'], {'p': 0})}
+        untagged = {edge['label'] for edge in compact['edges']
+                    if edge['from'] == 0 and predicate(edge['guard'], {'p': 0})}
+        self.assertIn('need:x@0', tagged)
+        self.assertIn('need:x', untagged)
+        self.assertNotEqual(tagged, untagged)
+
+    def test_serial_quotient_edges_match_after_uniform_age_label_erasure(self):
+        # Check the quotient map on every legal history of each serial
+        # valuation, not only the initial refinement decision.
+        for case in CASES.values():
+            if translation_mode(case) != 'age':
+                continue
+            for side in ('implementation', 'specification'):
+                history = translate_profile(case, side, mode='history')
+                compact = translate_profile(case, side, mode='age')
+                states = history['history_states']
+                quotient = lambda state: min(state) if state else case['horizon']
+                for value in validate_timeline(case):
+                    gap = profile_sets(case[side], value)['gap']
+                    for sid, state in enumerate(states):
+                        if any(b - a < gap for a, b in zip(state, state[1:])):
+                            continue
+                        erased = {(edge['kind'], edge['label'].split('@', 1)[0],
+                                   quotient(states[edge['to']]))
+                                  for edge in history['edges']
+                                  if edge['from'] == sid and predicate(edge['guard'], value)}
+                        expected = {(edge['kind'], edge['label'], edge['to'])
+                                    for edge in compact['edges']
+                                    if edge['from'] == quotient(state) and predicate(edge['guard'], value)}
+                        self.assertEqual(erased, expected,
+                                         (case['id'], side, value, state))
+
     def test_input_files_exact_rebuild(self):
         files={p.stem:p for p in (ROOT/'timeline-inputs').glob('*.json')}
         self.assertEqual(set(files),set(CASES))

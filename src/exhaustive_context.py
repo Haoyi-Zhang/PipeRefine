@@ -99,6 +99,23 @@ def enumerate_clients(horizon: int = 2) -> Tuple[Client, ...]:
 
 
 def client_legal(profile: Profile, client: Client) -> bool:
+    # Legality must not silently rely on the enumerator's prefilter when a
+    # caller supplies a hand-written client.
+    if any(type(launch) is not int or launch < 0 for launch in client.launches):
+        return False
+    if any(right <= left for left, right in zip(client.launches, client.launches[1:])):
+        return False
+    for tags in (client.drives, client.samples):
+        for tag in tags:
+            if (type(tag) is not tuple or len(tag) != 2 or
+                    any(type(value) is not int for value in tag)):
+                return False
+            owner, age = tag
+            if not 0 <= owner < len(client.launches) or age < 0:
+                return False
+        # Distinct fixed input/output ports have separate collision domains.
+        if not _collision_free(tags, client.launches):
+            return False
     if any(right - left < profile.gap
            for left, right in zip(client.launches, client.launches[1:])):
         return False

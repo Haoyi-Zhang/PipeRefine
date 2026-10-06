@@ -1,6 +1,6 @@
 {
   "status": "pass",
-  "scope": "Targeted repair and clean reproduction of the retained bounded artifact and current paper; not machine-checked general proof, source-language or RTL validation, industrial workload evidence, venue-rule review, or independent peer review.",
+  "scope": "Historical reproduction of the September 2026 artifact and paper. The 102-test count, 12-page build, timings, archive checks and PDF inspection below refer to that source state, not the edited manuscript or the current native 108-test run.",
   "source": "clean extraction of the packaged complete-project and standalone-repository delivery shapes",
   "scientific_reproduction": {
     "unit_tests": 102,

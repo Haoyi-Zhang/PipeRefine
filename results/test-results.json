@@ -1,5 +1,5 @@
 {
-  "count": 102,
+  "count": 108,
   "errors": 0,
   "failures": 0,
   "tests": [
@@ -53,6 +53,10 @@
     },
     {
       "status": "pass",
+      "test": "test_exhaustive_context.ExhaustiveContextTests.test_all_optional_drives_and_samples_must_be_collision_free"
+    },
+    {
+      "status": "pass",
       "test": "test_exhaustive_context.ExhaustiveContextTests.test_client_universe_is_nontrivial"
     },
     {
@@ -61,7 +65,19 @@
     },
     {
       "status": "pass",
+      "test": "test_exhaustive_context.ExhaustiveContextTests.test_enumerated_clients_satisfy_domain_checks"
+    },
+    {
+      "status": "pass",
       "test": "test_exhaustive_context.ExhaustiveContextTests.test_exhaustive_context_matches_criterion"
+    },
+    {
+      "status": "pass",
+      "test": "test_exhaustive_context.ExhaustiveContextTests.test_launch_order_nonnegativity_and_integer_types"
+    },
+    {
+      "status": "pass",
+      "test": "test_exhaustive_context.ExhaustiveContextTests.test_orphan_and_negative_age_tags_are_illegal"
     },
     {
       "status": "pass",
@@ -325,6 +341,10 @@
     },
     {
       "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_raw_history_and_age_action_alphabets_are_not_identical"
+    },
+    {
+      "status": "pass",
       "test": "test_timeline.TimelineCorrespondence.test_read_is_contravariant"
     },
     {
@@ -334,6 +354,10 @@
     {
       "status": "pass",
       "test": "test_timeline.TimelineCorrespondence.test_retained_client_records_replay_without_producer_reconstruction"
+    },
+    {
+      "status": "pass",
+      "test": "test_timeline.TimelineCorrespondence.test_serial_quotient_edges_match_after_uniform_age_label_erasure"
     },
     {
       "status": "pass",

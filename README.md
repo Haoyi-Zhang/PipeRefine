@@ -5,6 +5,12 @@ described in the accompanying paper. It uses only the Python standard library,
 requires no network access, and does not call an external solver or model API.
 The code is distributed under `LICENSE` (MIT).
 
+The complete reproduction workflow below requires a POSIX system
+providing Python's `resource` module (for example Linux). Python 3.12 is used by
+the supplied Ubuntu 24.04 scientific-check workflow. Unit tests and the core
+finite algorithms also run natively on Windows; that path does not execute the
+POSIX resource-limited drivers.
+
 ## Scientific scope
 
 A timing profile has a minimum launch gap, finite input read-age sets, finite
@@ -52,6 +58,10 @@ the theorem's canonical witnesses.
 The retained result contains 52 profiles, 3,665 collision-free clients, and all
 2,704 ordered profile pairs. Explicit legal-client-set inclusion and the direct
 gap/read/write criterion each accept exactly 365 pairs and disagree zero times.
+
+`client_legal` checks ownership, nonnegative ordered launches, integer tags, and
+optional-event collisions independently of the client's origin. Hand-written
+clients do not bypass the domain checks used by the enumerator.
 
 ### Lilac declaration normalization
 
@@ -108,7 +118,12 @@ exhaustive-micro, and bibliography campaigns; checks certificates, spoiler DAGs,
 tagged clients, source bounds, collision oracles, and bibliography mutations;
 and byte-compares 294 claim-relevant scientific files. A successful run reports
 `status: pass` and the current unit-test count. Timing measurements are intentionally
-excluded from deterministic byte equality.
+excluded from deterministic byte equality. The retained `results/reproduction.json`
+records a historical 102-test reproduction and historical paper-build checks;
+it is not evidence that the edited manuscript was rebuilt. The current native
+Windows CPython 3.12.14 run passes 108 tests and replays the finite core results,
+with 114 byte-identical input regenerations, 284 matching JSON objects, and an
+unchanged 2,704-row micro-pair table. It does not execute the POSIX drivers.
 
 To rebuild retained outputs into separate directories without overwriting them:
 
@@ -139,7 +154,7 @@ python src/generate_anchor.py /tmp/anchor-inputs
 - `src/check.py`: independent parser, local-rank checker, reverse AND/OR oracle,
   and spoiler-DAG checker.
 - `src/timeline.py`: profiles, direct criterion, launch-history translation, age
-  quotient, and canonical clients.
+  quotient after uniform need/sample age-label erasure, and canonical clients.
 - `src/timeline_check.py`: separately written evaluator, physical collision
   enumerator, persisted-event client replay, canonical tie/rank binding, and
   launch-history action/drop checker.
