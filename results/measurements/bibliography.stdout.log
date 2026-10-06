@@ -1,0 +1,12 @@
+{
+  "citation_occurrences": 175,
+  "cited_entries": 69,
+  "doi_entries": 65,
+  "entries": 69,
+  "external_resolution_note": "structural and retained-metadata audit; not a live resolver or independent novelty review",
+  "high_risk_metadata_checks": 9,
+  "minimum_required": 55,
+  "status": "pass",
+  "unique_stable_locators": 69,
+  "url_only_entries": 4
+}

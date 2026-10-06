@@ -1,0 +1,10 @@
+{
+  "contextual_refinement_pairs": 365,
+  "criterion_true_pairs": 365,
+  "disagreements": 0,
+  "enumerated_clients": 3665,
+  "independence": "does not import timeline.py or timeline_check.py",
+  "ordered_profile_pairs": 2704,
+  "profiles": 52,
+  "scope": "one input port, one output port, ages 0..2, gaps 1..2"
+}

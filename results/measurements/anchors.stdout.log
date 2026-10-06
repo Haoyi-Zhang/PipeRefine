@@ -1,0 +1,9 @@
+{
+  "records": 6,
+  "reflexivity_disagreements": 0,
+  "rejected_boundary_records": 1,
+  "scope": "manual normalization of published Lilac timing declarations; no source parser, body semantics, bit widths, where-clause functions, or RTL",
+  "span_collision_disagreements": 0,
+  "supported_records": 5,
+  "supported_valuations": 29
+}

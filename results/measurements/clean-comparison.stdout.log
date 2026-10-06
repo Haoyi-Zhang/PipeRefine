@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "unit_tests": 108,
+  "regenerated_inputs": 41,
+  "regenerated_timeline_inputs": 67,
+  "regenerated_anchor_inputs": 6,
+  "exhaustive_micro_profiles": 52,
+  "exhaustive_micro_profile_pairs": 2704,
+  "exhaustive_micro_clients": 3665,
+  "bibliography_entries": 69,
+  "compared_scientific_files": 294,
+  "checks": [
+    "unit tests",
+    "exact input regeneration",
+    "bitset solving",
+    "local rank equations",
+    "reverse AND/OR oracle",
+    "spoiler DAG replay",
+    "port-separation/collision equivalence",
+    "all-tag client ownership/collision checks",
+    "persisted absolute-time client replay and tie/rank binding",
+    "history action/drop translation checks",
+    "history-game correspondence",
+    "independent exhaustive client-set inclusion oracle",
+    "published-declaration normalization boundary",
+    "bibliography coverage and high-risk metadata mutations",
+    "scientific result equality"
+  ],
+  "timing_equality_required": false
+}
