@@ -132,18 +132,33 @@ def arena(c,env):
     for a,out in ((I,iedges),(S,sedges)):
         for k,e in enumerate(a['edges']):
             if predicate(e['guard'],env):out[e['from']].append((k,e))
+    # Only this consumer's independently evaluated enabled edges are indexed.
+    indexed=[]
+    for outgoing in (iedges,sedges):
+        side=[]
+        for rows in outgoing:
+            groups=None
+            if all(type(e['kind']) is str and type(e['label']) is str for _,e in rows):
+                groups={}
+                for entry in rows:
+                    e=entry[1]; groups.setdefault((e['kind'],e['label']),[]).append(entry)
+            side.append(groups)
+        indexed.append(side)
+    imatches,smatches=indexed
     challenges=[[] for _ in range(I['states']*n)]
     for i in range(I['states']):
         for s in range(n):
             cs=challenges[i*n+s]
             for k,e in sedges[s]:
                 if e['kind']!='in' or not predicate(c['environment_inputs'].get(e['label'],True),env):continue
-                successors=sorted({r['to']*n+e['to'] for _,r in iedges[i]
+                bucket=iedges[i] if imatches[i] is None or type(e['label']) is not str else imatches[i].get(('in',e['label']),())
+                successors=sorted({r['to']*n+e['to'] for _,r in bucket
                                    if r['kind']=='in' and r['label']==e['label']})
                 cs.append({'kind':'in','edge':k,'label':e['label'],'replies':successors})
             for k,e in iedges[i]:
                 if e['kind']!='out':continue
-                successors=sorted({e['to']*n+r['to'] for _,r in sedges[s]
+                bucket=sedges[s] if smatches[s] is None or type(e['label']) is not str else smatches[s].get(('out',e['label']),())
+                successors=sorted({e['to']*n+r['to'] for _,r in bucket
                                    if r['kind']=='out' and r['label']==e['label']})
                 cs.append({'kind':'out','edge':k,'label':e['label'],'replies':successors})
     return challenges

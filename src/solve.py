@@ -6,6 +6,19 @@ This is an exact bounded reference prototype, not a new featured-game algorithm.
 from domain import valuations, masks, guard
 
 
+def _reply_index(outgoing):
+    indexed=[]
+    for rows in outgoing:
+        # Preserve the scan for Python-only, nonstandard string objects.
+        if any(type(row[1]) is not str or type(row[2]) is not str for row in rows):
+            indexed.append(None); continue
+        groups={}
+        for row in rows:
+            groups.setdefault((row[1],row[2]),[]).append(row)
+        indexed.append(groups)
+    return indexed
+
+
 def solve(case):
     values = valuations(case)
     m, n = case['implementation']['states'], case['specification']['states']
@@ -13,6 +26,7 @@ def solve(case):
     I, S = masks(case, values)
     environment = {label: sum(1 << k for k,p in enumerate(values) if guard(pred,p))
                    for label,pred in case['environment_inputs'].items()}
+    i_replies,s_replies=_reply_index(I),_reply_index(S)
     # Each challenge has an enabling mask and alternative response masks/targets.
     obligations = [[] for _ in range(m*n)]
     for i in range(m):
@@ -21,11 +35,13 @@ def solve(case):
             for eid,kind,label,target,enabled in S[s]:
                 if kind != 'in': continue
                 allowed = environment.get(label, all_values)
-                replies = [(j*n+target,g) for _,k,l,j,g in I[i] if k=='in' and l==label]
+                bucket=I[i] if i_replies[i] is None or type(label) is not str else i_replies[i].get(('in',label),())
+                replies = [(j*n+target,g) for _,k,l,j,g in bucket if k=='in' and l==label]
                 obligations[q].append((enabled & allowed, replies))
             for eid,kind,label,target,enabled in I[i]:
                 if kind != 'out': continue
-                replies = [(target*n+t,g) for _,k,l,t,g in S[s] if k=='out' and l==label]
+                bucket=S[s] if s_replies[s] is None or type(label) is not str else s_replies[s].get(('out',label),())
+                replies = [(target*n+t,g) for _,k,l,t,g in bucket if k=='out' and l==label]
                 obligations[q].append((enabled,replies))
     winning = [all_values]*(m*n)
     ranks = [[-1]*(m*n) for _ in values]

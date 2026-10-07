@@ -104,6 +104,8 @@ Run from this directory:
 
 ```bash
 python -m unittest discover -s tests -v
+python -B tests/reply_index_regression.py
+python -B -O tests/reply_index_regression.py
 python run.py --check-only
 python run_timeline.py --check-only
 python run_anchor.py --check-only
@@ -111,6 +113,17 @@ python run_exhaustive.py --check-only
 python run_bibliography.py --check-only
 python reproduce.py
 ```
+
+The two explicit reply-index checks each run four additional finite regression
+groups; they are also explicit steps in scientific CI. They are separate from
+the frozen 108-test discovery inventory checked by `reproduce.py`. Their
+test-local reference enumerates raw-edge arenas, spoiler trees and all tiny
+postfixed relations, not an earlier implementation. The producer builds local
+ordered reply buckets after mask evaluation; the independent checker builds
+its own buckets after guard evaluation. Parallel edges, disabled masks,
+canonical reply sets, rank cells and all reported semantic/visit counts retain
+their meanings. This is an implementation-only change with no measured
+speedup claim.
 
 `reproduce.py` creates fresh temporary directories; regenerates all 41 general,
 67 timeline, and six source records; reruns the general, timeline, source,
@@ -166,7 +179,7 @@ python src/generate_anchor.py /tmp/anchor-inputs
 - `results/`, `timeline-results/`, `anchor-results/`, `micro-results/`,
   `bibliography-results/`: retained deterministic scientific outputs.
 - `literature/`: bibliography copy, citation inventory, and metadata audit.
-- `tests/`: semantic, schema, mutation, source, exhaustive, and bibliography tests; the exact passing count is recorded by `results/test-results.json`.
+- `tests/`: semantic, schema, mutation, source, exhaustive, and bibliography tests; the exact discovery inventory is recorded by `results/test-results.json`. `reply_index_regression.py` is the separately executed finite suite above.
 - `proofs/`: readable proof notes and explicit scope boundaries.
 - `claim_evidence_ledger.csv`: material claims mapped to proof and evidence.
 - `external_resources.csv`, `SOURCES.md`: scholarly-source inventory and provenance.
