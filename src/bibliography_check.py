@@ -260,6 +260,16 @@ def validate(entries: list[BibEntry], counts: dict[str, int],
         "interfacebased": {"doi": "10.1145/266021.266060"},
         "cleaveland": {"doi": "10.1007/BFb0023750"},
         "pixley": {"doi": "10.1109/43.180261"},
+        "cosa": {
+            "author": "Cristian Mattarei and Makai Mann and Clark Barrett and Ross G. Daly and Dillon Huff and Pat Hanrahan",
+            "year": "2018", "doi": "10.23919/FMCAD.2018.8603014",
+        },
+        "omega": {
+            "author": "William Pugh", "title": "A Practical Algorithm for Exact Array Dependence Analysis",
+            "year": "1992", "journal": "Communications of the ACM",
+            "volume": "35", "number": "8", "pages": "102--114",
+            "doi": "10.1145/135226.135233",
+        },
     }
     for key, expected in known.items():
         _require_equal(by_key[key], expected)

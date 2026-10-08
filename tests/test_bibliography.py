@@ -52,11 +52,16 @@ class BibliographyAuditTests(unittest.TestCase):
             validate(entries, self.counts, self.audit)
 
     def test_high_risk_metadata_mutation_is_rejected(self):
-        entries = copy.deepcopy(self.entries)
-        anvil = next(entry for entry in entries if entry.key == "anvil")
-        anvil.fields["author"] = "Incorrect Author"
-        with self.assertRaises(BibliographyError):
-            validate(entries, self.counts, self.audit)
+        for key,field in (("anvil","author"),("cosa","author"),("omega","doi")):
+            with self.subTest(key=key,field=field):
+                entries = copy.deepcopy(self.entries)
+                entry = next(entry for entry in entries if entry.key == key)
+                entry.fields[field] = "Incorrect Metadata"
+                audit=copy.deepcopy(self.audit)
+                if field=="doi":
+                    audit[key]["stable_identifier"]="doi:Incorrect Metadata"
+                with self.assertRaises(BibliographyError):
+                    validate(entries, self.counts, audit)
 
     def test_audit_key_mismatch_is_rejected(self):
         audit = dict(self.audit)

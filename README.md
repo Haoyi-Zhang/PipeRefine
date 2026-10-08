@@ -90,7 +90,7 @@ require a branching spoiler DAG rather than one separating word.
 manuscript citation-key inventory, citation counts, and a row-by-row metadata
 audit. `run_bibliography.py` enforces at least 55 entries, requires every entry
 to be cited, rejects duplicate or missing stable locators, cross-checks the audit
-catalog, and guards nine high-risk published metadata records. The current
+catalog, and guards eleven selected published metadata records. The current
 result has 69 cited entries, 175 citation occurrences, 65 DOI records, four
 stable scholarly URL records, and 69 unique locators.
 
