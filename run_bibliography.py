@@ -37,7 +37,7 @@ def main() -> None:
         return
 
     args.output.mkdir(parents=True, exist_ok=True)
-    (args.output / "summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    (args.output / "summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     with (args.output / "entries.csv").open("w", newline="", encoding="utf-8") as handle:
         fields = ["key", "entry_type", "year", "venue", "stable_identifier", "citation_count"]
         writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
