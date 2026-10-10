@@ -39,6 +39,7 @@ jobs:
             "$@" >"scientific-output/${label}.stdout.log" 2>"scientific-output/${label}.stderr.log"
           }
           run unit-tests python -B -m unittest discover -s tests -v
+          run directed-client-regression python -B tests/directed_client_regression.py
           run reply-index python -B tests/reply_index_regression.py
           run reply-index-optimized python -B -O tests/reply_index_regression.py
           run general python -B run.py --output scientific-output/general

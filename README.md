@@ -28,7 +28,10 @@ For admitted profiles, the direct criterion is:
 
 Failed clauses produce a transaction-tagged old-client counterexample. The
 persisted record contains its actual nonnegative launches, every drive and
-sample tag, and failure metadata. An independent checker enforces global
+sample tag, and failure metadata. The fixed directed-port universe is the union
+of both profiles' map keys, including empty age sets. Optional drives may use
+any input in that universe, but not outputs or undeclared names; samples must
+use outputs. An independent checker enforces global
 port/cycle injectivity across all tags, replays the first absolute violation,
 and binds it to a separately checked game rank. The artifact also translates
 profiles to launch-history interface games and validates enabled actions for
@@ -106,6 +109,7 @@ Run from this directory:
 python -m unittest discover -s tests -v
 python -B tests/reply_index_regression.py
 python -B -O tests/reply_index_regression.py
+python -B tests/directed_client_regression.py -v
 python run.py --check-only
 python run_timeline.py --check-only
 python run_anchor.py --check-only

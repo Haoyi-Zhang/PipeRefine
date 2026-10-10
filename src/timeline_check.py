@@ -145,7 +145,14 @@ def _tagged_event(item, launches):
     return item['port'], launch, age, time
 
 
-def _parsed_client(client):
+def directed_ports(case):
+    """Fixed directed universe, including ports omitted by either profile."""
+    return {kind: set().union(*(case[side].get(kind, {})
+                               for side in ('implementation', 'specification')))
+            for kind in ('reads', 'writes')}
+
+
+def _parsed_client(client, ports):
     """Parse one persisted client and enforce ownership and global physical injectivity."""
     need(type(client) is dict, 'client object')
     launches = client.get('launches')
@@ -156,6 +163,7 @@ def _parsed_client(client):
     parsed = {'launches': launches, 'drives': [], 'samples': []}
     occupied = {}
     per_kind_tags = {'drives': set(), 'samples': set()}
+    need(not (ports['reads'] & ports['writes']), 'port direction collision')
     for field in ('drives', 'samples'):
         items = client.get(field, [])
         need(type(items) is list, f'client {field} list')
@@ -163,6 +171,8 @@ def _parsed_client(client):
             event = _tagged_event(item, launches)
             need(event is not None, f'invalid {field[:-1]} tag ownership or time')
             port, launch, age, time = event
+            direction = 'reads' if field == 'drives' else 'writes'
+            need(port in ports[direction], f'{field[:-1]} port direction')
             tag = port, launch, age
             slot = port, time
             need(tag not in per_kind_tags[field], f'duplicate {field[:-1]} tag')
@@ -175,15 +185,18 @@ def _parsed_client(client):
     return parsed
 
 
-def client_legal(profile, env, client):
+def client_legal(profile, env, client, ports=None):
     """Validate a launch-indexed client and every tagged physical projection.
 
     Optional drives are permitted, but every drive and sample must belong to an
     actual nonnegative launch and all tags together must project injectively on
-    each physical port/cycle slot.
+    each physical port/cycle slot. ``ports`` supplies the fixed directed universe;
+    for a standalone profile its declared map keys (including empty maps) are used.
     """
     try:
-        parsed = _parsed_client(client)
+        if ports is None:
+            ports = {kind: set(profile.get(kind, {})) for kind in ('reads', 'writes')}
+        parsed = _parsed_client(client, ports)
     except Invalid:
         return False
     p = evaluated(profile, env)
@@ -225,7 +238,7 @@ def canonical_failure(case, env):
 
 def replay_first_violation(case, env, client):
     """Compute the first absolute implementation violation from persisted events."""
-    parsed = _parsed_client(client)
+    parsed = _parsed_client(client, directed_ports(case))
     impl = evaluated(case['implementation'], env)
     violations = []
 
@@ -253,9 +266,10 @@ def replay_first_violation(case, env, client):
 
 def check_counterexample(case, env, client, game_rank):
     """Check one persisted shortest client against semantics and a verified game rank."""
-    need(client_legal(case['specification'], env, client),
+    ports = directed_ports(case)
+    need(client_legal(case['specification'], env, client, ports),
          'persisted client is not legal for the specification')
-    need(not client_legal(case['implementation'], env, client),
+    need(not client_legal(case['implementation'], env, client, ports),
          'persisted client is legal for the implementation')
 
     expected = canonical_failure(case, env)

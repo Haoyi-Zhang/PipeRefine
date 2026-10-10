@@ -7,6 +7,8 @@ the implementation; it does not replace the quantified arguments below.
 
 ## 1. Profiles, port separation, and launch-indexed clients
 
+Profiles being compared share a fixed disjoint universe of input and output
+ports. An omitted map entry has an empty age set, not removal from that universe.
 After fixing one admitted compile-time valuation, a profile `P` consists of:
 
 - a positive initiation gap `g_P`;
@@ -38,7 +40,10 @@ at absolute cycle `t+a`. It is legal for `P` exactly when:
 4. the projection is injective on **all** tags in `D union M`, so no two tagged
    events use the same physical port/cycle slot.
 
-Extra tagged input drives are permitted, but they obey the same ownership and
+Extra tagged input drives are permitted on any input in the fixed universe,
+including inputs with no required ages. Drives on outputs or undeclared ports
+and samples on inputs or undeclared ports are outside the client domain.
+All permitted tags obey the same ownership and
 global collision rule. For example, let `g=1`, `R(x)={0}`, and `L={0,1}`. The
 two required drives `(0,x,0)` and `(1,x,0)` are collision free. Adding
 `(0,x,1)` is illegal because it collides with `(1,x,0)` at physical cycle one;
