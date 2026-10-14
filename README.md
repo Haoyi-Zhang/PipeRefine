@@ -205,13 +205,19 @@ does not support statistical superiority, and the direct criterion is cheapest
 on this cohort. Own-process Windows working-set bytes are not Linux RSS or an
 OS memory cap; raw stages and capability flags are retained.
 
-`workflow-results/` is the single current result collection: normal/optimized
+`workflow-results/` contains the recorded workflow collection: normal/optimized
 full reports, selected raw campaign summaries/measurements, the compound input,
 cells and evidence, a common answer stream, three process/metric receipts,
 named regression receipts, source/input hashes and the observed environment.
 Public receipts tokenize only machine-specific paths; private raw receipts are
 not used as the sole source of any new paper number. Earlier result directories
 and timings remain unchanged historical evidence, not replaced by this run.
+
+The two full-run bibliography snapshots preserve their execution-time metadata.
+`bibliography-results/` is authoritative for the corrected publisher records;
+`workflow-results/bibliography/normal/` and `optimized/` contain independently
+regenerated and checked copies. No semantic or timing result was changed by
+this bibliography-only derivation.
 
 To rebuild retained outputs into separate directories without overwriting them:
 

@@ -14,6 +14,14 @@ check, not additional independent scientific observations. `campaigns/` retains
 fresh raw summary/measurement objects, not copies of all historical outputs.
 Exact compared semantic outputs already reside in the earlier five directories.
 
+The bibliography CSVs under `campaigns/normal/` and `campaigns/optimized/`
+retain metadata from those recorded executions. The authoritative bibliography
+is `../bibliography-results/`. After publisher-record corrections, bibliography-only
+generation in both interpreter modes produces the same 69 rows in
+`bibliography/normal/` and `bibliography/optimized/`; their selected-output checks
+pass against the corresponding source records. This derivation leaves the
+recorded full-campaign measurements unchanged.
+
 `compound/` contains the current factor inputs, four disjoint maximum-gap cells,
 certificates, witnesses, clients, summary and measurement. The independent replay
 checks factor-to-cell coverage and consumes persisted evidence without product
