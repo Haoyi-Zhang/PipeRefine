@@ -1,0 +1,17 @@
+{
+  "families": 41,
+  "maximum_shortest_depth": 16,
+  "maximum_states": 48,
+  "scope": "finite inputs only; no RTL or contextual completeness claim",
+  "totals": {
+    "bad": 334,
+    "cells": 204,
+    "equation_visits": 8091,
+    "guard_cells": 279,
+    "safe": 186,
+    "state_pair_valuations": 9076,
+    "valuations": 520,
+    "witness_nodes": 51
+  },
+  "zero_disagreements": true
+}

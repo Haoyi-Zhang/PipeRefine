@@ -56,7 +56,7 @@ the exact citation inventory.
 The deterministic bibliography check reports 65 DOI records and four records
 with stable scholarly URLs, for 69 unique locators. It enforces a minimum of 55
 references, complete in-text use, locator uniqueness, audit/BibTeX agreement,
-and nine high-risk metadata invariants, including current published records for
+and eleven high-risk metadata invariants, including current published records for
 Lilac, Anvil, and Spade. This structural and retained-metadata check is evidence
 against padding, stale identifiers, and silent metadata drift; it is not live
 resolver evidence or independent validation of every cited claim.
@@ -74,6 +74,18 @@ The executable artifact has no third-party runtime dependency. The surrounding
 paper package contains the supplied `IEEEtran.cls` and `IEEEtran.bst`; they are
 unmodified and are not part of the standalone repository archive. TeX and
 BibTeX are document build tools rather than scientific baselines.
+
+The additional compound-operation inputs in `examples/` are owned finite
+mathematical fixtures, not Lilac programs or hardware workloads. The profile
+compares three local Python paths on the unchanged 67-family timeline cohort;
+it does not execute an external featured-game engine or a hardware compiler.
+`workflow-results/environment.json` records the observed local CPU, OS and Python.
+Current results and source bindings are separate from retained historical runs.
+
+OpenAI Codex assisted with the product implementation/controls, portable
+reproduction and consumer repairs, query profiling, and corresponding proof,
+documentation and evidence updates. This attribution does not imply independent
+human verification or alter the existing MIT/template/source notices.
 
 ## Trust boundary
 

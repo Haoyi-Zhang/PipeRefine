@@ -5,7 +5,6 @@ import csv
 import json
 import os
 from pathlib import Path
-import resource
 import sys
 import time
 
@@ -13,10 +12,11 @@ ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'src'))
 from solve import solve
 from check import validate_case,check_certificate,make_witness,check_witness,predicate
+from runtime_limits import configure,check_cpu,peak_rss_kib
 
 
 def dump(path,obj):
-    path.write_text(json.dumps(obj,indent=2,sort_keys=True)+'\n')
+    path.write_text(json.dumps(obj,indent=2,sort_keys=True)+'\n',encoding='utf-8',newline='\n')
 
 
 def main():
@@ -24,12 +24,9 @@ def main():
     p.add_argument('--output',type=Path,default=ROOT/'results')
     p.add_argument('--only',type=str,default=None,help='single exact case identifier')
     p.add_argument('--check-only',action='store_true',help='check retained certificates; do not solve')
+    p.add_argument('--portable',action='store_true',help='cooperative checks, no OS hard-limit claim')
     args=p.parse_args()
-    resource.setrlimit(resource.RLIMIT_AS,(2*1024**3,2*1024**3))
-    resource.setrlimit(resource.RLIMIT_CPU,(110,110))
-    # Keep one CPU while leaving remaining headroom for the surrounding environment.
-    if hasattr(os,'sched_setaffinity'):
-        os.sched_setaffinity(0,{min(os.sched_getaffinity(0))})
+    limits=configure(args.portable)
     output=args.output.resolve()
     if not args.check_only:output.mkdir(parents=True,exist_ok=True)
     paths=sorted((ROOT/'inputs').glob('*.json'))
@@ -37,6 +34,7 @@ def main():
     if not paths:raise SystemExit('No matching input')
     t0=time.perf_counter();c0=time.process_time();rows=[]
     for path in paths:
+        check_cpu()
         c=json.loads(path.read_text());validate_case(c)
         start=time.perf_counter()
         cert_path=output/(path.stem+'.certificate.json')
@@ -68,8 +66,7 @@ def main():
              'maximum_states':max(max(r['implementation_states'],r['specification_states']) for r in rows),
              'zero_disagreements':True,'scope':'finite inputs only; no RTL or contextual completeness claim'}
     measurement={'wall_seconds':time.perf_counter()-t0,'cpu_seconds':time.process_time()-c0,
-                 'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'workers':1,
-                 'cpu_limit_seconds':110,'address_space_limit_bytes':2*1024**3}
+                 'peak_rss_kib':peak_rss_kib(),'workers':1,'runtime_limits':limits}
     if not args.check_only:
         with (output/'families.csv').open('w',newline='') as f:
             w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)

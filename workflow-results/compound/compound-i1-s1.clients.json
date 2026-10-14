@@ -1,0 +1,12 @@
+{
+  "case_id": "compound-i1-s1",
+  "counterexamples": [],
+  "safe_valuation_ids": [
+    0
+  ],
+  "valuations": [
+    {
+      "p": 1
+    }
+  ]
+}

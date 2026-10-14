@@ -7,7 +7,6 @@ import argparse
 import csv
 import json
 from pathlib import Path
-import resource
 import os
 import sys
 
@@ -16,21 +15,20 @@ sys.path.insert(0, str(ROOT / 'src'))
 from check import Invalid
 from timeline_check import (validate_timeline, direct_refines, port_separated,
                             collision_free, evaluated)
+from runtime_limits import configure,check_cpu,scientific_equal
 
 
 def dump(path, obj):
-    path.write_text(json.dumps(obj, indent=2, sort_keys=True) + '\n')
+    path.write_text(json.dumps(obj, indent=2, sort_keys=True) + '\n',encoding='utf-8',newline='\n')
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, default=ROOT / 'anchor-results')
     parser.add_argument('--check-only', action='store_true')
+    parser.add_argument('--portable',action='store_true')
     args = parser.parse_args()
-    resource.setrlimit(resource.RLIMIT_AS, (2 * 1024**3, 2 * 1024**3))
-    resource.setrlimit(resource.RLIMIT_CPU, (110, 110))
-    if hasattr(os, 'sched_setaffinity'):
-        os.sched_setaffinity(0, {min(os.sched_getaffinity(0))})
+    configure(args.portable)
     args.output.mkdir(parents=True, exist_ok=True)
 
     rows = []
@@ -38,6 +36,7 @@ def main():
     span_collision_disagreements = 0
     reflexivity_disagreements = 0
     for path in sorted((ROOT / 'anchor-inputs').glob('*.json')):
+        check_cpu()
         case = json.loads(path.read_text())
         expected = case['expected_supported']
         try:
@@ -89,7 +88,7 @@ def main():
         raise RuntimeError('anchor cross-check disagreement')
 
     if args.check_only:
-        if json.loads((args.output / 'summary.json').read_text()) != summary:
+        if not scientific_equal(json.loads((args.output / 'summary.json').read_text()),summary):
             raise RuntimeError('retained anchor summary mismatch')
         with (args.output / 'profiles.csv').open(newline='') as handle:
             retained = list(csv.DictReader(handle))

@@ -1,0 +1,70 @@
+{
+  "cells": [
+    {
+      "cell": "compound-i0-s0",
+      "safe": 0,
+      "valuations": 0
+    },
+    {
+      "cell": "compound-i0-s1",
+      "safe": 1,
+      "valuations": 2
+    },
+    {
+      "cell": "compound-i1-s0",
+      "safe": 0,
+      "valuations": 0
+    },
+    {
+      "cell": "compound-i1-s1",
+      "safe": 1,
+      "valuations": 1
+    }
+  ],
+  "factor_intersection_sufficient_control": [
+    {
+      "p": 1
+    }
+  ],
+  "input_sha256": {
+    "left": "ae69bab9edfc07c7a5e35535c87ad1e692f10a17f8909cb776380ae5f063cc98",
+    "right": "a3479e7a074da5c7bd08fbbe563f25f0a4fb0fadc05314b4256408ef1c84c8c7"
+  },
+  "recovered_valuations": [
+    {
+      "p": 2
+    }
+  ],
+  "safe_valuations": [
+    {
+      "p": 1
+    },
+    {
+      "p": 2
+    }
+  ],
+  "same_guarantee_note": "factor intersection is sufficient only, not the exact baseline",
+  "scope": "one owned synchronous disjoint-port example; not a new benchmark denominator or wiring theorem",
+  "source_sha256": {
+    "run_product.py": "aee4f82b52ccd0099ffc5eb879d05453acdd1bbf5fd1352a6808f504fd360b04",
+    "src/check.py": "3925ef8a976ad0af6cceae35fa995dd6e21454d3564c1ba8eff1d008a099cd0e",
+    "src/domain.py": "e365af45c85d906a026c7f3094ce56dceaaf19ed6152441bbbe418ebc3020dae",
+    "src/runtime_limits.py": "a8525b92f3585ef6b4a2488ea00ab1006ba9cae1ddbb8deb25edd9ccf286c9f1",
+    "src/solve.py": "c000c6411b0771fbfd2158d59106a7d17b9de6f8e0783b0359814036387cf62e",
+    "src/timeline.py": "62d65999b37b65ecaa73cfacf686c67e2ca7e50583fb64e31c44e6fc29512b2c",
+    "src/timeline_check.py": "ffb9553ce467f1e6d0174b86dd28ff34861deb9871d695de6f130770a2262216",
+    "src/timeline_product.py": "0bcaa8fb616c16e15f8185d4a15fd423e0003e2c650965fdc8a9bc64d4965bd3",
+    "src/timeline_product_check.py": "d6ebf770b49d2ace16b537d14db0aa47d6f0ce5f7c0768a71c5077fcc8db8313"
+  },
+  "valuations": [
+    {
+      "p": 1
+    },
+    {
+      "p": 2
+    },
+    {
+      "p": 3
+    }
+  ]
+}

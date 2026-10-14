@@ -296,8 +296,13 @@ def check_client_record(case, values, safe_ids, record, rank_rows, initial_pair)
     """Validate one retained .clients.json file without rebuilding producer clients."""
     need(type(record) is dict, 'client record object')
     need(record.get('case_id') == case['id'], 'client record case identifier')
-    need(record.get('safe_valuation_ids') == safe_ids, 'client record safe region')
-    need(record.get('valuations') == values, 'client record valuation order')
+    ids=record.get('safe_valuation_ids')
+    table=record.get('valuations')
+    need(type(ids) is list and all(type(k) is int for k in ids) and ids==safe_ids,
+         'client record safe region or index types')
+    need(type(table) is list and all(type(p) is dict and
+         all(type(v) is int for v in p.values()) for p in table) and table==values,
+         'client record valuation order or integer types')
     counterexamples = record.get('counterexamples')
     need(type(counterexamples) is list, 'client counterexample list')
 
@@ -310,9 +315,12 @@ def check_client_record(case, values, safe_ids, record, rank_rows, initial_pair)
              'counterexample valuation identifier')
         need(valuation_id not in seen, 'duplicate counterexample valuation')
         seen.add(valuation_id)
-        need(row.get('valuation') == values[valuation_id], 'counterexample valuation binding')
+        valuation=row.get('valuation')
+        need(type(valuation) is dict and all(type(v) is int for v in valuation.values()) and
+             valuation==values[valuation_id], 'counterexample valuation binding or integer types')
         verified_rank = rank_rows[valuation_id][initial_pair]
-        need(row.get('game_rank') == verified_rank, 'counterexample game-rank binding')
+        need(type(row.get('game_rank')) is int and row['game_rank'] == verified_rank,
+             'counterexample game-rank binding or integer type')
         check_counterexample(case, values[valuation_id], row.get('client'), verified_rank)
     need(seen == expected_failures, 'missing or extraneous counterexample valuations')
     return len(counterexamples)

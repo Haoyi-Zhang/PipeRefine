@@ -164,6 +164,39 @@ The converse need not hold: a second factor with a larger shared gap can mask a
 throughput mismatch in the first. Wiring an output to an input also requires a
 value-association and timing-shift theorem outside this product rule.
 
+### Exact bounded-family product in the existing grammar
+
+The public grammar has no `max` expression. For factors with the same ordered
+parameter box, conjoin their admission assumptions and partition that common
+domain by `g_I1 >= g_I2` / `g_I1 < g_I2` and, independently,
+`g_S1 >= g_S2` / `g_S1 < g_S2`. These four conjunctions are pairwise disjoint
+and their union is the common domain: each integer comparison has exactly one
+truth value and equality is assigned only to the first choice. In each cell
+the chosen affine gap equals the corresponding maximum. The disjoint port
+maps are unchanged, and the larger horizon contains both factors' ages.
+Theorem 2 applied per cell therefore computes the exact product region; the
+union is not merely the sufficient intersection of factor-safe regions.
+Cells with no admitted valuation contribute the empty set. This is a finite
+encoding of Proposition 1's definition, not a new symbolic synthesis result.
+
+`src/timeline_product.py` emits the four cells. The separately written
+`src/timeline_product_check.py` imports no product producer: it evaluates both
+trusted factor inputs, recomputes maxima and map ownership, and requires exactly
+one occurrence of each common admitted valuation and no others. `run_product.py
+--check-only` reads persisted cases, certificates, spoilers and clients; it does
+not call the product or canonical-client constructors. Aliased directed ports
+and different ordered parameter boxes are rejected rather than guessed.
+
+For `examples/compound-left.json` and `compound-right.json`, the first factor
+has gaps `(p,1)`, the second `(2,2)`, for `p=1..3`. Each reads age zero and
+writes age one on disjoint ports. Factor intersection is `{1}`; the exact
+product has gaps `(max(p,2),2)` and safe set `{1,2}`. At `p=3` the earliest
+violation is the second launch at cycle 2, with initial game rank 4. This owned
+example exercises workflow utility, not benchmark expansion or evidence of a
+hardware tool integration. Seven named controls cover the exact region,
+ties/coverage, aliases, parameter mismatch, wrong maxima, missing/duplicate
+cells, and empty common admission.
+
 **Corollary 2 (compact client).** Let `r_S` be the total number of declared
 specification input ages. Every failed refinement has a counterexample with at
 most two launches, at most `2*r_S` tagged input facts, and at most one output

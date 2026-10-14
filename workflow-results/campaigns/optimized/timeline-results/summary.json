@@ -1,0 +1,17 @@
+{
+  "age_translation_families": 64,
+  "anchor_derived_families": 3,
+  "bad": 691,
+  "client_counterexamples": 691,
+  "client_game_depth_disagreements": 0,
+  "criterion_game_disagreements": 0,
+  "families": 67,
+  "history_translation_families": 3,
+  "maximum_client_game_depth": 6,
+  "minimum_client_game_depth": 2,
+  "port_collision_checker_disagreements": 0,
+  "safe": 270,
+  "scope": "port-separated launch-indexed timeline contracts, including bounded overlapping pipelines; compile-time bounded parameters",
+  "state_pair_valuations": 66688,
+  "valuations": 961
+}

@@ -1,0 +1,9 @@
+{
+  "id": "compound-left",
+  "group": "owned-workflow-example",
+  "horizon": 3,
+  "parameters": [{"name": "p", "lo": 1, "hi": 3}],
+  "assumption": true,
+  "implementation": {"gap": "p", "reads": {"a": [[0, 1]]}, "writes": {"u": [[1, 2]]}},
+  "specification": {"gap": 1, "reads": {"a": [[0, 1]]}, "writes": {"u": [[1, 2]]}}
+}

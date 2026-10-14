@@ -1,0 +1,959 @@
+{
+  "status": "pass",
+  "unit_tests": 118,
+  "test_report": {
+    "count": 118,
+    "errors": 0,
+    "failures": 0,
+    "tests": [
+      {
+        "status": "pass",
+        "test": "test_anchor.AnchorNormalization.test_five_reusable_declarations_inside_fragment"
+      },
+      {
+        "status": "pass",
+        "test": "test_anchor.AnchorNormalization.test_input_files_exact_rebuild"
+      },
+      {
+        "status": "pass",
+        "test": "test_anchor.AnchorNormalization.test_source_identity_is_bound"
+      },
+      {
+        "status": "pass",
+        "test": "test_anchor.AnchorNormalization.test_wide_input_is_explicit_boundary"
+      },
+      {
+        "status": "pass",
+        "test": "test_bibliography.BibliographyAuditTests.test_audit_key_mismatch_is_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_bibliography.BibliographyAuditTests.test_duplicate_stable_locator_is_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_bibliography.BibliographyAuditTests.test_high_risk_metadata_mutation_is_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_bibliography.BibliographyAuditTests.test_minimum_reference_count_is_enforced"
+      },
+      {
+        "status": "pass",
+        "test": "test_bibliography.BibliographyAuditTests.test_missing_stable_locator_is_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_bibliography.BibliographyAuditTests.test_parser_and_citation_extraction_preserve_nested_braces"
+      },
+      {
+        "status": "pass",
+        "test": "test_bibliography.BibliographyAuditTests.test_retained_bibliography_passes"
+      },
+      {
+        "status": "pass",
+        "test": "test_bibliography.BibliographyAuditTests.test_uncited_entry_is_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_exhaustive_context.ExhaustiveContextTests.test_all_optional_drives_and_samples_must_be_collision_free"
+      },
+      {
+        "status": "pass",
+        "test": "test_exhaustive_context.ExhaustiveContextTests.test_client_universe_is_nontrivial"
+      },
+      {
+        "status": "pass",
+        "test": "test_exhaustive_context.ExhaustiveContextTests.test_each_variance_direction_has_explicit_client"
+      },
+      {
+        "status": "pass",
+        "test": "test_exhaustive_context.ExhaustiveContextTests.test_enumerated_clients_satisfy_domain_checks"
+      },
+      {
+        "status": "pass",
+        "test": "test_exhaustive_context.ExhaustiveContextTests.test_exhaustive_context_matches_criterion"
+      },
+      {
+        "status": "pass",
+        "test": "test_exhaustive_context.ExhaustiveContextTests.test_launch_order_nonnegativity_and_integer_types"
+      },
+      {
+        "status": "pass",
+        "test": "test_exhaustive_context.ExhaustiveContextTests.test_orphan_and_negative_age_tags_are_illegal"
+      },
+      {
+        "status": "pass",
+        "test": "test_exhaustive_context.ExhaustiveContextTests.test_profile_and_pair_counts"
+      },
+      {
+        "status": "pass",
+        "test": "test_product.ProductControls.test_aliased_directed_ports_are_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_product.ProductControls.test_empty_common_admission_remains_empty"
+      },
+      {
+        "status": "pass",
+        "test": "test_product.ProductControls.test_exact_shared_gap_region_not_factor_intersection"
+      },
+      {
+        "status": "pass",
+        "test": "test_product.ProductControls.test_independent_consumer_rejects_partition_loss_or_overlap"
+      },
+      {
+        "status": "pass",
+        "test": "test_product.ProductControls.test_independent_consumer_rejects_wrong_maximum"
+      },
+      {
+        "status": "pass",
+        "test": "test_product.ProductControls.test_parameter_box_mismatch_is_not_silently_joined"
+      },
+      {
+        "status": "pass",
+        "test": "test_product.ProductControls.test_partition_is_disjoint_complete_and_ties_choose_left"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_boolean_global_selection"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_boolean_parameter_value"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_boolean_valuation_id"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_boolean_witness_edge"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_boolean_witness_parameter"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_branch_omission"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_coverage"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_extraneous_node"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_false_safe"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_global_selection"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_missing_leaf"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_nonminimal_rank"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_nonminimal_witness_depth"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_overlap"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_rank_dimension"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_round_counter"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_safe_region_omission_or_addition"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_valuation_binding"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_valuation_outside_domain"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_visit_counter"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.CertificateMutations.test_wrong_challenge"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SchemaControls.test_input_nondeterminism"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SchemaControls.test_nonpositive_modulus"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SchemaControls.test_parameter_out_of_range"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SchemaControls.test_polarity_collision"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SchemaControls.test_variable_multiplication"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_boolean_safe_index_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_branching_requires_strategy_not_word"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_correlation_not_a_bounding_box"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_empty_domain_is_vacuous"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_environment_input_restriction"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_gap_closed_form"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_global_shortest_order"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_input_contravariance"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_input_files_exact_rebuild"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_interior_is_not_determined_by_corners"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_no_progress_claim"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_parity_not_monotone"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_phase_closed_form"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_pointwise_quantifier"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_reflexivity"
+      },
+      {
+        "status": "pass",
+        "test": "test_semantics.SemanticControls.test_window_closed_form"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_all_failures_have_contextual_counterexample"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_all_families_criterion_equals_game"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_all_tags_share_one_physical_collision_domain"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_anchor_shapes_use_history_translation"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_assumption_filters_domain"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_client_tags_require_actual_nonnegative_launch_owners"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_client_time_matches_game_rank"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_counterexample_canonical_priority"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_counterexample_metadata_and_rank_mutations_are_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_disjoint_intervals"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_equal_time_failure_tie_mutation_is_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_extra_read_port_fails"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_extra_write_port_is_allowed"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_gap_direction"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_history_actions_preserve_old_transaction_and_drop_boundary"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_history_translation_represents_overlapping_launches"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_initial_state_is_quiescent"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_input_files_exact_rebuild"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_latest_launch_only_action_mutation_is_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_missing_write_port_fails"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_noncolliding_optional_drive_is_legal_and_removable"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_port_span_matches_exhaustive_collision_check"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_raw_history_and_age_action_alphabets_are_not_identical"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_read_is_contravariant"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_reflexive_generated_controls"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_retained_client_records_replay_without_producer_reconstruction"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_serial_quotient_edges_match_after_uniform_age_label_erasure"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_shifted_persisted_client_requires_absolute_time_replay"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_tick_saturates"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_transaction_tags_prevent_cross_launch_borrowing"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_translated_witnesses_check"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineCorrespondence.test_write_is_covariant"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_bad_parameter_bound"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_direction_collision"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_gap_beyond_horizon"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_horizon_too_large"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_interval_after_gap"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_interval_empty"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_interval_negative"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_late_singletons_are_allowed"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_overlapping_intervals"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_same_port_span_at_gap_is_rejected"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_too_many_ports"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_unknown_parameter"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_variable_product"
+      },
+      {
+        "status": "pass",
+        "test": "test_timeline.TimelineSchemaControls.test_zero_gap"
+      },
+      {
+        "status": "pass",
+        "test": "test_workflow.WorkflowControls.test_bibliography_check_only_consumes_selected_output"
+      },
+      {
+        "status": "pass",
+        "test": "test_workflow.WorkflowControls.test_client_record_binding_rejects_equal_typed_substitutes"
+      },
+      {
+        "status": "pass",
+        "test": "test_workflow.WorkflowControls.test_scientific_comparison_requires_same_file_set"
+      }
+    ]
+  },
+  "separate_regression_suites": {
+    "reply_index": 4,
+    "directed_client": 4
+  },
+  "compound_example": {
+    "cells": [
+      {
+        "cell": "compound-i0-s0",
+        "safe": 0,
+        "valuations": 0
+      },
+      {
+        "cell": "compound-i0-s1",
+        "safe": 1,
+        "valuations": 2
+      },
+      {
+        "cell": "compound-i1-s0",
+        "safe": 0,
+        "valuations": 0
+      },
+      {
+        "cell": "compound-i1-s1",
+        "safe": 1,
+        "valuations": 1
+      }
+    ],
+    "factor_intersection_sufficient_control": [
+      {
+        "p": 1
+      }
+    ],
+    "input_sha256": {
+      "left": "ae69bab9edfc07c7a5e35535c87ad1e692f10a17f8909cb776380ae5f063cc98",
+      "right": "a3479e7a074da5c7bd08fbbe563f25f0a4fb0fadc05314b4256408ef1c84c8c7"
+    },
+    "recovered_valuations": [
+      {
+        "p": 2
+      }
+    ],
+    "safe_valuations": [
+      {
+        "p": 1
+      },
+      {
+        "p": 2
+      }
+    ],
+    "same_guarantee_note": "factor intersection is sufficient only, not the exact baseline",
+    "scope": "one owned synchronous disjoint-port example; not a new benchmark denominator or wiring theorem",
+    "source_sha256": {
+      "run_product.py": "aee4f82b52ccd0099ffc5eb879d05453acdd1bbf5fd1352a6808f504fd360b04",
+      "src/check.py": "3925ef8a976ad0af6cceae35fa995dd6e21454d3564c1ba8eff1d008a099cd0e",
+      "src/domain.py": "e365af45c85d906a026c7f3094ce56dceaaf19ed6152441bbbe418ebc3020dae",
+      "src/runtime_limits.py": "a8525b92f3585ef6b4a2488ea00ab1006ba9cae1ddbb8deb25edd9ccf286c9f1",
+      "src/solve.py": "c000c6411b0771fbfd2158d59106a7d17b9de6f8e0783b0359814036387cf62e",
+      "src/timeline.py": "62d65999b37b65ecaa73cfacf686c67e2ca7e50583fb64e31c44e6fc29512b2c",
+      "src/timeline_check.py": "ffb9553ce467f1e6d0174b86dd28ff34861deb9871d695de6f130770a2262216",
+      "src/timeline_product.py": "0bcaa8fb616c16e15f8185d4a15fd423e0003e2c650965fdc8a9bc64d4965bd3",
+      "src/timeline_product_check.py": "d6ebf770b49d2ace16b537d14db0aa47d6f0ce5f7c0768a71c5077fcc8db8313"
+    },
+    "valuations": [
+      {
+        "p": 1
+      },
+      {
+        "p": 2
+      },
+      {
+        "p": 3
+      }
+    ]
+  },
+  "regenerated_inputs": 41,
+  "regenerated_timeline_inputs": 67,
+  "regenerated_anchor_inputs": 6,
+  "exhaustive_micro_profiles": 52,
+  "exhaustive_micro_profile_pairs": 2704,
+  "exhaustive_micro_clients": 3665,
+  "bibliography_entries": 69,
+  "compared_scientific_files": 294,
+  "checks": [
+    "unit tests",
+    "exact input regeneration",
+    "bitset solving",
+    "local rank equations",
+    "reverse AND/OR oracle",
+    "spoiler DAG replay",
+    "port-separation/collision equivalence",
+    "all-tag client ownership/collision checks",
+    "persisted absolute-time client replay and tie/rank binding",
+    "history action/drop translation checks",
+    "history-game correspondence",
+    "independent exhaustive client-set inclusion oracle",
+    "published-declaration normalization boundary",
+    "bibliography coverage and high-risk metadata mutations",
+    "scientific result equality"
+  ],
+  "timing_equality_required": false,
+  "runtime_limits": {
+    "mode": "portable",
+    "workers": 1,
+    "requested_cpu_seconds": 110,
+    "requested_address_space_bytes": 2147483648,
+    "os_cpu_limit_enforced": false,
+    "os_address_space_limit_enforced": false,
+    "cooperative_cpu_checks": true,
+    "peak_rss_available": false,
+    "python_optimization": 1,
+    "site_packages_disabled": true,
+    "dont_write_bytecode": true,
+    "platform": "win32"
+  },
+  "raw_workspace": "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204",
+  "wall_seconds_descriptive": 8.485456900001736,
+  "source_sha256": {
+    ".github/scripts/check_repository.py": "4f99c3155f57d16acdd49b8a714811ee87082cb80c9ea5f80f4ab2c1910d13e1",
+    "profile_workflow.py": "176272f636a4b91f757a9ffb491078ec8b70314bed6f5c47d435f9156274b533",
+    "reproduce.py": "09863f29169a36f318800d83057f56274c55be7b5dff6e70a41bdd5b5cd29591",
+    "run.py": "b897373cb52b2abb04f65976028c9afbc68f27795d6202159f42d1218f9c4001",
+    "run_anchor.py": "8ecc061435969c152250ac839f72fe3479080ca07eb3b44c0ca79f902fbb6846",
+    "run_bibliography.py": "3748a84944cf122b21f3aac31e44c418e8fead885dc2c9ebad005ef8971b2b61",
+    "run_exhaustive.py": "b6d000e46246e996ade69cad44888f4d1ca8ec6bbdf7f0cd0efe1e9ad1613356",
+    "run_product.py": "aee4f82b52ccd0099ffc5eb879d05453acdd1bbf5fd1352a6808f504fd360b04",
+    "run_timeline.py": "5500619c7197d278308d1d8968ec6da634e38071dbf2b0442d5f2f477ca1773f",
+    "src/bibliography_check.py": "dfcb98d02b4dcc32bd169479e13a815a57dffd3921079af3442d84d2d7479685",
+    "src/check.py": "3925ef8a976ad0af6cceae35fa995dd6e21454d3564c1ba8eff1d008a099cd0e",
+    "src/domain.py": "e365af45c85d906a026c7f3094ce56dceaaf19ed6152441bbbe418ebc3020dae",
+    "src/exhaustive_context.py": "9b72bca9649e6ad7ec69ee75654f23d468734324c69c6149a2e1512490baf1d1",
+    "src/generate.py": "0fd45ac23cbe391076c7a10cb754a43c75f98e5c05e2e9b85fa01c5290284044",
+    "src/generate_anchor.py": "164087736cd0095888039261eb99efc3d8fae9ea77700482ac2bc6bae114b195",
+    "src/generate_timeline.py": "773eb15fd7ab6234b9ad88f583f079ee42bc792bcf852c79638ffe5cc4abe414",
+    "src/runtime_limits.py": "a8525b92f3585ef6b4a2488ea00ab1006ba9cae1ddbb8deb25edd9ccf286c9f1",
+    "src/solve.py": "c000c6411b0771fbfd2158d59106a7d17b9de6f8e0783b0359814036387cf62e",
+    "src/timeline.py": "62d65999b37b65ecaa73cfacf686c67e2ca7e50583fb64e31c44e6fc29512b2c",
+    "src/timeline_check.py": "ffb9553ce467f1e6d0174b86dd28ff34861deb9871d695de6f130770a2262216",
+    "src/timeline_product.py": "0bcaa8fb616c16e15f8185d4a15fd423e0003e2c650965fdc8a9bc64d4965bd3",
+    "src/timeline_product_check.py": "d6ebf770b49d2ace16b537d14db0aa47d6f0ce5f7c0768a71c5077fcc8db8313",
+    "tests/directed_client_regression.py": "e817f0dfc9b186e922bff0ac35fe018d3f7601bd91c210efef596b9d64631b43",
+    "tests/reply_index_regression.py": "fca1bf42846474cc145a2f85722aa229f031a32553bee7d368930f2da92acacf",
+    "tests/test_anchor.py": "57bfad4353981eaa144c5bed20d1f972663067c7d8a1c664939a257b216e3bbd",
+    "tests/test_bibliography.py": "ec207eb5bb4918320bee98c7a5b42408cbe768c6ffff06810dd202a708228130",
+    "tests/test_exhaustive_context.py": "d9726771ceb716ea00a785e1bf2aa3f2d564f73d1712613edaebb6c1c72214d6",
+    "tests/test_product.py": "270ca0701004c7404c75d2bec76b6eacdc8f31ccb3c6c70fc6280343afd3e6e9",
+    "tests/test_semantics.py": "440594deb02f17c2acb9d21c0dd733430135014074088e80a6eb974fc2034d32",
+    "tests/test_timeline.py": "101d66e54fffaab376102219581789ca7ab4306e7fc0f406315035666f8e44fd",
+    "tests/test_workflow.py": "db5239cee607835c60f0f94d7f172672325af1282e79897ab722997489ef306e"
+  },
+  "source_scope": "launch inventory, not assertion that every source/function executed",
+  "child_commands": [
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_five_reusable_declarations_inside_fragment (test_anchor.AnchorNormalization.test_five_reusable_declarations_inside_fragment) ... ok\r\ntest_input_files_exact_rebuild (test_anchor.AnchorNormalization.test_input_files_exact_rebuild) ... ok\r\ntest_source_identity_is_bound (test_anchor.AnchorNormalization.test_source_identity_is_bound) ... ok\r\ntest_wide_input_is_explicit_boundary (test_anchor.AnchorNormalization.test_wide_input_is_explicit_boundary) ... ok\r\ntest_audit_key_mismatch_is_rejected (test_bibliography.BibliographyAuditTests.test_audit_key_mismatch_is_rejected) ... ok\r\ntest_duplicate_stable_locator_is_rejected (test_bibliography.BibliographyAuditTests.test_duplicate_stable_locator_is_rejected) ... ok\r\ntest_high_risk_metadata_mutation_is_rejected (test_bibliography.BibliographyAuditTests.test_high_risk_metadata_mutation_is_rejected) ... ok\r\ntest_minimum_reference_count_is_enforced (test_bibliography.BibliographyAuditTests.test_minimum_reference_count_is_enforced) ... ok\r\ntest_missing_stable_locator_is_rejected (test_bibliography.BibliographyAuditTests.test_missing_stable_locator_is_rejected) ... ok\r\ntest_parser_and_citation_extraction_preserve_nested_braces (test_bibliography.BibliographyAuditTests.test_parser_and_citation_extraction_preserve_nested_braces) ... ok\r\ntest_retained_bibliography_passes (test_bibliography.BibliographyAuditTests.test_retained_bibliography_passes) ... ok\r\ntest_uncited_entry_is_rejected (test_bibliography.BibliographyAuditTests.test_uncited_entry_is_rejected) ... ok\r\ntest_all_optional_drives_and_samples_must_be_collision_free (test_exhaustive_context.ExhaustiveContextTests.test_all_optional_drives_and_samples_must_be_collision_free) ... ok\r\ntest_client_universe_is_nontrivial (test_exhaustive_context.ExhaustiveContextTests.test_client_universe_is_nontrivial) ... ok\r\ntest_each_variance_direction_has_explicit_client (test_exhaustive_context.ExhaustiveContextTests.test_each_variance_direction_has_explicit_client) ... ok\r\ntest_enumerated_clients_satisfy_domain_checks (test_exhaustive_context.ExhaustiveContextTests.test_enumerated_clients_satisfy_domain_checks) ... ok\r\ntest_exhaustive_context_matches_criterion (test_exhaustive_context.ExhaustiveContextTests.test_exhaustive_context_matches_criterion) ... ok\r\ntest_launch_order_nonnegativity_and_integer_types (test_exhaustive_context.ExhaustiveContextTests.test_launch_order_nonnegativity_and_integer_types) ... ok\r\ntest_orphan_and_negative_age_tags_are_illegal (test_exhaustive_context.ExhaustiveContextTests.test_orphan_and_negative_age_tags_are_illegal) ... ok\r\ntest_profile_and_pair_counts (test_exhaustive_context.ExhaustiveContextTests.test_profile_and_pair_counts) ... ok\r\ntest_aliased_directed_ports_are_rejected (test_product.ProductControls.test_aliased_directed_ports_are_rejected) ... ok\r\ntest_empty_common_admission_remains_empty (test_product.ProductControls.test_empty_common_admission_remains_empty) ... ok\r\ntest_exact_shared_gap_region_not_factor_intersection (test_product.ProductControls.test_exact_shared_gap_region_not_factor_intersection) ... ok\r\ntest_independent_consumer_rejects_partition_loss_or_overlap (test_product.ProductControls.test_independent_consumer_rejects_partition_loss_or_overlap) ... ok\r\ntest_independent_consumer_rejects_wrong_maximum (test_product.ProductControls.test_independent_consumer_rejects_wrong_maximum) ... ok\r\ntest_parameter_box_mismatch_is_not_silently_joined (test_product.ProductControls.test_parameter_box_mismatch_is_not_silently_joined) ... ok\r\ntest_partition_is_disjoint_complete_and_ties_choose_left (test_product.ProductControls.test_partition_is_disjoint_complete_and_ties_choose_left) ... ok\r\ntest_boolean_global_selection (test_semantics.CertificateMutations.test_boolean_global_selection) ... ok\r\ntest_boolean_parameter_value (test_semantics.CertificateMutations.test_boolean_parameter_value) ... ok\r\ntest_boolean_valuation_id (test_semantics.CertificateMutations.test_boolean_valuation_id) ... ok\r\ntest_boolean_witness_edge (test_semantics.CertificateMutations.test_boolean_witness_edge) ... ok\r\ntest_boolean_witness_parameter (test_semantics.CertificateMutations.test_boolean_witness_parameter) ... ok\r\ntest_branch_omission (test_semantics.CertificateMutations.test_branch_omission) ... ok\r\ntest_coverage (test_semantics.CertificateMutations.test_coverage) ... ok\r\ntest_extraneous_node (test_semantics.CertificateMutations.test_extraneous_node) ... ok\r\ntest_false_safe (test_semantics.CertificateMutations.test_false_safe) ... ok\r\ntest_global_selection (test_semantics.CertificateMutations.test_global_selection) ... ok\r\ntest_missing_leaf (test_semantics.CertificateMutations.test_missing_leaf) ... ok\r\ntest_nonminimal_rank (test_semantics.CertificateMutations.test_nonminimal_rank) ... ok\r\ntest_nonminimal_witness_depth (test_semantics.CertificateMutations.test_nonminimal_witness_depth) ... ok\r\ntest_overlap (test_semantics.CertificateMutations.test_overlap) ... ok\r\ntest_rank_dimension (test_semantics.CertificateMutations.test_rank_dimension) ... ok\r\ntest_round_counter (test_semantics.CertificateMutations.test_round_counter) ... ok\r\ntest_safe_region_omission_or_addition (test_semantics.CertificateMutations.test_safe_region_omission_or_addition) ... ok\r\ntest_valuation_binding (test_semantics.CertificateMutations.test_valuation_binding) ... ok\r\ntest_valuation_outside_domain (test_semantics.CertificateMutations.test_valuation_outside_domain) ... ok\r\ntest_visit_counter (test_semantics.CertificateMutations.test_visit_counter) ... ok\r\ntest_wrong_challenge (test_semantics.CertificateMutations.test_wrong_challenge) ... ok\r\ntest_input_nondeterminism (test_semantics.SchemaControls.test_input_nondeterminism) ... ok\r\ntest_nonpositive_modulus (test_semantics.SchemaControls.test_nonpositive_modulus) ... ok\r\ntest_parameter_out_of_range (test_semantics.SchemaControls.test_parameter_out_of_range) ... ok\r\ntest_polarity_collision (test_semantics.SchemaControls.test_polarity_collision) ... ok\r\ntest_variable_multiplication (test_semantics.SchemaControls.test_variable_multiplication) ... ok\r\ntest_boolean_safe_index_rejected (test_semantics.SemanticControls.test_boolean_safe_index_rejected) ... ok\r\ntest_branching_requires_strategy_not_word (test_semantics.SemanticControls.test_branching_requires_strategy_not_word) ... ok\r\ntest_correlation_not_a_bounding_box (test_semantics.SemanticControls.test_correlation_not_a_bounding_box) ... ok\r\ntest_empty_domain_is_vacuous (test_semantics.SemanticControls.test_empty_domain_is_vacuous) ... ok\r\ntest_environment_input_restriction (test_semantics.SemanticControls.test_environment_input_restriction) ... ok\r\ntest_gap_closed_form (test_semantics.SemanticControls.test_gap_closed_form) ... ok\r\ntest_global_shortest_order (test_semantics.SemanticControls.test_global_shortest_order) ... ok\r\ntest_input_contravariance (test_semantics.SemanticControls.test_input_contravariance) ... ok\r\ntest_input_files_exact_rebuild (test_semantics.SemanticControls.test_input_files_exact_rebuild) ... ok\r\ntest_interior_is_not_determined_by_corners (test_semantics.SemanticControls.test_interior_is_not_determined_by_corners) ... ok\r\ntest_no_progress_claim (test_semantics.SemanticControls.test_no_progress_claim) ... ok\r\ntest_parity_not_monotone (test_semantics.SemanticControls.test_parity_not_monotone) ... ok\r\ntest_phase_closed_form (test_semantics.SemanticControls.test_phase_closed_form) ... ok\r\ntest_pointwise_quantifier (test_semantics.SemanticControls.test_pointwise_quantifier) ... ok\r\ntest_reflexivity (test_semantics.SemanticControls.test_reflexivity) ... ok\r\ntest_window_closed_form (test_semantics.SemanticControls.test_window_closed_form) ... ok\r\ntest_all_failures_have_contextual_counterexample (test_timeline.TimelineCorrespondence.test_all_failures_have_contextual_counterexample) ... ok\r\ntest_all_families_criterion_equals_game (test_timeline.TimelineCorrespondence.test_all_families_criterion_equals_game) ... ok\r\ntest_all_tags_share_one_physical_collision_domain (test_timeline.TimelineCorrespondence.test_all_tags_share_one_physical_collision_domain) ... ok\r\ntest_anchor_shapes_use_history_translation (test_timeline.TimelineCorrespondence.test_anchor_shapes_use_history_translation) ... ok\r\ntest_assumption_filters_domain (test_timeline.TimelineCorrespondence.test_assumption_filters_domain) ... ok\r\ntest_client_tags_require_actual_nonnegative_launch_owners (test_timeline.TimelineCorrespondence.test_client_tags_require_actual_nonnegative_launch_owners) ... ok\r\ntest_client_time_matches_game_rank (test_timeline.TimelineCorrespondence.test_client_time_matches_game_rank) ... ok\r\ntest_counterexample_canonical_priority (test_timeline.TimelineCorrespondence.test_counterexample_canonical_priority) ... ok\r\ntest_counterexample_metadata_and_rank_mutations_are_rejected (test_timeline.TimelineCorrespondence.test_counterexample_metadata_and_rank_mutations_are_rejected) ... ok\r\ntest_disjoint_intervals (test_timeline.TimelineCorrespondence.test_disjoint_intervals) ... ok\r\ntest_equal_time_failure_tie_mutation_is_rejected (test_timeline.TimelineCorrespondence.test_equal_time_failure_tie_mutation_is_rejected) ... ok\r\ntest_extra_read_port_fails (test_timeline.TimelineCorrespondence.test_extra_read_port_fails) ... ok\r\ntest_extra_write_port_is_allowed (test_timeline.TimelineCorrespondence.test_extra_write_port_is_allowed) ... ok\r\ntest_gap_direction (test_timeline.TimelineCorrespondence.test_gap_direction) ... ok\r\ntest_history_actions_preserve_old_transaction_and_drop_boundary (test_timeline.TimelineCorrespondence.test_history_actions_preserve_old_transaction_and_drop_boundary) ... ok\r\ntest_history_translation_represents_overlapping_launches (test_timeline.TimelineCorrespondence.test_history_translation_represents_overlapping_launches) ... ok\r\ntest_initial_state_is_quiescent (test_timeline.TimelineCorrespondence.test_initial_state_is_quiescent) ... ok\r\ntest_input_files_exact_rebuild (test_timeline.TimelineCorrespondence.test_input_files_exact_rebuild) ... ok\r\ntest_latest_launch_only_action_mutation_is_rejected (test_timeline.TimelineCorrespondence.test_latest_launch_only_action_mutation_is_rejected) ... ok\r\ntest_missing_write_port_fails (test_timeline.TimelineCorrespondence.test_missing_write_port_fails) ... ok\r\ntest_noncolliding_optional_drive_is_legal_and_removable (test_timeline.TimelineCorrespondence.test_noncolliding_optional_drive_is_legal_and_removable) ... ok\r\ntest_port_span_matches_exhaustive_collision_check (test_timeline.TimelineCorrespondence.test_port_span_matches_exhaustive_collision_check) ... ok\r\ntest_raw_history_and_age_action_alphabets_are_not_identical (test_timeline.TimelineCorrespondence.test_raw_history_and_age_action_alphabets_are_not_identical) ... ok\r\ntest_read_is_contravariant (test_timeline.TimelineCorrespondence.test_read_is_contravariant) ... ok\r\ntest_reflexive_generated_controls (test_timeline.TimelineCorrespondence.test_reflexive_generated_controls) ... ok\r\ntest_retained_client_records_replay_without_producer_reconstruction (test_timeline.TimelineCorrespondence.test_retained_client_records_replay_without_producer_reconstruction) ... ok\r\ntest_serial_quotient_edges_match_after_uniform_age_label_erasure (test_timeline.TimelineCorrespondence.test_serial_quotient_edges_match_after_uniform_age_label_erasure) ... ok\r\ntest_shifted_persisted_client_requires_absolute_time_replay (test_timeline.TimelineCorrespondence.test_shifted_persisted_client_requires_absolute_time_replay) ... ok\r\ntest_tick_saturates (test_timeline.TimelineCorrespondence.test_tick_saturates) ... ok\r\ntest_transaction_tags_prevent_cross_launch_borrowing (test_timeline.TimelineCorrespondence.test_transaction_tags_prevent_cross_launch_borrowing) ... ok\r\ntest_translated_witnesses_check (test_timeline.TimelineCorrespondence.test_translated_witnesses_check) ... ok\r\ntest_write_is_covariant (test_timeline.TimelineCorrespondence.test_write_is_covariant) ... ok\r\ntest_bad_parameter_bound (test_timeline.TimelineSchemaControls.test_bad_parameter_bound) ... ok\r\ntest_direction_collision (test_timeline.TimelineSchemaControls.test_direction_collision) ... ok\r\ntest_gap_beyond_horizon (test_timeline.TimelineSchemaControls.test_gap_beyond_horizon) ... ok\r\ntest_horizon_too_large (test_timeline.TimelineSchemaControls.test_horizon_too_large) ... ok\r\ntest_interval_after_gap (test_timeline.TimelineSchemaControls.test_interval_after_gap) ... ok\r\ntest_interval_empty (test_timeline.TimelineSchemaControls.test_interval_empty) ... ok\r\ntest_interval_negative (test_timeline.TimelineSchemaControls.test_interval_negative) ... ok\r\ntest_late_singletons_are_allowed (test_timeline.TimelineSchemaControls.test_late_singletons_are_allowed) ... ok\r\ntest_overlapping_intervals (test_timeline.TimelineSchemaControls.test_overlapping_intervals) ... ok\r\ntest_same_port_span_at_gap_is_rejected (test_timeline.TimelineSchemaControls.test_same_port_span_at_gap_is_rejected) ... ok\r\ntest_too_many_ports (test_timeline.TimelineSchemaControls.test_too_many_ports) ... ok\r\ntest_unknown_parameter (test_timeline.TimelineSchemaControls.test_unknown_parameter) ... ok\r\ntest_variable_product (test_timeline.TimelineSchemaControls.test_variable_product) ... ok\r\ntest_zero_gap (test_timeline.TimelineSchemaControls.test_zero_gap) ... ok\r\ntest_bibliography_check_only_consumes_selected_output (test_workflow.WorkflowControls.test_bibliography_check_only_consumes_selected_output) ... ok\r\ntest_client_record_binding_rejects_equal_typed_substitutes (test_workflow.WorkflowControls.test_client_record_binding_rejects_equal_typed_substitutes) ... ok\r\ntest_scientific_comparison_requires_same_file_set (test_workflow.WorkflowControls.test_scientific_comparison_requires_same_file_set) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 118 tests in 2.497s\r\n\r\nOK\r\n",
+      "wall_seconds": 2.8996604999992996
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "tests/reply_index_regression.py",
+        "-v"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_admission_and_nonstandard_string_fallback (__main__.ReplyRegression.test_admission_and_nonstandard_string_fallback) ... ok\r\ntest_branching_and_omitted_universal_reply (__main__.ReplyRegression.test_branching_and_omitted_universal_reply) ... ok\r\ntest_fresh_after_mutation_between_calls (__main__.ReplyRegression.test_fresh_after_mutation_between_calls) ... ok\r\ntest_tiny_full_packets_ranks_and_arenas (__main__.ReplyRegression.test_tiny_full_packets_ranks_and_arenas) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 4 tests in 0.075s\r\n\r\nOK\r\n",
+      "wall_seconds": 0.2851667000213638
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "tests/directed_client_regression.py",
+        "-v"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_optional_input_without_required_ages_is_legal (__main__.DirectedClientTests.test_optional_input_without_required_ages_is_legal) ... ok\r\ntest_output_and_unknown_drives_are_rejected (__main__.DirectedClientTests.test_output_and_unknown_drives_are_rejected) ... ok\r\ntest_sample_direction_and_guaranteed_output (__main__.DirectedClientTests.test_sample_direction_and_guaranteed_output) ... ok\r\ntest_standalone_empty_age_input_key_remains_declared (__main__.DirectedClientTests.test_standalone_empty_age_input_key_remains_declared) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 4 tests in 0.000s\r\n\r\nOK\r\n",
+      "wall_seconds": 0.2071785999869462
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "src/generate.py",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\inputs"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "wall_seconds": 0.1420557999808807
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "src/generate_timeline.py",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\timeline-inputs"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "wall_seconds": 0.14529139999649487
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "src/generate_anchor.py",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\anchor-inputs"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "wall_seconds": 0.1287951999984216
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\results",
+        "--portable"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "availability-window {\"bad\": 9, \"cells\": 16, \"safe\": 7, \"state_pair_valuations\": 784, \"valuations\": 16} wall_seconds 0.006512\r\nbranching {\"bad\": 1, \"cells\": 1, \"safe\": 0, \"state_pair_valuations\": 12, \"valuations\": 1} wall_seconds 0.00069\r\ncorrelated {\"bad\": 12, \"cells\": 2, \"safe\": 4, \"state_pair_valuations\": 16, \"valuations\": 16} wall_seconds 0.000815\r\nempty-domain {\"bad\": 0, \"cells\": 0, \"safe\": 0, \"state_pair_valuations\": 0, \"valuations\": 0} wall_seconds 0.000332\r\ngenerated-01 {\"bad\": 10, \"cells\": 9, \"safe\": 6, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.002981\r\ngenerated-02 {\"bad\": 16, \"cells\": 3, \"safe\": 0, \"state_pair_valuations\": 64, \"valuations\": 16} wall_seconds 0.00177\r\ngenerated-03 {\"bad\": 16, \"cells\": 4, \"safe\": 0, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.001991\r\ngenerated-04 {\"bad\": 0, \"cells\": 4, \"safe\": 16, \"state_pair_valuations\": 144, \"valuations\": 16} wall_seconds 0.002334\r\ngenerated-05 {\"bad\": 4, \"cells\": 8, \"safe\": 12, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.002789\r\ngenerated-06 {\"bad\": 9, \"cells\": 9, \"safe\": 7, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.002963\r\ngenerated-07 {\"bad\": 16, \"cells\": 6, \"safe\": 0, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.002833\r\ngenerated-08 {\"bad\": 16, \"cells\": 10, \"safe\": 0, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.002896\r\ngenerated-09 {\"bad\": 16, \"cells\": 8, \"safe\": 0, \"state_pair_valuations\": 128, \"valuations\": 16} wall_seconds 0.001658\r\ngenerated-10 {\"bad\": 0, \"cells\": 8, \"safe\": 16, \"state_pair_valuations\": 256, \"valuations\": 16} wall_seconds 0.002473\r\ngenerated-11 {\"bad\": 14, \"cells\": 6, \"safe\": 2, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.002317\r\ngenerated-12 {\"bad\": 16, \"cells\": 4, \"safe\": 0, \"state_pair_valuations\": 128, \"valuations\": 16} wall_seconds 0.001914\r\ngenerated-13 {\"bad\": 16, \"cells\": 8, \"safe\": 0, \"state_pair_valuations\": 144, \"valuations\": 16} wall_seconds 0.002375\r\ngenerated-14 {\"bad\": 16, \"cells\": 5, \"safe\": 0, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.001951\r\ngenerated-15 {\"bad\": 12, \"cells\": 8, \"safe\": 4, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.001594\r\ngenerated-16 {\"bad\": 0, \"cells\": 2, \"safe\": 16, \"state_pair_valuations\": 64, \"valuations\": 16} wall_seconds 0.001701\r\ngenerated-17 {\"bad\": 10, \"cells\": 7, \"safe\": 6, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.001836\r\ngenerated-18 {\"bad\": 12, \"cells\": 5, \"safe\": 4, \"state_pair_valuations\": 128, \"valuations\": 16} wall_seconds 0.002482\r\ngenerated-19 {\"bad\": 13, \"cells\": 8, \"safe\": 3, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.002358\r\ngenerated-20 {\"bad\": 16, \"cells\": 6, \"safe\": 0, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.00201\r\ngenerated-21 {\"bad\": 16, \"cells\": 3, \"safe\": 0, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.002123\r\ngenerated-22 {\"bad\": 0, \"cells\": 7, \"safe\": 16, \"state_pair_valuations\": 144, \"valuations\": 16} wall_seconds 0.002753\r\ngenerated-23 {\"bad\": 14, \"cells\": 9, \"safe\": 2, \"state_pair_valuations\": 128, \"valuations\": 16} wall_seconds 0.002347\r\ngenerated-24 {\"bad\": 16, \"cells\": 3, \"safe\": 0, \"state_pair_valuations\": 64, \"valuations\": 16} wall_seconds 0.001967\r\nguard-splitting {\"bad\": 0, \"cells\": 1, \"safe\": 4, \"state_pair_valuations\": 16, \"valuations\": 4} wall_seconds 0.000519\r\ninitiation-gap {\"bad\": 6, \"cells\": 16, \"safe\": 10, \"state_pair_valuations\": 400, \"valuations\": 16} wall_seconds 0.003512\r\ninput-assumption {\"bad\": 1, \"cells\": 2, \"safe\": 3, \"state_pair_valuations\": 4, \"valuations\": 4} wall_seconds 0.000521\r\ninput-variance {\"bad\": 4, \"cells\": 2, \"safe\": 4, \"state_pair_valuations\": 8, \"valuations\": 8} wall_seconds 0.000694\r\ninterior-hole {\"bad\": 1, \"cells\": 2, \"safe\": 7, \"state_pair_valuations\": 8, \"valuations\": 8} wall_seconds 0.000552\r\nlong-chain {\"bad\": 4, \"cells\": 2, \"safe\": 4, \"state_pair_valuations\": 2048, \"valuations\": 8} wall_seconds 0.008917\r\nparity {\"bad\": 4, \"cells\": 2, \"safe\": 4, \"state_pair_valuations\": 8, \"valuations\": 8} wall_seconds 0.00064\r\nphase-alignment {\"bad\": 16, \"cells\": 2, \"safe\": 16, \"state_pair_valuations\": 128, \"valuations\": 32} wall_seconds 0.001474\r\npointwise-choice {\"bad\": 0, \"cells\": 1, \"safe\": 4, \"state_pair_valuations\": 24, \"valuations\": 4} wall_seconds 0.000649\r\nquiescence-not-progress {\"bad\": 0, \"cells\": 1, \"safe\": 4, \"state_pair_valuations\": 4, \"valuations\": 4} wall_seconds 0.000432\r\nreflexive {\"bad\": 0, \"cells\": 1, \"safe\": 4, \"state_pair_valuations\": 64, \"valuations\": 4} wall_seconds 0.000767\r\nshortest-order {\"bad\": 2, \"cells\": 2, \"safe\": 0, \"state_pair_valuations\": 32, \"valuations\": 2} wall_seconds 0.000682\r\nwide-control {\"bad\": 0, \"cells\": 1, \"safe\": 1, \"state_pair_valuations\": 2304, \"valuations\": 1} wall_seconds 0.013844\r\n{\r\n  \"measurement\": {\r\n    \"cpu_seconds\": 0.078125,\r\n    \"peak_rss_kib\": null,\r\n    \"runtime_limits\": {\r\n      \"cooperative_cpu_checks\": true,\r\n      \"dont_write_bytecode\": true,\r\n      \"mode\": \"portable\",\r\n      \"os_address_space_limit_enforced\": false,\r\n      \"os_cpu_limit_enforced\": false,\r\n      \"peak_rss_available\": false,\r\n      \"platform\": \"win32\",\r\n      \"python_optimization\": 1,\r\n      \"requested_address_space_bytes\": 2147483648,\r\n      \"requested_cpu_seconds\": 110,\r\n      \"site_packages_disabled\": true,\r\n      \"workers\": 1\r\n    },\r\n    \"wall_seconds\": 0.10288159997435287,\r\n    \"workers\": 1\r\n  },\r\n  \"summary\": {\r\n    \"families\": 41,\r\n    \"maximum_shortest_depth\": 16,\r\n    \"maximum_states\": 48,\r\n    \"scope\": \"finite inputs only; no RTL or contextual completeness claim\",\r\n    \"totals\": {\r\n      \"bad\": 334,\r\n      \"cells\": 204,\r\n      \"equation_visits\": 8091,\r\n      \"guard_cells\": 279,\r\n      \"safe\": 186,\r\n      \"state_pair_valuations\": 9076,\r\n      \"valuations\": 520,\r\n      \"witness_nodes\": 51\r\n    },\r\n    \"zero_disagreements\": true\r\n  }\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.2356549999967683
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\results",
+        "--check-only",
+        "--portable"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "availability-window {\"bad\": 9, \"cells\": 16, \"safe\": 7, \"state_pair_valuations\": 784, \"valuations\": 16} wall_seconds 0.003023\r\nbranching {\"bad\": 1, \"cells\": 1, \"safe\": 0, \"state_pair_valuations\": 12, \"valuations\": 1} wall_seconds 0.000235\r\ncorrelated {\"bad\": 12, \"cells\": 2, \"safe\": 4, \"state_pair_valuations\": 16, \"valuations\": 16} wall_seconds 0.00028\r\nempty-domain {\"bad\": 0, \"cells\": 0, \"safe\": 0, \"state_pair_valuations\": 0, \"valuations\": 0} wall_seconds 0.00012\r\ngenerated-01 {\"bad\": 10, \"cells\": 9, \"safe\": 6, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.001359\r\ngenerated-02 {\"bad\": 16, \"cells\": 3, \"safe\": 0, \"state_pair_valuations\": 64, \"valuations\": 16} wall_seconds 0.000837\r\ngenerated-03 {\"bad\": 16, \"cells\": 4, \"safe\": 0, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.000884\r\ngenerated-04 {\"bad\": 0, \"cells\": 4, \"safe\": 16, \"state_pair_valuations\": 144, \"valuations\": 16} wall_seconds 0.000998\r\ngenerated-05 {\"bad\": 4, \"cells\": 8, \"safe\": 12, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.00127\r\ngenerated-06 {\"bad\": 9, \"cells\": 9, \"safe\": 7, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.001279\r\ngenerated-07 {\"bad\": 16, \"cells\": 6, \"safe\": 0, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.001514\r\ngenerated-08 {\"bad\": 16, \"cells\": 10, \"safe\": 0, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.001423\r\ngenerated-09 {\"bad\": 16, \"cells\": 8, \"safe\": 0, \"state_pair_valuations\": 128, \"valuations\": 16} wall_seconds 0.000729\r\ngenerated-10 {\"bad\": 0, \"cells\": 8, \"safe\": 16, \"state_pair_valuations\": 256, \"valuations\": 16} wall_seconds 0.001046\r\ngenerated-11 {\"bad\": 14, \"cells\": 6, \"safe\": 2, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.000949\r\ngenerated-12 {\"bad\": 16, \"cells\": 4, \"safe\": 0, \"state_pair_valuations\": 128, \"valuations\": 16} wall_seconds 0.000793\r\ngenerated-13 {\"bad\": 16, \"cells\": 8, \"safe\": 0, \"state_pair_valuations\": 144, \"valuations\": 16} wall_seconds 0.001122\r\ngenerated-14 {\"bad\": 16, \"cells\": 5, \"safe\": 0, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.000905\r\ngenerated-15 {\"bad\": 12, \"cells\": 8, \"safe\": 4, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.000664\r\ngenerated-16 {\"bad\": 0, \"cells\": 2, \"safe\": 16, \"state_pair_valuations\": 64, \"valuations\": 16} wall_seconds 0.000667\r\ngenerated-17 {\"bad\": 10, \"cells\": 7, \"safe\": 6, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.00084\r\ngenerated-18 {\"bad\": 12, \"cells\": 5, \"safe\": 4, \"state_pair_valuations\": 128, \"valuations\": 16} wall_seconds 0.000988\r\ngenerated-19 {\"bad\": 13, \"cells\": 8, \"safe\": 3, \"state_pair_valuations\": 192, \"valuations\": 16} wall_seconds 0.00111\r\ngenerated-20 {\"bad\": 16, \"cells\": 6, \"safe\": 0, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.001036\r\ngenerated-21 {\"bad\": 16, \"cells\": 3, \"safe\": 0, \"state_pair_valuations\": 96, \"valuations\": 16} wall_seconds 0.001005\r\ngenerated-22 {\"bad\": 0, \"cells\": 7, \"safe\": 16, \"state_pair_valuations\": 144, \"valuations\": 16} wall_seconds 0.001226\r\ngenerated-23 {\"bad\": 14, \"cells\": 9, \"safe\": 2, \"state_pair_valuations\": 128, \"valuations\": 16} wall_seconds 0.001092\r\ngenerated-24 {\"bad\": 16, \"cells\": 3, \"safe\": 0, \"state_pair_valuations\": 64, \"valuations\": 16} wall_seconds 0.000813\r\nguard-splitting {\"bad\": 0, \"cells\": 1, \"safe\": 4, \"state_pair_valuations\": 16, \"valuations\": 4} wall_seconds 0.000177\r\ninitiation-gap {\"bad\": 6, \"cells\": 16, \"safe\": 10, \"state_pair_valuations\": 400, \"valuations\": 16} wall_seconds 0.00163\r\ninput-assumption {\"bad\": 1, \"cells\": 2, \"safe\": 3, \"state_pair_valuations\": 4, \"valuations\": 4} wall_seconds 0.000191\r\ninput-variance {\"bad\": 4, \"cells\": 2, \"safe\": 4, \"state_pair_valuations\": 8, \"valuations\": 8} wall_seconds 0.000229\r\ninterior-hole {\"bad\": 1, \"cells\": 2, \"safe\": 7, \"state_pair_valuations\": 8, \"valuations\": 8} wall_seconds 0.000212\r\nlong-chain {\"bad\": 4, \"cells\": 2, \"safe\": 4, \"state_pair_valuations\": 2048, \"valuations\": 8} wall_seconds 0.004324\r\nparity {\"bad\": 4, \"cells\": 2, \"safe\": 4, \"state_pair_valuations\": 8, \"valuations\": 8} wall_seconds 0.000244\r\nphase-alignment {\"bad\": 16, \"cells\": 2, \"safe\": 16, \"state_pair_valuations\": 128, \"valuations\": 32} wall_seconds 0.000657\r\npointwise-choice {\"bad\": 0, \"cells\": 1, \"safe\": 4, \"state_pair_valuations\": 24, \"valuations\": 4} wall_seconds 0.000183\r\nquiescence-not-progress {\"bad\": 0, \"cells\": 1, \"safe\": 4, \"state_pair_valuations\": 4, \"valuations\": 4} wall_seconds 0.000134\r\nreflexive {\"bad\": 0, \"cells\": 1, \"safe\": 4, \"state_pair_valuations\": 64, \"valuations\": 4} wall_seconds 0.000237\r\nshortest-order {\"bad\": 2, \"cells\": 2, \"safe\": 0, \"state_pair_valuations\": 32, \"valuations\": 2} wall_seconds 0.000232\r\nwide-control {\"bad\": 0, \"cells\": 1, \"safe\": 1, \"state_pair_valuations\": 2304, \"valuations\": 1} wall_seconds 0.006472\r\n{\r\n  \"measurement\": {\r\n    \"cpu_seconds\": 0.046875,\r\n    \"peak_rss_kib\": null,\r\n    \"runtime_limits\": {\r\n      \"cooperative_cpu_checks\": true,\r\n      \"dont_write_bytecode\": true,\r\n      \"mode\": \"portable\",\r\n      \"os_address_space_limit_enforced\": false,\r\n      \"os_cpu_limit_enforced\": false,\r\n      \"peak_rss_available\": false,\r\n      \"platform\": \"win32\",\r\n      \"python_optimization\": 1,\r\n      \"requested_address_space_bytes\": 2147483648,\r\n      \"requested_cpu_seconds\": 110,\r\n      \"site_packages_disabled\": true,\r\n      \"workers\": 1\r\n    },\r\n    \"wall_seconds\": 0.04924280001432635,\r\n    \"workers\": 1\r\n  },\r\n  \"summary\": {\r\n    \"families\": 41,\r\n    \"maximum_shortest_depth\": 16,\r\n    \"maximum_states\": 48,\r\n    \"scope\": \"finite inputs only; no RTL or contextual completeness claim\",\r\n    \"totals\": {\r\n      \"bad\": 334,\r\n      \"cells\": 204,\r\n      \"equation_visits\": 8091,\r\n      \"guard_cells\": 279,\r\n      \"safe\": 186,\r\n      \"state_pair_valuations\": 9076,\r\n      \"valuations\": 520,\r\n      \"witness_nodes\": 51\r\n    },\r\n    \"zero_disagreements\": true\r\n  }\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.17980489999172278
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_timeline.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\timeline-results",
+        "--portable"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"age_translation_families\": 64,\r\n  \"anchor_derived_families\": 3,\r\n  \"bad\": 691,\r\n  \"client_counterexamples\": 691,\r\n  \"client_game_depth_disagreements\": 0,\r\n  \"criterion_game_disagreements\": 0,\r\n  \"families\": 67,\r\n  \"history_translation_families\": 3,\r\n  \"maximum_client_game_depth\": 6,\r\n  \"minimum_client_game_depth\": 2,\r\n  \"port_collision_checker_disagreements\": 0,\r\n  \"safe\": 270,\r\n  \"scope\": \"port-separated launch-indexed timeline contracts, including bounded overlapping pipelines; compile-time bounded parameters\",\r\n  \"state_pair_valuations\": 66688,\r\n  \"valuations\": 961\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 1.0254520000016782
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_timeline.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\timeline-results",
+        "--check-only",
+        "--portable"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"age_translation_families\": 64,\r\n  \"anchor_derived_families\": 3,\r\n  \"bad\": 691,\r\n  \"client_counterexamples\": 691,\r\n  \"client_game_depth_disagreements\": 0,\r\n  \"criterion_game_disagreements\": 0,\r\n  \"families\": 67,\r\n  \"history_translation_families\": 3,\r\n  \"maximum_client_game_depth\": 6,\r\n  \"minimum_client_game_depth\": 2,\r\n  \"port_collision_checker_disagreements\": 0,\r\n  \"safe\": 270,\r\n  \"scope\": \"port-separated launch-indexed timeline contracts, including bounded overlapping pipelines; compile-time bounded parameters\",\r\n  \"state_pair_valuations\": 66688,\r\n  \"valuations\": 961\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.568321200000355
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_anchor.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\anchor-results",
+        "--portable"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"records\": 6,\r\n  \"reflexivity_disagreements\": 0,\r\n  \"rejected_boundary_records\": 1,\r\n  \"scope\": \"manual normalization of published Lilac timing declarations; no source parser, body semantics, bit widths, where-clause functions, or RTL\",\r\n  \"span_collision_disagreements\": 0,\r\n  \"supported_records\": 5,\r\n  \"supported_valuations\": 29\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.13085010001668707
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_anchor.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\anchor-results",
+        "--check-only",
+        "--portable"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"records\": 6,\r\n  \"reflexivity_disagreements\": 0,\r\n  \"rejected_boundary_records\": 1,\r\n  \"scope\": \"manual normalization of published Lilac timing declarations; no source parser, body semantics, bit widths, where-clause functions, or RTL\",\r\n  \"span_collision_disagreements\": 0,\r\n  \"supported_records\": 5,\r\n  \"supported_valuations\": 29\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.13068309999653138
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_exhaustive.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\micro-results",
+        "--portable"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"contextual_refinement_pairs\": 365,\r\n  \"criterion_true_pairs\": 365,\r\n  \"disagreements\": 0,\r\n  \"enumerated_clients\": 3665,\r\n  \"independence\": \"does not import timeline.py or timeline_check.py\",\r\n  \"ordered_profile_pairs\": 2704,\r\n  \"profiles\": 52,\r\n  \"scope\": \"one input port, one output port, ages 0..2, gaps 1..2\"\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.839969699998619
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_exhaustive.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\micro-results",
+        "--check-only",
+        "--portable"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"contextual_refinement_pairs\": 365,\r\n  \"criterion_true_pairs\": 365,\r\n  \"disagreements\": 0,\r\n  \"enumerated_clients\": 3665,\r\n  \"independence\": \"does not import timeline.py or timeline_check.py\",\r\n  \"ordered_profile_pairs\": 2704,\r\n  \"profiles\": 52,\r\n  \"scope\": \"one input port, one output port, ages 0..2, gaps 1..2\"\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.8366780000214931
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_bibliography.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\bibliography-results"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"citation_occurrences\": 175,\r\n  \"cited_entries\": 69,\r\n  \"doi_entries\": 65,\r\n  \"entries\": 69,\r\n  \"external_resolution_note\": \"structural and retained-metadata audit; not a live resolver or independent novelty review\",\r\n  \"high_risk_metadata_checks\": 11,\r\n  \"minimum_required\": 55,\r\n  \"status\": \"pass\",\r\n  \"unique_stable_locators\": 69,\r\n  \"url_only_entries\": 4\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.19462550000753254
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_bibliography.py",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\bibliography-results",
+        "--check-only"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"citation_occurrences\": 175,\r\n  \"cited_entries\": 69,\r\n  \"doi_entries\": 65,\r\n  \"entries\": 69,\r\n  \"external_resolution_note\": \"structural and retained-metadata audit; not a live resolver or independent novelty review\",\r\n  \"high_risk_metadata_checks\": 11,\r\n  \"minimum_required\": 55,\r\n  \"status\": \"pass\",\r\n  \"unique_stable_locators\": 69,\r\n  \"url_only_entries\": 4\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.19669780001277104
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_product.py",
+        "$PROJECT\\artifact\\examples\\compound-left.json",
+        "$PROJECT\\artifact\\examples\\compound-right.json",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\compound",
+        "--portable"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"scope\": \"one owned synchronous disjoint-port example; not a new benchmark denominator or wiring theorem\",\r\n  \"valuations\": [\r\n    {\r\n      \"p\": 1\r\n    },\r\n    {\r\n      \"p\": 2\r\n    },\r\n    {\r\n      \"p\": 3\r\n    }\r\n  ],\r\n  \"safe_valuations\": [\r\n    {\r\n      \"p\": 1\r\n    },\r\n    {\r\n      \"p\": 2\r\n    }\r\n  ],\r\n  \"factor_intersection_sufficient_control\": [\r\n    {\r\n      \"p\": 1\r\n    }\r\n  ],\r\n  \"recovered_valuations\": [\r\n    {\r\n      \"p\": 2\r\n    }\r\n  ],\r\n  \"cells\": [\r\n    {\r\n      \"cell\": \"compound-i0-s0\",\r\n      \"valuations\": 0,\r\n      \"safe\": 0\r\n    },\r\n    {\r\n      \"cell\": \"compound-i0-s1\",\r\n      \"valuations\": 2,\r\n      \"safe\": 1\r\n    },\r\n    {\r\n      \"cell\": \"compound-i1-s0\",\r\n      \"valuations\": 0,\r\n      \"safe\": 0\r\n    },\r\n    {\r\n      \"cell\": \"compound-i1-s1\",\r\n      \"valuations\": 1,\r\n      \"safe\": 1\r\n    }\r\n  ],\r\n  \"same_guarantee_note\": \"factor intersection is sufficient only, not the exact baseline\",\r\n  \"source_sha256\": {\r\n    \"run_product.py\": \"aee4f82b52ccd0099ffc5eb879d05453acdd1bbf5fd1352a6808f504fd360b04\",\r\n    \"src/timeline_product.py\": \"0bcaa8fb616c16e15f8185d4a15fd423e0003e2c650965fdc8a9bc64d4965bd3\",\r\n    \"src/timeline_product_check.py\": \"d6ebf770b49d2ace16b537d14db0aa47d6f0ce5f7c0768a71c5077fcc8db8313\",\r\n    \"src/timeline.py\": \"62d65999b37b65ecaa73cfacf686c67e2ca7e50583fb64e31c44e6fc29512b2c\",\r\n    \"src/timeline_check.py\": \"ffb9553ce467f1e6d0174b86dd28ff34861deb9871d695de6f130770a2262216\",\r\n    \"src/domain.py\": \"e365af45c85d906a026c7f3094ce56dceaaf19ed6152441bbbe418ebc3020dae\",\r\n    \"src/solve.py\": \"c000c6411b0771fbfd2158d59106a7d17b9de6f8e0783b0359814036387cf62e\",\r\n    \"src/check.py\": \"3925ef8a976ad0af6cceae35fa995dd6e21454d3564c1ba8eff1d008a099cd0e\",\r\n    \"src/runtime_limits.py\": \"a8525b92f3585ef6b4a2488ea00ab1006ba9cae1ddbb8deb25edd9ccf286c9f1\"\r\n  },\r\n  \"input_sha256\": {\r\n    \"left\": \"ae69bab9edfc07c7a5e35535c87ad1e692f10a17f8909cb776380ae5f063cc98\",\r\n    \"right\": \"a3479e7a074da5c7bd08fbbe563f25f0a4fb0fadc05314b4256408ef1c84c8c7\"\r\n  }\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.14956599997822195
+    },
+    {
+      "argv": [
+        "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+        "-B",
+        "-S",
+        "-O",
+        "run_product.py",
+        "$PROJECT\\artifact\\examples\\compound-left.json",
+        "$PROJECT\\artifact\\examples\\compound-right.json",
+        "--output",
+        "$OWNED_OUTPUT\\campaign-full-optimized\\interface-refinement-vz16k204\\compound",
+        "--portable",
+        "--check-only"
+      ],
+      "cwd": "$PROJECT\\artifact",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "{\r\n  \"scope\": \"one owned synchronous disjoint-port example; not a new benchmark denominator or wiring theorem\",\r\n  \"valuations\": [\r\n    {\r\n      \"p\": 1\r\n    },\r\n    {\r\n      \"p\": 2\r\n    },\r\n    {\r\n      \"p\": 3\r\n    }\r\n  ],\r\n  \"safe_valuations\": [\r\n    {\r\n      \"p\": 1\r\n    },\r\n    {\r\n      \"p\": 2\r\n    }\r\n  ],\r\n  \"factor_intersection_sufficient_control\": [\r\n    {\r\n      \"p\": 1\r\n    }\r\n  ],\r\n  \"recovered_valuations\": [\r\n    {\r\n      \"p\": 2\r\n    }\r\n  ],\r\n  \"cells\": [\r\n    {\r\n      \"cell\": \"compound-i0-s0\",\r\n      \"valuations\": 0,\r\n      \"safe\": 0\r\n    },\r\n    {\r\n      \"cell\": \"compound-i0-s1\",\r\n      \"valuations\": 2,\r\n      \"safe\": 1\r\n    },\r\n    {\r\n      \"cell\": \"compound-i1-s0\",\r\n      \"valuations\": 0,\r\n      \"safe\": 0\r\n    },\r\n    {\r\n      \"cell\": \"compound-i1-s1\",\r\n      \"valuations\": 1,\r\n      \"safe\": 1\r\n    }\r\n  ],\r\n  \"same_guarantee_note\": \"factor intersection is sufficient only, not the exact baseline\",\r\n  \"source_sha256\": {\r\n    \"run_product.py\": \"aee4f82b52ccd0099ffc5eb879d05453acdd1bbf5fd1352a6808f504fd360b04\",\r\n    \"src/timeline_product.py\": \"0bcaa8fb616c16e15f8185d4a15fd423e0003e2c650965fdc8a9bc64d4965bd3\",\r\n    \"src/timeline_product_check.py\": \"d6ebf770b49d2ace16b537d14db0aa47d6f0ce5f7c0768a71c5077fcc8db8313\",\r\n    \"src/timeline.py\": \"62d65999b37b65ecaa73cfacf686c67e2ca7e50583fb64e31c44e6fc29512b2c\",\r\n    \"src/timeline_check.py\": \"ffb9553ce467f1e6d0174b86dd28ff34861deb9871d695de6f130770a2262216\",\r\n    \"src/domain.py\": \"e365af45c85d906a026c7f3094ce56dceaaf19ed6152441bbbe418ebc3020dae\",\r\n    \"src/solve.py\": \"c000c6411b0771fbfd2158d59106a7d17b9de6f8e0783b0359814036387cf62e\",\r\n    \"src/check.py\": \"3925ef8a976ad0af6cceae35fa995dd6e21454d3564c1ba8eff1d008a099cd0e\",\r\n    \"src/runtime_limits.py\": \"a8525b92f3585ef6b4a2488ea00ab1006ba9cae1ddbb8deb25edd9ccf286c9f1\"\r\n  },\r\n  \"input_sha256\": {\r\n    \"left\": \"ae69bab9edfc07c7a5e35535c87ad1e692f10a17f8909cb776380ae5f063cc98\",\r\n    \"right\": \"a3479e7a074da5c7bd08fbbe563f25f0a4fb0fadc05314b4256408ef1c84c8c7\"\r\n  }\r\n}\r\n",
+      "stderr": "",
+      "wall_seconds": 0.1447792999970261
+    }
+  ]
+}

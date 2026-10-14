@@ -1,0 +1,104 @@
+{
+  "left": {
+    "assumption": true,
+    "group": "owned-workflow-example",
+    "horizon": 3,
+    "id": "compound-left",
+    "implementation": {
+      "gap": "p",
+      "reads": {
+        "a": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "writes": {
+        "u": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "parameters": [
+      {
+        "hi": 3,
+        "lo": 1,
+        "name": "p"
+      }
+    ],
+    "specification": {
+      "gap": 1,
+      "reads": {
+        "a": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "writes": {
+        "u": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  "right": {
+    "assumption": true,
+    "group": "owned-workflow-example",
+    "horizon": 3,
+    "id": "compound-right",
+    "implementation": {
+      "gap": 2,
+      "reads": {
+        "b": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "writes": {
+        "v": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "parameters": [
+      {
+        "hi": 3,
+        "lo": 1,
+        "name": "p"
+      }
+    ],
+    "specification": {
+      "gap": 2,
+      "reads": {
+        "b": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "writes": {
+        "v": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    }
+  }
+}

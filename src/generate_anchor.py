@@ -84,7 +84,7 @@ def write_anchor_inputs(directory):
     directory.mkdir(parents=True, exist_ok=True)
     for item in all_anchor_records():
         (directory / (item['id'] + '.json')).write_text(
-            json.dumps(item, indent=2, sort_keys=True) + '\n'
+            json.dumps(item, indent=2, sort_keys=True) + '\n',encoding='utf-8',newline='\n'
         )
 
 

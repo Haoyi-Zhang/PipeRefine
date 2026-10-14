@@ -4,7 +4,6 @@ import argparse
 import csv
 import json
 from pathlib import Path
-import resource
 import os
 import sys
 import time
@@ -15,31 +14,31 @@ from check import check_certificate, certificate_ranks, make_witness, check_witn
 from timeline import safe_valuation_ids, translate_case
 from timeline_check import (validate_timeline, direct_refines, check_client_record,
                             check_history_translation)
+from runtime_limits import configure,check_cpu,peak_rss_kib
 
 
 def dump(path, obj):
-    path.write_text(json.dumps(obj, indent=2, sort_keys=True) + '\n')
+    path.write_text(json.dumps(obj, indent=2, sort_keys=True) + '\n',encoding='utf-8',newline='\n')
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--output', type=Path, default=ROOT / 'timeline-results')
     ap.add_argument('--check-only', action='store_true')
+    ap.add_argument('--portable',action='store_true',help='cooperative checks, no OS hard-limit claim')
     args = ap.parse_args()
     if not args.check_only:
         # Generation alone imports the producer's client constructor.  The
         # check-only path validates persisted events without that routine.
         from timeline import canonical_counterexample
-    resource.setrlimit(resource.RLIMIT_AS, (2 * 1024**3, 2 * 1024**3))
-    resource.setrlimit(resource.RLIMIT_CPU, (110, 110))
-    if hasattr(os, 'sched_setaffinity'):
-        os.sched_setaffinity(0, {min(os.sched_getaffinity(0))})
+    limits=configure(args.portable)
     args.output.mkdir(parents=True, exist_ok=True)
     rows = []
     all_records = []
     t0 = time.perf_counter()
     c0 = time.process_time()
     for path in sorted((ROOT / 'timeline-inputs').glob('*.json')):
+        check_cpu()
         case = json.loads(path.read_text())
         values = validate_timeline(case)
         translated = translate_case(case)
@@ -139,8 +138,8 @@ def main():
         dump(args.output / 'measurements.json', {
             'wall_seconds': time.perf_counter() - t0,
             'cpu_seconds': time.process_time() - c0,
-            'peak_rss_kib': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
-            'workers': 1,
+            'peak_rss_kib': peak_rss_kib(),
+            'workers': 1, 'runtime_limits':limits,
         })
     print(json.dumps(summary, indent=2, sort_keys=True))
 

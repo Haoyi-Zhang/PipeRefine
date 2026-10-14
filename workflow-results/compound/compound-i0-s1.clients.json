@@ -1,0 +1,61 @@
+{
+  "case_id": "compound-i0-s1",
+  "counterexamples": [
+    {
+      "client": {
+        "age": 2,
+        "drives": [
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "a",
+            "time": 0
+          },
+          {
+            "age": 0,
+            "launch": 0,
+            "port": "b",
+            "time": 0
+          },
+          {
+            "age": 0,
+            "launch": 2,
+            "port": "a",
+            "time": 2
+          },
+          {
+            "age": 0,
+            "launch": 2,
+            "port": "b",
+            "time": 2
+          }
+        ],
+        "explanation": "the second specification-legal launch is too early for the replacement",
+        "first_violation_cycle": 2,
+        "kind": "gap",
+        "launches": [
+          0,
+          2
+        ],
+        "port": null,
+        "samples": []
+      },
+      "game_rank": 4,
+      "valuation": {
+        "p": 3
+      },
+      "valuation_id": 1
+    }
+  ],
+  "safe_valuation_ids": [
+    0
+  ],
+  "valuations": [
+    {
+      "p": 2
+    },
+    {
+      "p": 3
+    }
+  ]
+}

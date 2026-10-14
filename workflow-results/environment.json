@@ -1,0 +1,27 @@
+{
+  "observed_utc": "2026-10-14T04:51:06.905714+00:00",
+  "os": "Windows-11-10.0.28000-SP0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+  "cpu_query": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors | ConvertTo-Json -Compress"
+  ],
+  "cpu": {
+    "Name": "12th Gen Intel(R) Core(TM) i7-12700KF",
+    "NumberOfCores": 12,
+    "NumberOfLogicalProcessors": 20
+  },
+  "dependencies": "Python standard library only",
+  "native_scope": "Local Windows CPython processes over owned finite mathematical inputs, not native RTL, a language compiler, production, or deployment",
+  "POSIX_fresh_execution": false,
+  "hard_resource_limits_in_portable_mode": false,
+  "memory_method": "GetProcessMemoryInfo on GetCurrentProcess pseudo-handle, peak working set/commit bytes; no foreign process access",
+  "path_tokens": {
+    "$PROJECT": "relocated candidate root",
+    "$OWNED_OUTPUT": "private fresh output root; no semantic path input"
+  },
+  "raw_receipts": "Private unmodified launch/stdout/stderr and original absolute paths retained separately; public paths only are tokenized"
+}

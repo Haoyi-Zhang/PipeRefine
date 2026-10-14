@@ -12,6 +12,7 @@ from collections import Counter
 from pathlib import Path
 
 from src.bibliography_check import parse_bibtex, read_audit, read_counts, validate, venue, locator
+from src.runtime_limits import scientific_equal
 
 ROOT = Path(__file__).resolve().parent
 
@@ -29,17 +30,24 @@ def main() -> None:
         raise SystemExit("retained citation sequence does not reproduce citation counts")
     audit = read_audit(ROOT / "literature/bibliography-audit.csv")
     summary = validate(entries, counts, audit)
+    fields = ["key", "entry_type", "year", "venue", "stable_identifier", "citation_count"]
+    expected_rows=[{"key":entry.key,"entry_type":entry.entry_type,"year":entry.fields["year"],
+        "venue":venue(entry),"stable_identifier":locator(entry),"citation_count":str(counts[entry.key])}
+        for entry in entries]
     if args.check_only:
-        retained = json.loads((ROOT / "bibliography-results/summary.json").read_text(encoding="utf-8"))
-        if summary != retained:
+        retained = json.loads((args.output / "summary.json").read_text(encoding="utf-8"))
+        if not scientific_equal(summary,retained):
             raise SystemExit("retained bibliography summary differs")
+        with (args.output/"entries.csv").open(newline="",encoding="utf-8") as handle:
+            reader=csv.DictReader(handle)
+            if reader.fieldnames!=fields or list(reader)!=expected_rows:
+                raise SystemExit("retained bibliography entries differ")
         print(json.dumps(summary, indent=2, sort_keys=True))
         return
 
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     with (args.output / "entries.csv").open("w", newline="", encoding="utf-8") as handle:
-        fields = ["key", "entry_type", "year", "venue", "stable_identifier", "citation_count"]
         writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for entry in entries:

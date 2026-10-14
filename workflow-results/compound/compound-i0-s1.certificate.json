@@ -1,0 +1,65 @@
+{
+  "case_id": "compound-i0-s1",
+  "cells": [
+    {
+      "ranks": [
+        -1,
+        1,
+        1,
+        1,
+        2,
+        -1,
+        1,
+        1,
+        2,
+        1,
+        -1,
+        -1,
+        2,
+        1,
+        -1,
+        -1
+      ],
+      "valuation_ids": [
+        0
+      ]
+    },
+    {
+      "ranks": [
+        3,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        4,
+        4
+      ],
+      "valuation_ids": [
+        1
+      ]
+    }
+  ],
+  "equation_visits": 80,
+  "rounds": 4,
+  "safe_valuation_ids": [
+    0
+  ],
+  "shortest_bad_valuation_id": 1,
+  "valuations": [
+    {
+      "p": 2
+    },
+    {
+      "p": 3
+    }
+  ]
+}

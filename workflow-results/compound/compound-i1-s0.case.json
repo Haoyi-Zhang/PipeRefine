@@ -1,0 +1,93 @@
+{
+  "assumption": [
+    "and",
+    true,
+    true,
+    [
+      "<",
+      "p",
+      2
+    ],
+    [
+      "<=",
+      2,
+      1
+    ]
+  ],
+  "group": "synchronous-product",
+  "horizon": 3,
+  "id": "compound-i1-s0",
+  "implementation": {
+    "gap": 2,
+    "reads": {
+      "a": [
+        [
+          0,
+          1
+        ]
+      ],
+      "b": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "u": [
+        [
+          1,
+          2
+        ]
+      ],
+      "v": [
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  },
+  "parameters": [
+    {
+      "hi": 3,
+      "lo": 1,
+      "name": "p"
+    }
+  ],
+  "product_gap_owners": {
+    "implementation": "right",
+    "specification": "left"
+  },
+  "specification": {
+    "gap": 1,
+    "reads": {
+      "a": [
+        [
+          0,
+          1
+        ]
+      ],
+      "b": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "writes": {
+      "u": [
+        [
+          1,
+          2
+        ]
+      ],
+      "v": [
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "cpu_seconds": 0.015625,
+  "peak_rss_kib": null,
+  "runtime_limits": {
+    "cooperative_cpu_checks": true,
+    "dont_write_bytecode": true,
+    "mode": "portable",
+    "os_address_space_limit_enforced": false,
+    "os_cpu_limit_enforced": false,
+    "peak_rss_available": false,
+    "platform": "win32",
+    "python_optimization": 0,
+    "requested_address_space_bytes": 2147483648,
+    "requested_cpu_seconds": 110,
+    "site_packages_disabled": true,
+    "workers": 1
+  },
+  "wall_seconds": 0.00794879999011755
+}

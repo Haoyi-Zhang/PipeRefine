@@ -100,7 +100,7 @@ def all_timeline_cases():
 def write_timeline_inputs(directory):
     directory = Path(directory); directory.mkdir(parents=True, exist_ok=True)
     for c in all_timeline_cases():
-        (directory / (c['id'] + '.json')).write_text(json.dumps(c, indent=2, sort_keys=True) + '\n')
+        (directory / (c['id'] + '.json')).write_text(json.dumps(c, indent=2, sort_keys=True) + '\n',encoding='utf-8',newline='\n')
 
 
 if __name__ == '__main__':

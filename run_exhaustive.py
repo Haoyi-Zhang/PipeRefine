@@ -7,32 +7,31 @@ import csv
 import json
 import os
 from pathlib import Path
-import resource
 import sys
 import time
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
 from exhaustive_context import exhaustive_campaign
+from runtime_limits import configure,check_cpu,peak_rss_kib,scientific_equal
 
 
 def dump(path: Path, obj) -> None:
-    path.write_text(json.dumps(obj, indent=2, sort_keys=True) + "\n")
+    path.write_text(json.dumps(obj, indent=2, sort_keys=True) + "\n",encoding='utf-8',newline='\n')
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "micro-results")
     parser.add_argument("--check-only", action="store_true")
+    parser.add_argument('--portable',action='store_true')
     args = parser.parse_args()
-    resource.setrlimit(resource.RLIMIT_AS, (2 * 1024**3, 2 * 1024**3))
-    resource.setrlimit(resource.RLIMIT_CPU, (110, 110))
-    if hasattr(os, "sched_setaffinity"):
-        os.sched_setaffinity(0, {min(os.sched_getaffinity(0))})
+    limits=configure(args.portable)
 
     started_wall = time.perf_counter()
     started_cpu = time.process_time()
     profiles, clients, rows, disagreements = exhaustive_campaign()
+    check_cpu()
     summary = {
         "profiles": len(profiles),
         "ordered_profile_pairs": len(rows),
@@ -54,7 +53,7 @@ def main() -> None:
     if args.check_only:
         retained_summary = json.loads((args.output / "summary.json").read_text())
         # Measured timing is intentionally not in summary.json.
-        if retained_summary != summary:
+        if not scientific_equal(retained_summary,summary):
             raise RuntimeError("retained exhaustive summary differs")
         with (args.output / "profiles.csv").open(newline="") as handle:
             retained_profiles = list(csv.DictReader(handle))
@@ -77,8 +76,8 @@ def main() -> None:
         dump(args.output / "measurements.json", {
             "wall_seconds": time.perf_counter() - started_wall,
             "cpu_seconds": time.process_time() - started_cpu,
-            "peak_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
-            "workers": 1,
+            "peak_rss_kib": peak_rss_kib(),
+            "workers": 1, "runtime_limits":limits,
         })
     if disagreements:
         raise RuntimeError(f"criterion/context disagreement: {disagreements[0]}")

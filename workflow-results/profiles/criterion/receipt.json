@@ -1,0 +1,146 @@
+{
+  "method": "criterion",
+  "families": 67,
+  "valuations": 961,
+  "safe": 270,
+  "failed_clients": 691,
+  "through_answers": {
+    "cpu_seconds": 0.0625,
+    "wall_seconds": 0.05802739999489859
+  },
+  "stages": {
+    "input_read_decode": {
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.0022811000235378742
+    },
+    "full_admission_and_collision_check": {
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.015525299910223112
+    },
+    "all_criterion_queries": {
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.004568699834635481
+    },
+    "all_client_construction_and_replay": {
+      "cpu_seconds": 0.03125,
+      "wall_seconds": 0.032022699946537614
+    },
+    "answer_encoding": {
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.002366799977608025
+    },
+    "answer_write": {
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0002272999845445156
+    }
+  },
+  "memory": {
+    "peak_rss_kib": null,
+    "windows_peak_working_set_bytes": 22679552,
+    "windows_peak_commit_bytes": 13807616,
+    "scope": "whole owned process before receipt write/exit; includes imports/input/answers, not Linux RSS or an OS cap"
+  },
+  "runtime_limits": {
+    "mode": "portable",
+    "workers": 1,
+    "requested_cpu_seconds": 110,
+    "requested_address_space_bytes": 2147483648,
+    "os_cpu_limit_enforced": false,
+    "os_address_space_limit_enforced": false,
+    "cooperative_cpu_checks": true,
+    "peak_rss_available": false,
+    "python_optimization": 0,
+    "site_packages_disabled": true,
+    "dont_write_bytecode": true,
+    "platform": "win32"
+  },
+  "answer_sha256": "0c73b2917ad84f9fc4aa9ad81d44bb039183c53775eaebda4272b4c86e5a1c59",
+  "input_sha256": {
+    "timeline-inputs/timeline-anchor-fpadd.json": "fd9328402abf27a484a1c8a6410c2194c94976629814fbf966a5e0215acba4b3",
+    "timeline-inputs/timeline-anchor-highrad.json": "38a32236a382e131f83764ea3a20ad349383a1588d25eb6697de720fd3e9c547",
+    "timeline-inputs/timeline-anchor-shift.json": "1a19b11248fd9c51c8d68db485e6ccb9a5541a74810be6102f4446dd78c83b59",
+    "timeline-inputs/timeline-combined.json": "eea22dfb29a32f1d64a67f3829f0948a75128cd5bbe01be21f437b489a1253f3",
+    "timeline-inputs/timeline-correlated-assumption.json": "0f33d8a229e8e63a446e3510bbcc1d06a88e5082f1368182637b3a6daa9da001",
+    "timeline-inputs/timeline-disjoint-read.json": "235bcd3fd5efbb37529ed639008aa2446b480aa1f083ca21921cb65e26fae2c2",
+    "timeline-inputs/timeline-disjoint-write.json": "a7107a187b455348f6c62c562708dd79057f62e5bbf2ba3c3ca5dcd8f9c9ec75",
+    "timeline-inputs/timeline-extra-read-port.json": "992d6ef3fbf42ec4324f1a21b726f91ff4eb803b3f9eabb72f6c373afcd7c780",
+    "timeline-inputs/timeline-extra-write-port.json": "e25fcd8ddae1e472a46c9f3ab7eae10cc484b304ab26a5d5ac2b5f81b0811fea",
+    "timeline-inputs/timeline-gap.json": "096db28113db5da3af0e2722e495b7755f4153fbc8e0f8bf01368ed15d932519",
+    "timeline-inputs/timeline-generated-01.json": "be2fff162aaba11ff2226f0a322b5679e9890f92fcc31b7a364da7aeb9d8494f",
+    "timeline-inputs/timeline-generated-02.json": "18ca30e22a3ed7cff2c14e49f704901c59ab7d7afd5a8f7ac832a71c5bfb0764",
+    "timeline-inputs/timeline-generated-03.json": "a5f2fa338994c5bbbfdb6d7d06a0c4691062dd89599b2c588b9a3bca6af73c1c",
+    "timeline-inputs/timeline-generated-04.json": "dee665410d691aff5c2ae927137b68c2cad91c7ce9b1a83dcb68be6f2ebac037",
+    "timeline-inputs/timeline-generated-05.json": "6a1950262a2693aa2a75e4fc4103464e39dafdd76c929d9f0fd0482a59b0f557",
+    "timeline-inputs/timeline-generated-06.json": "ce9e27277b7cfb4870f42430e3c92a5c1b4d2809df264aa4b0e7582b63093c2e",
+    "timeline-inputs/timeline-generated-07.json": "fccb43d6b631205d4a02a0bff784a5723aeb23c7847ed81c106274db184fd183",
+    "timeline-inputs/timeline-generated-08.json": "87b571c10c2e25195357217c7122ac5614ca2a095276e871610f8908f8d94044",
+    "timeline-inputs/timeline-generated-09.json": "269034ccb18586e226386332e8c94a206ce795f11e9bd2139cd9d70ee782697b",
+    "timeline-inputs/timeline-generated-10.json": "4e0ee6679051fb714795b5786270c2f2355e9ac44124b72aace72ceb1a92931b",
+    "timeline-inputs/timeline-generated-11.json": "01f1a31f7eb082af7effe3ef835418eb0d58f7062b54cd6aaee6f00100da1a45",
+    "timeline-inputs/timeline-generated-12.json": "0b5ad4f560abd597a8fb328f04dc8ffbdb2b1d7370b09d3cdc76508b85207e0e",
+    "timeline-inputs/timeline-generated-13.json": "5f0444bacd58bc7ce15626ffe587950cb967dd5813e4341a914ac571b387a6a2",
+    "timeline-inputs/timeline-generated-14.json": "c65548ca8b1f859792011183e195eae74d2a1471c3ec582ccce0b3a8098ff3ff",
+    "timeline-inputs/timeline-generated-15.json": "8674ad23d60b4f05f304d91233d9a522960538ebdb3780b7db72dec5e7c7bc0a",
+    "timeline-inputs/timeline-generated-16.json": "e8de2b78bd172c5303d01bcd343e3b4f76f653d473bc15e00aa532c199b0d2fb",
+    "timeline-inputs/timeline-generated-17.json": "5e910669a2598f0bad38459d13ed18e15b5692c55c529dced63c481191396ef6",
+    "timeline-inputs/timeline-generated-18.json": "88450177344ec3fcf8f72efc18b60b4e003901ddbbb3934721e6e2df32e4fe9e",
+    "timeline-inputs/timeline-generated-19.json": "b176f5fd8806611369e844628237f78c5eb70fdd4ba526dbd70be2a7dc7555d4",
+    "timeline-inputs/timeline-generated-20.json": "4ade60cb6d32e92f2fbb20013687ac3d3b4f9ee5aae9653a18736107d8083e36",
+    "timeline-inputs/timeline-generated-21.json": "cbb1ee807c3091a296cfe60534f66f2973a273fd6c47da925e28cf47c949e81d",
+    "timeline-inputs/timeline-generated-22.json": "da7f377cd4b81a12927f36245c9f2ec0876aa16eb6bef9d5ba11f5cdb6f273f9",
+    "timeline-inputs/timeline-generated-23.json": "7e2baaf2d8f78e1176c539f341be095fb3ef387a71dd1346a9ce1ae1fe9d4f30",
+    "timeline-inputs/timeline-generated-24.json": "e59d8b09414a200ea9d859a7c3ccdb655e66f7ccf29f1253d6b3f30544a04e07",
+    "timeline-inputs/timeline-generated-25.json": "7bdb7d956fbcf4b1bdcd6b808e229dc3480d9986e75125af766e5ab2cb9c4407",
+    "timeline-inputs/timeline-generated-26.json": "53ef210ef14cadaf0dc3adf552118495e2d4ba338cc35011155bbbbf05a5ce00",
+    "timeline-inputs/timeline-generated-27.json": "aa8dbace2776e83cc5106ac3904ffcf0e8e8b754a45be1fc2bdb90f8c77be139",
+    "timeline-inputs/timeline-generated-28.json": "29928952ecd5aaf857e9aaa32f6b4508bd3d3b2aad1ebbb8ff23d70540909d99",
+    "timeline-inputs/timeline-generated-29.json": "f00c21247fbc480c578a8dc3975f87ae4e392103e41f3f417657a2b8aaa6453f",
+    "timeline-inputs/timeline-generated-30.json": "6bbddc066aa70bf46fa743b0a9a75819f64244df8c3f50c232914e3e1ac67100",
+    "timeline-inputs/timeline-generated-31.json": "279ac861f107744d4db0b8bf6b56ff47d4bf7d17abcb33e6ee166450f41a1896",
+    "timeline-inputs/timeline-generated-32.json": "e3c3e547de8a1716db9d4205370fa4de1a7b067de9322cec86f7f64c7babfe02",
+    "timeline-inputs/timeline-generated-33.json": "1b7de702f8c5635b65f84b85165e9be35454819810e0e731dc5c9dfe8c8814a3",
+    "timeline-inputs/timeline-generated-34.json": "c7e87c3dc72fb04fb46b9211137e66b46a8302b56ea8c0cdd51a15e70e1578d2",
+    "timeline-inputs/timeline-generated-35.json": "56cb66a10f130c02f75b0e3268029da81f19b9f290b11fc0385db043d9dac1be",
+    "timeline-inputs/timeline-generated-36.json": "1a35d94d0f4f6bd2c2282182c2c97fbafddda10f08bb3308121b00da47f6fd30",
+    "timeline-inputs/timeline-generated-37.json": "3d9ea6e7cbebd4eb58c71ebdb3df99cc2cc5fb2d5dfa835e3433a04cfedd93a9",
+    "timeline-inputs/timeline-generated-38.json": "d1f47954f6398fa9052fd72866ca512a646bd1046637a08d53918b07abe8da1f",
+    "timeline-inputs/timeline-generated-39.json": "df4a154b2f2612485e4d4efcf7aecf5512e9d8b048fa03590361430a6e78b100",
+    "timeline-inputs/timeline-generated-40.json": "e6878275d48af79778090b5791491578c5fc8880ed5cf1a184dcb07e92db8392",
+    "timeline-inputs/timeline-generated-41.json": "1c784e693b00d640047ab2e1b3195d4bc69702ac8f1b4cd25a32c6607ed99b2a",
+    "timeline-inputs/timeline-generated-42.json": "62faeedaea15cc3b51d0a994d9c26af7f92457ab56884e5cd0d6196ffef76943",
+    "timeline-inputs/timeline-generated-43.json": "9534955ba92aabeeccc6c921c629852b6705f4b75f7af8d1f1048cd3c980745b",
+    "timeline-inputs/timeline-generated-44.json": "5fa8910ff250013fa40f2303d28112ae53d5f9ec7301528150677583e5a31620",
+    "timeline-inputs/timeline-generated-45.json": "e68db47fac3f32157adbf7d13f44ab1beb85ba160b0b693201341936aaf80e36",
+    "timeline-inputs/timeline-generated-46.json": "d85bb156e2ae41a88ceddfcbce3dc1466e163926770d44b524a2e933cff5426f",
+    "timeline-inputs/timeline-generated-47.json": "918ec57a6625c45db6bfecfa977c666e2aa51a44887017488b86aaeca3953f64",
+    "timeline-inputs/timeline-generated-48.json": "bdcfea1ea9ed21892a499626647ec8395c3deff9326b1ea101275677f9de4169",
+    "timeline-inputs/timeline-generated-49.json": "dda5e90955221dd7cfd4b80a042bd33c6996b35b970db96785926820e70229fe",
+    "timeline-inputs/timeline-generated-50.json": "25a5525a1265ab0bf9707d41f60de44f09b178fa3de0ceb4134a71864aa54afe",
+    "timeline-inputs/timeline-generated-51.json": "379f69f9a6aac30287d0b9a879479540f762cb730762fd6cbbfbb3cbfba709b3",
+    "timeline-inputs/timeline-generated-52.json": "1231c2f57ca6266cca2534a833d4284c05a3108bea4597cb072661a9102f1a02",
+    "timeline-inputs/timeline-identical.json": "a5d88af5439af406c3b6b04a22e4abdc1b78adff3a173f2b9c9e116a0748f0d6",
+    "timeline-inputs/timeline-missing-write-port.json": "84217160831b58713b202682a335444ef251c0029712161854558de1a92695b4",
+    "timeline-inputs/timeline-read-window.json": "fa8a5cb59ae8de9e1dcd1831509ac62f8836c065ff6dca7748e79bd29cca39a5",
+    "timeline-inputs/timeline-three-ports.json": "c1ab655ae32c6df7bc89e76a195f6f932b1aef833f0ec61e516bd1283ebfb2bb",
+    "timeline-inputs/timeline-write-window.json": "cf529f8854302edbd57d3aa5b3f456a5fd24c6c4438bf9600b82f5d9f4dd2640"
+  },
+  "source_sha256": {
+    "profile_workflow.py": "176272f636a4b91f757a9ffb491078ec8b70314bed6f5c47d435f9156274b533",
+    "src/timeline.py": "62d65999b37b65ecaa73cfacf686c67e2ca7e50583fb64e31c44e6fc29512b2c",
+    "src/timeline_check.py": "ffb9553ce467f1e6d0174b86dd28ff34861deb9871d695de6f130770a2262216",
+    "src/domain.py": "e365af45c85d906a026c7f3094ce56dceaaf19ed6152441bbbe418ebc3020dae",
+    "src/solve.py": "c000c6411b0771fbfd2158d59106a7d17b9de6f8e0783b0359814036387cf62e",
+    "src/check.py": "3925ef8a976ad0af6cceae35fa995dd6e21454d3564c1ba8eff1d008a099cd0e",
+    "src/runtime_limits.py": "a8525b92f3585ef6b4a2488ea00ab1006ba9cae1ddbb8deb25edd9ccf286c9f1"
+  },
+  "source_scope": "seven imported local files, not every function or independent authorship",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.28000-SP0"
+  },
+  "contract": "all retained timeline safe valuations and every canonical shortest client; identical inputs and semantic guarantee",
+  "extra_game_work": "complete rank tables/certificates and selected branching spoiler are constructed and consumed only by game arms",
+  "criterion_rank_scope": "arithmetic prediction of time+2, not native game execution in the criterion arm",
+  "measurement_scope": "one fresh process per arm; body through answers; external command includes startup/imports/receipt/exit",
+  "native_scope": "owned finite Python models only, no hardware/HDL/RTL/external featured-game engine"
+}

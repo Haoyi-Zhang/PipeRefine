@@ -5,11 +5,12 @@ described in the accompanying paper. It uses only the Python standard library,
 requires no network access, and does not call an external solver or model API.
 The code is distributed under `LICENSE` (MIT).
 
-The complete reproduction workflow below requires a POSIX system
-providing Python's `resource` module (for example Linux). Python 3.12 is used by
-the supplied Ubuntu 24.04 scientific-check workflow. Unit tests and the core
-finite algorithms also run natively on Windows; that path does not execute the
-POSIX resource-limited drivers.
+The default reproduction path requires a POSIX system providing Python's
+`resource` module. Explicit `--portable` mode also executes the entire workflow
+on native Windows, while honestly reporting that CPU/address-space hard limits
+and POSIX RSS are unavailable. It uses cooperative CPU checks and a parent
+wall-time watchdog, not an equivalent OS sandbox. No runtime installation is
+needed. The retained Ubuntu scientific workflow is not a fresh CI result.
 
 ## Scientific scope
 
@@ -106,7 +107,7 @@ review.
 Run from this directory:
 
 ```bash
-python -m unittest discover -s tests -v
+python -B -S -m unittest discover -s tests -v
 python -B tests/reply_index_regression.py
 python -B -O tests/reply_index_regression.py
 python -B tests/directed_client_regression.py -v
@@ -115,12 +116,14 @@ python run_timeline.py --check-only
 python run_anchor.py --check-only
 python run_exhaustive.py --check-only
 python run_bibliography.py --check-only
-python reproduce.py
+python -B -S reproduce.py
 ```
 
 The two explicit reply-index checks each run four additional finite regression
 groups; they are also explicit steps in scientific CI. They are separate from
-the frozen 108-test discovery inventory checked by `reproduce.py`. Their
+the current 118-test discovery inventory checked by `reproduce.py`. The separate
+directed-client suite also has four tests; neither suite is pooled into discovery.
+Their
 test-local reference enumerates raw-edge arenas, spoiler trees and all tiny
 postfixed relations, not an earlier implementation. The producer builds local
 ordered reply buckets after mask evaluation; the independent checker builds
@@ -137,10 +140,78 @@ and byte-compares 294 claim-relevant scientific files. A successful run reports
 `status: pass` and the current unit-test count. Timing measurements are intentionally
 excluded from deterministic byte equality. The retained `results/reproduction.json`
 records a historical 102-test reproduction and historical paper-build checks;
-it is not evidence that the edited manuscript was rebuilt. The current native
-Windows CPython 3.12.14 run passes 108 tests and replays the finite core results,
-with 114 byte-identical input regenerations, 284 matching JSON objects, and an
-unchanged 2,704-row micro-pair table. It does not execute the POSIX drivers.
+it is not evidence that an edited manuscript was rebuilt. Earlier native
+Windows core-only records have 108 tests, 114 byte-identical regenerated inputs,
+284 matching JSON objects and the unchanged micro-pair table. Current complete
+Windows CPython 3.12.14 normal and `-O` runs each pass 118 discovery tests, the
+two separate four-test suites, all five campaigns and consumer-only replays,
+114 input byte comparisons and 294 scientific-file byte comparisons. All 108
+earlier test identities remain. Results are not pooled across optimization modes.
+
+For a fresh owned external directory, the native portable entry points are:
+
+```bash
+python -B -S reproduce.py --portable --scratch "$OWNED_OUTPUT/normal" --keep-work --output "$OWNED_OUTPUT/normal.json"
+python -B -S -O reproduce.py --portable --scratch "$OWNED_OUTPUT/optimized" --keep-work --output "$OWNED_OUTPUT/optimized.json"
+```
+
+Set `PYTHONDONTWRITEBYTECODE=1` for owned subprocesses, and set `TEMP`, `TMP` and
+`TMPDIR` to an owned external temporary directory. The reproducer propagates
+`-B`, `-S`, the actual optimization mode and bytecode suppression to every child,
+retains child commands/stdout/stderr, and records explicit resource capabilities.
+On Windows append `--portable` to individual general/timeline/anchor/micro
+commands below; bibliography checks have no POSIX resource dependency.
+
+`tests/test_workflow.py` guards three recording/consumer issues: typed integer
+bindings (not Python bool/float equality), exact two-sided scientific-file
+coverage, and replaying the supplied bibliography output including every CSV
+row. Explicit UTF-8/LF generators make regeneration byte-stable on Windows.
+These repairs leave valid-domain decisions and all retained semantic data intact.
+
+## Compound-operation query and complete query costs
+
+`run_product.py` accepts two already-declared families with the same ordered
+parameter box and disjoint directed ports. It encodes the two shared-launch
+maximum gaps as four disjoint Presburger cells in the existing grammar, then
+uses the unchanged criterion/game/certificate/client workflow. Its independent
+product consumer checks exact coverage, maxima and map ownership from the
+factor inputs. Check-only replay does not invoke producer constructors.
+
+```bash
+python -B -S run_product.py examples/compound-left.json examples/compound-right.json --portable --output "$OWNED_OUTPUT/compound"
+python -B -S run_product.py examples/compound-left.json examples/compound-right.json --portable --output "$OWNED_OUTPUT/compound" --check-only
+python -B -S profile_workflow.py criterion --portable --output "$OWNED_OUTPUT/criterion"
+python -B -S profile_workflow.py bitset --portable --output "$OWNED_OUTPUT/bitset"
+python -B -S profile_workflow.py scalar --portable --output "$OWNED_OUTPUT/scalar"
+```
+
+The example's exact safe set is `{p=1,p=2}`, whereas intersecting factor-safe
+sets gives only `{p=1}`. Intersection is a sufficient control, not a same-guarantee
+exact baseline. This owned finite example is separate from the unchanged 67
+timeline / 41 general / six source-record denominators. It neither wires ports
+nor evaluates data/RTL or an imported Lilac program.
+
+The profile's three methods return identical exact safe identifiers and all
+691 independently replayed canonical shortest clients over the same 67 inputs
+and 961 valuations. Criterion is the closest ordinary comparator; the bitset
+and scalar game paths additionally construct and consume complete rank
+certificates and selected spoilers in memory. Body cost includes input decode,
+admission/collision checks, queries, explanations, answer encoding and writing;
+external process time also includes startup/imports, receipt/hash I/O and exit.
+Writing and reloading every game certificate is not in this common-query
+profile; it is exercised by the separate full campaign. Source/RTL compilation
+and hardware execution are not measured. One fresh sequential process per method
+does not support statistical superiority, and the direct criterion is cheapest
+on this cohort. Own-process Windows working-set bytes are not Linux RSS or an
+OS memory cap; raw stages and capability flags are retained.
+
+`workflow-results/` is the single current result collection: normal/optimized
+full reports, selected raw campaign summaries/measurements, the compound input,
+cells and evidence, a common answer stream, three process/metric receipts,
+named regression receipts, source/input hashes and the observed environment.
+Public receipts tokenize only machine-specific paths; private raw receipts are
+not used as the sole source of any new paper number. Earlier result directories
+and timings remain unchanged historical evidence, not replaced by this run.
 
 To rebuild retained outputs into separate directories without overwriting them:
 
@@ -179,11 +250,15 @@ python src/generate_anchor.py /tmp/anchor-inputs
   contextual micro-model.
 - `src/bibliography_check.py`: BibTeX/citation/audit validator and mutation target.
 - `src/generate_anchor.py`: exact rebuild of six locator-bound source records.
+- `src/timeline_product.py`, `src/timeline_product_check.py`, `run_product.py`:
+  bounded shared-launch product and separate exact-coverage consumer.
+- `src/runtime_limits.py`: explicit POSIX/portable capability boundary.
+- `profile_workflow.py`: identical-query criterion/bitset/scalar lifecycle profile.
 - `inputs/`, `timeline-inputs/`, `anchor-inputs/`: retained JSON inputs.
 - `results/`, `timeline-results/`, `anchor-results/`, `micro-results/`,
   `bibliography-results/`: retained deterministic scientific outputs.
 - `literature/`: bibliography copy, citation inventory, and metadata audit.
-- `tests/`: semantic, schema, mutation, source, exhaustive, and bibliography tests; the exact discovery inventory is recorded by `results/test-results.json`. `reply_index_regression.py` is the separately executed finite suite above.
+- `tests/`: semantic, schema, mutation, source, exhaustive, product and recording controls; current discovery is in `workflow-results/reproduction-normal.json`, earlier 108-test inventory in `results/test-results.json`. Reply-index and directed-client suites are separate.
 - `proofs/`: readable proof notes and explicit scope boundaries.
 - `claim_evidence_ledger.csv`: material claims mapped to proof and evidence.
 - `external_resources.csv`, `SOURCES.md`: scholarly-source inventory and provenance.
