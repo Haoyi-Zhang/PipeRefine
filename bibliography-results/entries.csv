@@ -1,5 +1,5 @@
 key,entry_type,year,venue,stable_identifier,citation_count
-lilac,inproceedings,2026,Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems,doi:10.1145/3779212.3790199,4
+lilac,inproceedings,2026,"Proceedings of the 31st ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2",doi:10.1145/3779212.3790199,4
 performanceinterfaces,inproceedings,2024,18th USENIX Symposium on Operating Systems Design and Implementation,url:https://www.usenix.org/conference/osdi24/presentation/ma,2
 filament,article,2023,Proceedings of the ACM on Programming Languages,doi:10.1145/3591234,4
 dahlia,inproceedings,2020,Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation,doi:10.1145/3385412.3385974,4
