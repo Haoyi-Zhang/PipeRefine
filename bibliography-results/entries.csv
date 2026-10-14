@@ -30,7 +30,7 @@ ioautomata,article,1989,CWI Quarterly,url:https://groups.csail.mit.edu/tds/paper
 interfaceautomata,inproceedings,2001,Proceedings of the ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering,doi:10.1145/503209.503226,4
 interfacetheories,inproceedings,2001,Embedded Software,doi:10.1007/3-540-45449-7_11,2
 alternating,inproceedings,1998,CONCUR '98: Concurrency Theory,doi:10.1007/bfb0055622,4
-modalspec,incollection,1989,Automatic Verification Methods for Finite State Systems,doi:10.1007/3-540-52148-8_19,2
+modalspec,incollection,1990,Automatic Verification Methods for Finite State Systems,doi:10.1007/3-540-52148-8_19,2
 modalio,inproceedings,2007,Programming Languages and Systems,doi:10.1007/978-3-540-71316-6_6,4
 timedio,inproceedings,2010,Proceedings of the ACM International Conference on Hybrid Systems: Computation and Control,doi:10.1145/1755952.1755967,4
 contracts,article,2018,Foundations and Trends in Electronic Design Automation,doi:10.1561/1000000053,4
