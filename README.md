@@ -10,7 +10,8 @@ The default reproduction path requires a POSIX system providing Python's
 on native Windows, while honestly reporting that CPU/address-space hard limits
 and POSIX RSS are unavailable. It uses cooperative CPU checks and a parent
 wall-time watchdog, not an equivalent OS sandbox. No runtime installation is
-needed. The retained Ubuntu scientific workflow is not a fresh CI result.
+needed. `.github/workflows/scientific-checks.yml` runs the POSIX checks on Ubuntu;
+exact-head run results are available in the repository's Actions tab.
 
 ## Scientific scope
 
@@ -269,7 +270,7 @@ python src/generate_anchor.py /tmp/anchor-inputs
 - `results/`, `timeline-results/`, `anchor-results/`, `micro-results/`,
   `bibliography-results/`: retained deterministic scientific outputs.
 - `literature/`: bibliography copy, citation inventory, and metadata audit.
-- `tests/`: semantic, schema, mutation, source, exhaustive, product and recording controls; current discovery is in `workflow-results/reproduction-normal.json`, earlier 108-test inventory in `results/test-results.json`. Reply-index and directed-client suites are separate.
+- `tests/`: current discovery sources (`test_*.py`) for semantic, schema, mutation, source, exhaustive, product, bibliography and recording controls. `workflow-results/reproduction-normal.json` retains the earlier 118-test inventory; `results/test-results.json` retains the 108-test inventory. Reply-index and directed-client suites are separate.
 - `proofs/`: readable proof notes and explicit scope boundaries.
 - `claim_evidence_ledger.csv`: material claims mapped to proof and evidence.
 - `external_resources.csv`, `SOURCES.md`: scholarly-source inventory and provenance.
