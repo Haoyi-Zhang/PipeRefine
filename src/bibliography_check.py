@@ -106,9 +106,15 @@ def parse_bibtex(text: str) -> list[BibEntry]:
     return entries
 
 
+def _strip_comments(text: str) -> str:
+    """Remove ordinary TeX comments, preserving line endings and escaped percent."""
+    # Only an even run of immediately preceding backslashes starts a comment.
+    return re.sub(r"(?<!\\)((?:\\\\)*)%[^\r\n]*", r"\1", text)
+
+
 def citation_sequence(tex: str) -> list[str]:
     keys: list[str] = []
-    for match in re.finditer(r"\\cite\s*\{([^}]*)\}", tex):
+    for match in re.finditer(r"\\cite\s*\{([^}]*)\}", _strip_comments(tex)):
         keys.extend(key.strip() for key in match.group(1).split(",") if key.strip())
     return keys
 

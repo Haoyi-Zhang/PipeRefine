@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.bibliography_check import (
     BibEntry, BibliographyError, citation_sequence, parse_bibtex,
-    read_audit, read_counts, validate,
+    read_audit, read_counts, validate, _strip_comments,
 )
 
 
@@ -77,6 +77,38 @@ class BibliographyAuditTests(unittest.TestCase):
         entries = parse_bibtex(sample)
         self.assertEqual(entries[0].fields["title"], r"{ABC}: $10^{20}$ States")
         self.assertEqual(citation_sequence(r"A~\cite{x,y}; B~\cite{x}."), ["x", "y", "x"])
+
+
+class CitationCommentTests(unittest.TestCase):
+    def test_existing_command_and_occurrence_order(self):
+        self.assertEqual(
+            citation_sequence(r"\cite{interfacebased, behavioraltypes}\cite {learningag}\cite{interfacebased}"),
+            ["interfacebased", "behavioraltypes", "learningag", "interfacebased"],
+        )
+        # Do not broaden the existing plain-cite-only command syntax.
+        self.assertEqual(citation_sequence(r"\citep{x}\citet{x}\cite[see]{x}\nocite{x}"), [])
+
+    def test_comments_and_literal_percent(self):
+        tex = (r"\cite{interfacebased}% \cite{behavioraltypes}" + "\r\n"
+               + r"\% \cite{learningag} % \cite{behavioraltypes}" + "\n"
+               + r"% \cite{behavioraltypes}")
+        self.assertEqual(citation_sequence(tex), ["interfacebased", "learningag"])
+
+    def test_backslash_parity(self):
+        for count in range(6):
+            with self.subTest(backslashes=count):
+                tex = "\\" * count + r"% \cite{behavioraltypes}" + "\n" + r"\cite{learningag}"
+                expected = (["behavioraltypes"] if count % 2 else []) + ["learningag"]
+                self.assertEqual(citation_sequence(tex), expected)
+
+    def test_line_endings_are_preserved(self):
+        self.assertEqual(_strip_comments("a% hidden\r\nb% hidden\rc% hidden\n% eof"), "a\r\nb\rc\n")
+
+    def test_missing_bib_key_only_in_comment_is_not_collected(self):
+        bib = parse_bibtex("@article{interfacebased, title={Retained}}")
+        cited = set(citation_sequence(r"\cite{interfacebased} % \cite{behavioraltypes}"))
+        self.assertEqual(cited, {"interfacebased"})
+        self.assertEqual(cited - {entry.key for entry in bib}, set())
 
 
 if __name__ == "__main__":

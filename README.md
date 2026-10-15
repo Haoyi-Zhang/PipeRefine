@@ -121,7 +121,7 @@ python -B -S reproduce.py
 
 The two explicit reply-index checks each run four additional finite regression
 groups; they are also explicit steps in scientific CI. They are separate from
-the current 118-test discovery inventory checked by `reproduce.py`. The separate
+the current 123-test discovery inventory checked by `reproduce.py`. The separate
 directed-client suite also has four tests; neither suite is pooled into discovery.
 Their
 test-local reference enumerates raw-edge arenas, spoiler trees and all tiny
@@ -142,11 +142,16 @@ excluded from deterministic byte equality. The retained `results/reproduction.js
 records a historical 102-test reproduction and historical paper-build checks;
 it is not evidence that an edited manuscript was rebuilt. Earlier native
 Windows core-only records have 108 tests, 114 byte-identical regenerated inputs,
-284 matching JSON objects and the unchanged micro-pair table. Current complete
+284 matching JSON objects and the unchanged micro-pair table. Retained complete
 Windows CPython 3.12.14 normal and `-O` runs each pass 118 discovery tests, the
 two separate four-test suites, all five campaigns and consumer-only replays,
 114 input byte comparisons and 294 scientific-file byte comparisons. All 108
 earlier test identities remain. Results are not pooled across optimization modes.
+
+The current 123-method inventory adds five citation-parser regressions to those
+118 methods. The comment controls cover active citation order, literal percent
+signs, backslash parity and comment-only missing keys. The retained full-campaign
+receipts keep their original 118-method counts.
 
 For a fresh owned external directory, the native portable entry points are:
 

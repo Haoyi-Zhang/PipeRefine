@@ -17,7 +17,7 @@ import time
 from src.runtime_limits import configure,check_cpu,resource,CPU_SECONDS,ADDRESS_BYTES
 
 ROOT = Path(__file__).resolve().parent
-EXPECTED_TEST_METHODS=118
+EXPECTED_TEST_METHODS=123
 
 
 def bounded_child():
