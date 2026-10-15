@@ -31,8 +31,7 @@ old benchmark denominator. At `p=3` failure cycle is 2 and initial losing rank 4
 
 `profiles/answers.jsonl` is the identical encoded answer stream for criterion,
 bitset and scalar paths on the same 67 families and 961 valuations, including
-all 691 canonical clients. Its SHA-256 is
-`0c73b2917ad84f9fc4aa9ad81d44bb039183c53775eaebda4272b4c86e5a1c59`.
+all 691 canonical clients.
 Each method has a raw stage/metric receipt and whole-process launch receipt.
 All arms include decode, admission/collisions, exact queries, client construction
 and independent replay, encoding and answer-file writing. Game arms also
