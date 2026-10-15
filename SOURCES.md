@@ -82,11 +82,6 @@ it does not execute an external featured-game engine or a hardware compiler.
 `workflow-results/environment.json` records the observed local CPU, OS and Python.
 Current results and source bindings are separate from retained historical runs.
 
-OpenAI Codex assisted with the product implementation/controls, portable
-reproduction and consumer repairs, query profiling, and corresponding proof,
-documentation and evidence updates. This attribution does not imply independent
-human verification or alter the existing MIT/template/source notices.
-
 ## Trust boundary
 
 The timeline producer, independent timeline checker, exhaustive contextual
