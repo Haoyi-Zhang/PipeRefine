@@ -248,6 +248,19 @@ python src/generate_timeline.py /tmp/timeline-inputs
 python src/generate_anchor.py /tmp/anchor-inputs
 ```
 
+## Manuscript figures
+
+The optional Matplotlib renderer generates the overlapping-transaction,
+launch-history, and branching-control schematics as self-contained vector PDFs
+with embedded fonts:
+
+```bash
+python -B figures/generate.py --outdir scratch/figures
+```
+
+These are semantic examples, not hardware measurements. The companion paper
+build invokes the same renderer; scientific checks remain standard-library-only.
+
 ## Repository map
 
 - `src/domain.py`, `src/solve.py`: general-family interpretation and bitset producer.
