@@ -306,3 +306,7 @@ The artifact does not establish automatic extraction from Lilac or another
 language, functional/data equivalence, RTL equivalence, reset semantics,
 backpressure, queues, arbitration, reordering, fairness, liveness, runtime-varying
 timepoints, unbounded parameter synthesis, or industrial workload prevalence.
+
+## Portable path notation
+
+Published execution records use `<PYTHON_ROOT>`, `<NODE_ROOT>`, `<RUNTIME_ROOT>` and `<PROJECTS_ROOT>` for machine-local installation and workspace prefixes. These are path aliases, not literal directories; substitute the corresponding local roots when replaying a command. Recorded interpreter and dependency versions, inputs, measurements and outcomes are unchanged. File inventories bind the published portable serializations; any `recorded_` identity denotes the pre-normalization bytes.
