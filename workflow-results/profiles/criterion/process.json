@@ -1,6 +1,6 @@
 {
   "argv": [
-    "<PROJECTS_ROOT>/2026-07-13/new-chat-4/completion_workspace/library_review/pdf-env/Scripts/python.exe",
+    "<PYTHON_ROOT>/Scripts/python.exe",
     "-B",
     "-S",
     "profile_workflow.py",
