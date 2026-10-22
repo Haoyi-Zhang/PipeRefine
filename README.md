@@ -96,7 +96,7 @@ manuscript citation-key inventory, citation counts, and a row-by-row metadata
 audit. `run_bibliography.py` enforces at least 55 entries, requires every entry
 to be cited, rejects duplicate or missing stable locators, cross-checks the audit
 catalog, and guards eleven selected published metadata records. The current
-result has 69 cited entries, 175 citation occurrences, 65 DOI records, four
+result has 69 cited entries, 166 citation occurrences, 65 DOI records, four
 stable scholarly URL records, and 69 unique locators.
 
 This is a deterministic structural and retained-metadata audit. It does not
